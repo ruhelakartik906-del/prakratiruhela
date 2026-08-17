@@ -217,14 +217,15 @@ function Index() {
         </section>
 
         {/* Custom order */}
-        <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-          <div className="rounded-[2rem] bg-blush px-6 py-12 text-center text-blush-foreground sm:px-12">
-            <h2 className="font-display text-3xl font-semibold sm:text-4xl">Have your own idea?</h2>
-            <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed opacity-80">
+        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-blush/60 px-6 py-16 text-center text-foreground sm:px-12">
+            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--color-terracotta) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+            <h2 className="relative font-display text-4xl font-semibold sm:text-5xl">Have your own idea?</h2>
+            <p className="relative mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground/90">
               Names, favourite characters, wedding colours, office sets — if it can be crocheted, we'll
               try. Send us a reference picture and we'll quote you the same day.
             </p>
-            <Button asChild variant="hero" size="xl" className="mt-7">
+            <Button asChild className="relative mt-10 h-14 rounded-full bg-whatsapp px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
               <a href={customOrderLink()} target="_blank" rel="noreferrer">
                 Request a custom rakhi
               </a>
@@ -233,26 +234,29 @@ function Index() {
         </section>
 
         {/* Brand story */}
-        <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            <img
-              src={classic}
-              alt="Crochet work in progress on a cream cloth"
-              loading="lazy"
-              width={800}
-              height={800}
-              className="aspect-4/3 w-full rounded-[2rem] object-cover shadow-soft"
-            />
+        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
+          <div className="grid items-center gap-16 md:grid-cols-2">
+            <div className="relative">
+              <img
+                src={classic}
+                alt="Crochet work in progress on a cream cloth"
+                loading="lazy"
+                width={800}
+                height={800}
+                className="aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft ring-8 ring-white"
+              />
+              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full border-8 border-white bg-terracotta/10 shadow-lg sm:h-40 sm:w-40" />
+            </div>
             <div>
-              <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-                Two hands, one hook, a lot of chai
+              <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+                Two hands, one hook, <br />a lot of chai
               </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
+              <p className="mt-8 text-lg leading-relaxed text-muted-foreground/90">
                 Taar &amp; Tale started at a kitchen table in 2019, with a ball of leftover cotton and
                 one rakhi for a brother who lived too far away to visit. Word travelled, and the
                 orders followed.
               </p>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground/90">
                 Today a small group of women crochet every piece at home, paid per piece and by name.
                 Nothing here is mass produced, so no two rakhis are ever exactly alike.
               </p>
@@ -261,26 +265,29 @@ function Index() {
         </section>
 
         {/* How to order */}
-        <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-          <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
-            How to order
-          </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
+          <div className="text-center">
+            <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Process</span>
+            <h2 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+              How to order
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {steps.map((s, i) => (
               <div
                 key={s.title}
-                className="rounded-3xl border border-border bg-card p-6 shadow-soft"
+                className="group relative rounded-[2rem] border border-border/40 bg-card p-8 shadow-soft transition-all hover:-translate-y-2 hover:shadow-xl"
               >
-                <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
-                    <s.icon className="h-5 w-5" />
+                <div className="flex items-center gap-4">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-terracotta/10 text-terracotta font-bold text-lg">
+                    {i + 1}
                   </span>
-                  <span className="text-xs tracking-widest text-muted-foreground uppercase">
+                  <span className="text-xs font-bold tracking-widest text-muted-foreground/60 uppercase">
                     Step {i + 1}
                   </span>
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{s.title}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground/80">{s.body}</p>
               </div>
             ))}
           </div>
