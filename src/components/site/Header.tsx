@@ -26,11 +26,11 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
       <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <a href="#top" className="flex items-center gap-3">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-border/10 overflow-hidden">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-soft overflow-hidden">
               <img 
                 src={logoAsset.url} 
                 alt="Crochet Craft Logo" 
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
             <div>
