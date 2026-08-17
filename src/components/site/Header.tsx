@@ -82,7 +82,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 className={`flex shrink-0 items-center gap-3 rounded-full border-2 px-8 py-3.5 text-base font-medium transition-all active:scale-95 ${
                   active
                     ? "border-terracotta bg-terracotta text-white shadow-md"
-                    : "border-black/80 bg-white text-foreground/80 hover:border-terracotta hover:text-terracotta hover:shadow-lg hover:-translate-y-1 hover:ring-2 hover:ring-terracotta/10"
+                    : "border-border/60 bg-white text-foreground/80 hover:border-terracotta hover:text-terracotta hover:shadow-lg hover:-translate-y-1 hover:ring-2 hover:ring-terracotta/10"
                 }`}
               >
                 {c.icon && <span className="text-xl">{c.icon}</span>}
