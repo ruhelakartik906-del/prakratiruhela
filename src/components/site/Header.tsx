@@ -69,7 +69,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               <img 
                 src={whatsappButtonAsset.url} 
                 alt="Order on WhatsApp" 
-                className="h-11 w-auto object-contain"
+                className="h-[52px] w-auto object-contain"
               />
             </a>
           </div>
@@ -100,19 +100,21 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 <button
                   key={c.id}
                   onClick={() => onCategory(c.id)}
-                  className={`flex h-[60px] shrink-0 items-center gap-3.5 rounded-full border px-6 text-[15px] font-semibold transition-all active:scale-95 lg:w-[calc((100%-80px)/6)] min-w-[200px] justify-center ${
+                  className={`flex h-[56px] shrink-0 items-center justify-between rounded-full border px-5 text-[15px] font-semibold transition-all active:scale-95 lg:w-[calc((100%-80px)/6)] min-w-[210px] ${
                     active
                       ? "border-terracotta bg-terracotta text-white shadow-md"
                       : "border-black/5 bg-white text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
-                  {c.icon && (
-                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
-                      {c.icon}
-                    </span>
-                  )}
-                  <span className="whitespace-nowrap">{c.label}</span>
-                  <span className={`text-[13px] font-bold opacity-50 ${active ? "text-white" : "text-[#3F2A22]/60"}`}>
+                  <div className="flex items-center gap-3">
+                    {c.icon && (
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
+                        {c.icon}
+                      </span>
+                    )}
+                    <span className="whitespace-nowrap">{c.label}</span>
+                  </div>
+                  <span className={`ml-2 text-[13px] font-bold opacity-50 ${active ? "text-white" : "text-[#3F2A22]/60"}`}>
                     {count}
                   </span>
                 </button>
