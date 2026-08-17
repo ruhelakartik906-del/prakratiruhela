@@ -320,7 +320,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bg-brand-deep py-20 text-background">
+      <footer className="bg-[#3F2A22] py-20 text-white">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-3">
           <div>
             <h3 className="font-display text-3xl font-semibold">Crochet Craft</h3>
@@ -345,14 +345,14 @@ function Index() {
           <div className="text-base">
             <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Talk to us</p>
             <p className="mt-6 opacity-60">Mon–Sat, 10am to 7pm IST</p>
-            <Button asChild className="mt-6 h-12 rounded-full bg-whatsapp px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
+            <Button asChild className="mt-6 h-12 rounded-full bg-[#087F69] px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to place a rakhi order.")} target="_blank" rel="noreferrer">
                 <MessageCircle className="h-4 w-4 fill-current" /> Order on WhatsApp
               </a>
             </Button>
           </div>
         </div>
-        <div className="mt-20 border-t border-background/10 pt-8 text-center text-sm opacity-40">
+        <div className="mt-20 border-t border-white/10 pt-8 text-center text-sm opacity-40">
           © {new Date().getFullYear()} Crochet Craft. Made by hand.
         </div>
       </footer>
