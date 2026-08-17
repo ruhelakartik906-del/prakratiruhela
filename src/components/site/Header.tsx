@@ -44,35 +44,31 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
             </div>
           </a>
           
-          <div className="flex items-center">
+          <div className="flex items-center gap-1.5">
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="relative h-14 w-14 shrink-0 overflow-hidden active:scale-95 transition-transform"
+              className="group relative flex h-11 w-11 items-center justify-center overflow-hidden transition-all active:scale-95"
             >
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-full" />
               <img 
-                src={socialButtonsAsset.url} 
+                src={instagramAsset.url} 
                 alt="Instagram" 
-                className="absolute left-0 top-0 h-full w-[auto] object-cover"
-                style={{ clipPath: 'inset(0 80% 0 0)' }}
+                className="relative z-10 h-6 w-6 object-contain invert brightness-0"
               />
             </a>
-            <a 
-              href={waLink("Hi! I'd like to know more about your crochet rakhis.")} 
-              target="_blank" 
-              rel="noreferrer"
-              aria-label="Order on WhatsApp"
-              className="relative h-14 w-[180px] shrink-0 overflow-hidden active:scale-95 transition-transform"
-            >
-              <img 
-                src={socialButtonsAsset.url} 
-                alt="Order on WhatsApp" 
-                className="absolute right-0 top-0 h-full w-[auto] object-cover"
-                style={{ clipPath: 'inset(0 0 0 20%)', transform: 'translateX(18%)' }}
-              />
-            </a>
+            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#075E54] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
+              <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                  alt="WhatsApp" 
+                  className="h-5 w-5 invert brightness-0"
+                />
+                <span className="text-[15px] font-bold">Order on WhatsApp</span>
+              </a>
+            </Button>
           </div>
         </div>
 
