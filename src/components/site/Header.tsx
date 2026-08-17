@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.png.asset.json";
 import instagramAsset from "@/assets/instagram.png.asset.json";
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
-import whatsappNewAsset from "@/assets/whatsapp-new.png.asset.json";
+import whatsappChatAsset from "@/assets/whatsapp-chat.png.asset.json";
 import {
   categories,
   categoryCounts,
@@ -62,7 +62,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
             <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#075E54] px-5 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
                 <img 
-                  src={whatsappNewAsset.url} 
+                  src={whatsappChatAsset.url} 
                   alt="WhatsApp" 
                   className="h-7 w-7 object-contain"
                 />
