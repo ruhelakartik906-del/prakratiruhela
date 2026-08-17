@@ -323,7 +323,7 @@ function Index() {
       <footer className="bg-brand-deep py-20 text-background">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-3">
           <div>
-            <h3 className="font-display text-3xl font-semibold">Taar &amp; Tale</h3>
+            <h3 className="font-display text-3xl font-semibold">Crochet Craft</h3>
             <p className="mt-6 max-w-xs text-base leading-relaxed opacity-60">
               Handmade crochet rakhis, lumba sets and custom pieces. Shipped across India.
             </p>
@@ -353,7 +353,7 @@ function Index() {
           </div>
         </div>
         <div className="mt-20 border-t border-background/10 pt-8 text-center text-sm opacity-40">
-          © {new Date().getFullYear()} Taar &amp; Tale. Made by hand.
+          © {new Date().getFullYear()} Crochet Craft. Made by hand.
         </div>
       </footer>
 
