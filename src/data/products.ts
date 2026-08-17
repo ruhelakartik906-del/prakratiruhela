@@ -19,8 +19,8 @@ export type Product = {
 };
 
 export const categories: { id: CategoryId; label: string; icon?: string }[] = [
-  { id: "all", label: "All Items" },
-  { id: "raksha-bandhan", label: "Raksha Bandhan", icon: "✨" },
+  { id: "all", label: "All Items", icon: "✨" },
+  { id: "raksha-bandhan", label: "Raksha Bandhan", icon: "🧵" },
   { id: "hair-accessories", label: "Hair Accessories", icon: "🌸" },
   { id: "keychains", label: "Keychains", icon: "🔑" },
   { id: "earbuds-cover", label: "Earbuds Cover", icon: "🎧" },
