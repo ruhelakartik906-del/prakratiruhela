@@ -1,5 +1,5 @@
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import whatsappAsset from "@/assets/whatsapp.png.asset.json";
 import { orderLink, type Product } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -28,9 +28,9 @@ export function ProductCard({ product }: { product: Product }) {
           <Button asChild className="h-12 w-full rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-md transition-all hover:brightness-110 hover:shadow-lg active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                src={whatsappAsset.url} 
                 alt="WhatsApp" 
-                className="h-5 w-5 invert brightness-0"
+                className="h-5 w-5 object-contain"
               />
               <span>Order on WhatsApp</span>
             </a>
