@@ -22,8 +22,8 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/10 bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <a href="#top" className="flex items-center gap-3">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-border/20">
               <span className="font-display text-2xl text-primary">त</span>
@@ -57,7 +57,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 max-w-[680px]">
+        <div className="mx-auto mt-4 max-w-[680px]">
           <div className="relative group">
             <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-terracotta" />
             <input
@@ -71,7 +71,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
           </div>
         </div>
 
-        <nav className="no-scrollbar mt-8 flex w-full items-center gap-4 overflow-x-auto px-4 pb-6 scroll-smooth">
+        <nav className="no-scrollbar mt-4 flex w-full items-center gap-4 overflow-x-auto px-4 pb-4 scroll-smooth">
           {categories.map((c) => {
             const active = c.id === category;
             const count = counts[c.id];
@@ -79,15 +79,15 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               <button
                 key={c.id}
                 onClick={() => onCategory(c.id)}
-                className={`flex shrink-0 items-center gap-2 rounded-full border px-6 py-2.5 text-sm font-medium transition-all active:scale-95 ${
+                className={`flex shrink-0 items-center gap-3 rounded-full border px-8 py-3.5 text-base font-medium transition-all active:scale-95 ${
                   active
                     ? "border-terracotta bg-terracotta text-white shadow-md"
                     : "border-border/30 bg-white text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                 }`}
               >
-                {c.icon && <span className="text-base">{c.icon}</span>}
+                {c.icon && <span className="text-xl">{c.icon}</span>}
                 {c.label}
-                <span className={`text-[11px] font-semibold opacity-60 ${active ? "text-white/90" : "text-muted-foreground"}`}>
+                <span className={`text-[13px] font-semibold opacity-60 ${active ? "text-white/90" : "text-muted-foreground"}`}>
                   {count}
                 </span>
               </button>
