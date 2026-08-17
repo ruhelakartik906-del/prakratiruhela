@@ -294,21 +294,24 @@ function Index() {
         </section>
 
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 pb-20 sm:px-6">
-          <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
-            Questions, answered
-          </h2>
-          <Accordion type="single" collapsible className="mt-8">
+        <section className="mx-auto max-w-3xl px-4 pb-24 sm:px-6">
+          <div className="text-center">
+            <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">FAQ</span>
+            <h2 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+              Questions, answered
+            </h2>
+          </div>
+          <Accordion type="single" collapsible className="mt-12 space-y-4">
             {faqs.map((f) => (
               <AccordionItem
                 key={f.q}
                 value={f.q}
-                className="mb-3 rounded-2xl border border-border bg-card px-5"
+                className="border-none"
               >
-                <AccordionTrigger className="text-left font-display text-base font-semibold hover:no-underline">
+                <AccordionTrigger className="flex rounded-[1.25rem] border border-border/40 bg-card px-6 py-5 text-left font-display text-lg font-semibold text-foreground transition-all hover:border-terracotta/40 hover:no-underline data-[state=open]:border-terracotta/40 data-[state=open]:text-terracotta">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                <AccordionContent className="mt-2 px-6 pb-4 text-base leading-relaxed text-muted-foreground/80">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
@@ -317,39 +320,39 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bg-brand-deep text-background">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-3">
+      <footer className="bg-brand-deep py-20 text-background">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-3">
           <div>
-            <h3 className="font-display text-2xl font-semibold">Taar &amp; Tale</h3>
-            <p className="mt-3 max-w-xs text-sm opacity-70">
+            <h3 className="font-display text-3xl font-semibold">Taar &amp; Tale</h3>
+            <p className="mt-6 max-w-xs text-base leading-relaxed opacity-60">
               Handmade crochet rakhis, lumba sets and custom pieces. Shipped across India.
             </p>
           </div>
-          <div className="text-sm">
-            <p className="tracking-widest uppercase opacity-60">Explore</p>
-            <div className="mt-3 flex flex-col items-start gap-2">
-              <button onClick={() => scrollToId("collection")} className="opacity-80 hover:opacity-100">
+          <div className="text-base">
+            <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Explore</p>
+            <div className="mt-6 flex flex-col items-start gap-4">
+              <button onClick={() => scrollToId("collection")} className="opacity-70 transition-opacity hover:opacity-100">
                 Collection
               </button>
-              <a href={customOrderLink()} target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100">
+              <a href={customOrderLink()} target="_blank" rel="noreferrer" className="opacity-70 transition-opacity hover:opacity-100">
                 Custom orders
               </a>
-              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 opacity-80 hover:opacity-100">
+              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100">
                 <Instagram className="h-4 w-4" /> Instagram
               </a>
             </div>
           </div>
-          <div className="text-sm">
-            <p className="tracking-widest uppercase opacity-60">Talk to us</p>
-            <p className="mt-3 opacity-80">Mon–Sat, 10am to 7pm IST</p>
-            <Button asChild variant="whatsapp" className="mt-4 rounded-full">
+          <div className="text-base">
+            <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Talk to us</p>
+            <p className="mt-6 opacity-60">Mon–Sat, 10am to 7pm IST</p>
+            <Button asChild className="mt-6 h-12 rounded-full bg-whatsapp px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to place a rakhi order.")} target="_blank" rel="noreferrer">
-                <MessageCircle className="h-4 w-4" /> Order on WhatsApp
+                <MessageCircle className="h-4 w-4 fill-current" /> Order on WhatsApp
               </a>
             </Button>
           </div>
         </div>
-        <div className="border-t border-background/15 py-5 text-center text-xs opacity-60">
+        <div className="mt-20 border-t border-background/10 pt-8 text-center text-sm opacity-40">
           © {new Date().getFullYear()} Taar &amp; Tale. Made by hand.
         </div>
       </footer>
@@ -359,9 +362,9 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed right-4 bottom-4 z-40 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-soft transition-transform hover:scale-105"
+        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-whatsapp text-white shadow-2xl transition-all hover:scale-110 hover:shadow-whatsapp/20 active:scale-95 sm:right-8 sm:bottom-8"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-7 w-7 fill-current" />
       </a>
 
       <CookieNotice />
