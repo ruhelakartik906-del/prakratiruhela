@@ -85,6 +85,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                     : "border-border/60 bg-card text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                 }`}
               >
+                {c.icon && <span className="text-base">{c.icon}</span>}
                 {c.label}
                 <span className={`text-[11px] font-semibold opacity-60 ${active ? "text-terracotta" : "text-muted-foreground"}`}>
                   {count}
