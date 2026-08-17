@@ -25,9 +25,13 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="font-display text-xl leading-snug font-semibold text-[#3F2A22]">{product.name}</h3>
         <p className="text-sm leading-relaxed text-[#3F2A22]/60">{product.description}</p>
         <div className="mt-auto pt-4">
-          <Button asChild className="h-12 w-full rounded-full bg-[#087F69] px-6 text-sm font-semibold text-white shadow-md transition-all hover:brightness-110 hover:shadow-lg active:scale-95">
+          <Button asChild className="h-12 w-full rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-md transition-all hover:brightness-110 hover:shadow-lg active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
-              <MessageCircle className="h-4 w-4 fill-current" />
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                alt="WhatsApp" 
+                className="h-5 w-5 invert brightness-0"
+              />
               <span>Order on WhatsApp</span>
             </a>
           </Button>
