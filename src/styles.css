@@ -111,8 +111,8 @@
 @theme inline {
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-terracotta: var(--terracotta);
   --color-blush: var(--blush);
-  --color-blush-foreground: var(--blush-foreground);
   --color-brand-deep: var(--brand-deep);
   --shadow-soft: var(--shadow-soft);
 }
