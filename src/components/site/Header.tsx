@@ -88,7 +88,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 <button
                   key={c.id}
                   onClick={() => onCategory(c.id)}
-                  className={`flex h-[66px] shrink-0 items-center gap-3.5 rounded-full border px-6 text-[15px] font-semibold transition-all active:scale-95 ${
+                  className={`flex h-[66px] shrink-0 items-center gap-3.5 rounded-full border px-6 text-[15px] font-semibold transition-all active:scale-95 lg:w-[calc((100%-80px)/6)] min-w-[200px] justify-center ${
                     active
                       ? "border-terracotta bg-terracotta text-white shadow-md"
                       : "border-black/5 bg-white text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
