@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Heart, Package, Sparkles } from "lucide-react";
+import { Heart, MessageCircle, Package, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
