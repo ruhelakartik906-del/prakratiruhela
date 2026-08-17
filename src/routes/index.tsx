@@ -164,37 +164,37 @@ function Index() {
           </div>
         </section>
 
-        {/* Collection */}
-        <section id="collection" className="mx-auto max-w-6xl scroll-mt-44 px-4 pb-16 sm:px-6">
+        <section id="collection" className="mx-auto max-w-6xl scroll-mt-44 px-4 pb-24 sm:px-6">
           <div className="text-center">
-            <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+            <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Our Collection</span>
+            <h2 className="mt-4 font-display text-4xl font-semibold text-foreground sm:text-5xl">
               Raksha Bandhan • 28 August 2026
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground/80">
               This year's designs, crocheted in limited quantities. Once a colourway runs out, it's
               gone for the season.
             </p>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">
-              <span className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <span className="rounded-full bg-card px-4 py-1.5 text-sm font-medium text-foreground shadow-sm ring-1 ring-border/20">
                 {products.length} designs
               </span>
-              <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">
-                15% off on bulk orders of 10+
+              <span className="rounded-full bg-terracotta/10 px-4 py-1.5 text-sm font-bold text-terracotta">
+                15% OFF ON 10+ RAKHIS
               </span>
             </div>
           </div>
 
-          <div className="no-scrollbar mt-8 flex justify-start gap-2 overflow-x-auto pb-1 sm:justify-center">
+          <div className="no-scrollbar mt-12 flex justify-start gap-3 overflow-x-auto pb-6 sm:justify-center">
             {categories.map((c) => {
               const active = c.id === category;
               return (
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`pill-hover-effect shrink-0 rounded-full border px-5 py-2.5 text-sm font-medium transition-all active:scale-95 ${
+                  className={`shrink-0 rounded-full border px-6 py-3 text-sm font-semibold transition-all active:scale-95 ${
                     active
-                      ? "border-primary/20 bg-primary/5 text-primary shadow-sm ring-1 ring-primary/20"
-                      : "border-border bg-card text-foreground hover:border-border/80 hover:bg-secondary/50"
+                      ? "border-terracotta/40 bg-white text-terracotta shadow-md ring-1 ring-terracotta/20"
+                      : "border-border/60 bg-card text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
                   {c.label}
@@ -204,11 +204,11 @@ function Index() {
           </div>
 
           {filtered.length === 0 ? (
-            <p className="mt-14 text-center text-muted-foreground">
+            <p className="mt-20 text-center text-lg text-muted-foreground">
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
