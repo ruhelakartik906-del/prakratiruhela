@@ -92,7 +92,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
 
         {/* Category Slider Row */}
         <div className="mt-5 border-b border-black/5">
-          <nav className="no-scrollbar flex w-full items-center gap-4 overflow-x-auto pt-2 pb-6 scroll-smooth">
+          <nav className="no-scrollbar flex w-full items-center gap-3.5 overflow-x-auto px-4 pt-2 pb-6 scroll-smooth">
             {categories.map((c) => {
               const active = c.id === category;
               const count = counts[c.id];
@@ -100,21 +100,26 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 <button
                   key={c.id}
                   onClick={() => onCategory(c.id)}
-                  className={`flex h-[56px] shrink-0 items-center justify-between rounded-full border px-5 text-[15px] font-semibold transition-all active:scale-95 lg:w-[calc((100%-80px)/6)] min-w-[210px] ${
+                  className={`flex min-h-[64px] shrink-0 items-center rounded-full border px-[18px] transition-all active:scale-95 ${
                     active
                       ? "border-terracotta bg-terracotta text-white shadow-md"
                       : "border-black/5 bg-white text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    {c.icon && (
-                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
-                        {c.icon}
-                      </span>
-                    )}
-                    <span className="whitespace-nowrap">{c.label}</span>
-                  </div>
-                  <span className={`ml-2 text-[13px] font-bold opacity-50 ${active ? "text-white" : "text-[#3F2A22]/60"}`}>
+                  {/* Icon Circle */}
+                  {c.icon && (
+                    <span className={`flex h-10 w-10 min-w-[40px] shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
+                      {c.icon}
+                    </span>
+                  )}
+                  
+                  {/* Category Name */}
+                  <span className="ml-[14px] whitespace-nowrap text-[15px] font-semibold leading-none">
+                    {c.label}
+                  </span>
+                  
+                  {/* Count */}
+                  <span className={`ml-auto pl-3 whitespace-nowrap text-[13px] font-bold opacity-50 ${active ? "text-white" : "text-[#3F2A22]/60"}`}>
                     {count}
                   </span>
                 </button>
