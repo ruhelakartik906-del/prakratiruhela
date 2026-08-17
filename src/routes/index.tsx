@@ -116,18 +116,18 @@ function Index() {
             <span className="inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-terracotta/5 px-4 py-1.5 text-sm font-medium text-terracotta">
               ✨ Raksha Bandhan · 28 August 2026
             </span>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] font-semibold text-foreground sm:text-6xl md:text-7xl">
+            <h1 className="mt-6 font-display text-5xl leading-[1.05] font-semibold text-[#3F2A22] sm:text-6xl md:text-7xl">
               A rakhi made by hand, tied with <span className="italic text-terracotta font-normal">love</span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground/90">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#3F2A22]/70">
               Every piece is crocheted stitch by stitch in soft cotton yarn — no moulds, no machines.
               Choose from this year's collection or tell us your idea and we'll make it for you.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button size="xl" className="rounded-full bg-foreground px-8 font-semibold text-background shadow-soft transition-all hover:translate-y-[-2px] hover:shadow-lg active:scale-95" onClick={() => scrollToId("collection")}>
+              <Button size="xl" className="rounded-full bg-[#3F2A22] px-8 font-semibold text-white shadow-soft transition-all hover:translate-y-[-2px] hover:shadow-lg active:scale-95" onClick={() => scrollToId("collection")}>
                 Browse Designs
               </Button>
-              <Button asChild variant="secondary" size="xl" className="rounded-full border-border bg-transparent px-8 font-semibold text-foreground shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
+              <Button asChild variant="secondary" size="xl" className="rounded-full border-black/5 bg-white px-8 font-semibold text-[#3F2A22] shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
                 <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer">
                   <MessageCircle className="h-4 w-4" /> Chat with us
                 </a>
@@ -164,18 +164,18 @@ function Index() {
           </div>
         </section>
 
-        <section id="collection" className="mx-auto max-w-6xl scroll-mt-44 px-4 pb-24 sm:px-6">
+        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-24 sm:px-6">
           <div className="text-center">
             <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Our Collection</span>
-            <h2 className="mt-4 font-display text-4xl font-semibold text-foreground sm:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-semibold text-[#3F2A22] sm:text-5xl">
               Raksha Bandhan • 28 August 2026
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground/80">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-[#3F2A22]/70">
               This year's designs, crocheted in limited quantities. Once a colourway runs out, it's
               gone for the season.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <span className="rounded-full bg-card px-4 py-1.5 text-sm font-medium text-foreground shadow-sm ring-1 ring-border/20">
+              <span className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-[#3F2A22] shadow-sm ring-1 ring-black/5">
                 {products.length} designs
               </span>
               <span className="rounded-full bg-terracotta/10 px-4 py-1.5 text-sm font-bold text-terracotta">
@@ -193,8 +193,8 @@ function Index() {
                   onClick={() => setCategory(c.id)}
                   className={`shrink-0 rounded-full border px-6 py-3 text-sm font-semibold transition-all active:scale-95 ${
                     active
-                      ? "border-terracotta/40 bg-white text-terracotta shadow-md ring-1 ring-terracotta/20"
-                      : "border-border/60 bg-card text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
+                      ? "border-terracotta bg-terracotta text-white shadow-md"
+                      : "border-black/5 bg-white text-[#3F2A22]/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
                   {c.label}
@@ -225,7 +225,7 @@ function Index() {
               Names, favourite characters, wedding colours, office sets — if it can be crocheted, we'll
               try. Send us a reference picture and we'll quote you the same day.
             </p>
-            <Button asChild className="relative mt-10 h-14 rounded-full bg-whatsapp px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
+            <Button asChild className="relative mt-10 h-14 rounded-full bg-[#087F69] px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
               <a href={customOrderLink()} target="_blank" rel="noreferrer">
                 Request a custom rakhi
               </a>
@@ -320,7 +320,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bg-brand-deep py-20 text-background">
+      <footer className="bg-[#3F2A22] py-20 text-white">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-3">
           <div>
             <h3 className="font-display text-3xl font-semibold">Crochet Craft</h3>
@@ -345,14 +345,14 @@ function Index() {
           <div className="text-base">
             <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Talk to us</p>
             <p className="mt-6 opacity-60">Mon–Sat, 10am to 7pm IST</p>
-            <Button asChild className="mt-6 h-12 rounded-full bg-whatsapp px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
+            <Button asChild className="mt-6 h-12 rounded-full bg-[#087F69] px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to place a rakhi order.")} target="_blank" rel="noreferrer">
                 <MessageCircle className="h-4 w-4 fill-current" /> Order on WhatsApp
               </a>
             </Button>
           </div>
         </div>
-        <div className="mt-20 border-t border-background/10 pt-8 text-center text-sm opacity-40">
+        <div className="mt-20 border-t border-white/10 pt-8 text-center text-sm opacity-40">
           © {new Date().getFullYear()} Crochet Craft. Made by hand.
         </div>
       </footer>
@@ -362,7 +362,7 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-whatsapp text-white shadow-2xl transition-all hover:scale-110 hover:shadow-whatsapp/20 active:scale-95 sm:right-8 sm:bottom-8"
+        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-[#087F69] text-white shadow-2xl transition-all hover:scale-110 hover:shadow-[#087F69]/20 active:scale-95 sm:right-8 sm:bottom-8"
       >
         <MessageCircle className="h-7 w-7 fill-current" />
       </a>

@@ -22,11 +22,12 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
   const [logoError] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/10 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <a href="#top" className="flex items-center gap-3">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-soft overflow-hidden">
+    <header className="sticky top-0 z-40 bg-white shadow-sm">
+      <div className="mx-auto w-full px-4 pt-4 pb-2 sm:px-6">
+        {/* Brand Row */}
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <a href="#top" className="flex items-center gap-4">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-soft overflow-hidden ring-1 ring-black/5">
               <img 
                 src={logoAsset.url} 
                 alt="Crochet Craft Logo" 
@@ -34,10 +35,10 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               />
             </div>
             <div>
-              <span className="block font-display text-2xl leading-none font-semibold text-foreground">
+              <span className="block font-display text-2xl font-semibold tracking-tight text-[#3F2A22]">
                 Crochet Craft
               </span>
-              <span className="mt-1 block text-sm text-muted-foreground/80">
+              <span className="mt-0.5 block text-sm font-medium text-[#3F2A22]/60">
                 by Pooja Jain · Handmade Premium
               </span>
             </div>
@@ -49,11 +50,11 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="group flex h-11 w-11 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-border/20 transition-all hover:ring-terracotta/40 active:scale-95"
+              className="group flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-black/5 transition-all hover:ring-terracotta/40 active:scale-95"
             >
-              <Instagram className="h-5 w-5 text-foreground transition-colors group-hover:text-terracotta" />
+              <Instagram className="h-5 w-5 text-[#3F2A22] transition-colors group-hover:text-terracotta" />
             </a>
-            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-whatsapp px-8 text-sm font-semibold shadow-soft transition-all hover:brightness-110 active:scale-95">
+            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#087F69] px-8 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer">
                 <MessageCircle className="h-4 w-4 fill-current" />
                 <span>Order on WhatsApp</span>
@@ -62,43 +63,51 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
           </div>
         </div>
 
-        <div className="mx-auto mt-4 max-w-[680px]">
+        {/* Search Bar Row */}
+        <div className="mx-auto mt-8 max-w-[700px]">
           <div className="relative group">
-            <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-terracotta" />
+            <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-[#3F2A22]/40 transition-colors group-focus-within:text-terracotta" />
             <input
               value={query}
               onChange={(e) => onQuery(e.target.value)}
               type="search"
               placeholder="Search all designs — try 'rose', 'bunny', 'kids'..."
               aria-label="Search products"
-              className="h-[58px] w-full rounded-full border border-border/60 bg-card pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-muted-foreground/50 focus:border-terracotta/40 focus:bg-white focus:ring-4 focus:ring-terracotta/5"
+              className="h-[60px] w-full rounded-full border border-black/5 bg-white pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-[#3F2A22]/40 focus:border-terracotta/40 focus:ring-4 focus:ring-terracotta/5"
             />
           </div>
         </div>
 
-        <nav className="no-scrollbar mt-4 flex w-full items-center gap-4 overflow-x-auto px-4 pb-8 pt-2 scroll-smooth">
-          {categories.map((c) => {
-            const active = c.id === category;
-            const count = counts[c.id];
-            return (
-              <button
-                key={c.id}
-                onClick={() => onCategory(c.id)}
-                className={`flex shrink-0 items-center gap-3 rounded-full border-2 px-8 py-3.5 text-base font-medium transition-all active:scale-95 ${
-                  active
-                    ? "border-terracotta bg-terracotta text-white shadow-md"
-                    : "border-black bg-white text-foreground/80 hover:border-terracotta hover:text-terracotta hover:shadow-lg hover:-translate-y-1 hover:ring-2 hover:ring-terracotta/10"
-                }`}
-              >
-                {c.icon && <span className="text-xl">{c.icon}</span>}
-                {c.label}
-                <span className={`text-[13px] font-semibold opacity-60 ${active ? "text-white/90" : "text-muted-foreground"}`}>
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </nav>
+        {/* Category Slider Row */}
+        <div className="mt-7 border-b border-black/5">
+          <nav className="no-scrollbar flex w-full items-center gap-4 overflow-x-auto pb-6 scroll-smooth">
+            {categories.map((c) => {
+              const active = c.id === category;
+              const count = counts[c.id];
+              return (
+                <button
+                  key={c.id}
+                  onClick={() => onCategory(c.id)}
+                  className={`flex h-[66px] shrink-0 items-center gap-3.5 rounded-full border px-6 text-[15px] font-semibold transition-all active:scale-95 ${
+                    active
+                      ? "border-terracotta bg-terracotta text-white shadow-md"
+                      : "border-black/5 bg-white text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
+                  }`}
+                >
+                  {c.icon && (
+                    <span className={`flex h-9 w-9 items-center justify-center rounded-full text-lg ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
+                      {c.icon}
+                    </span>
+                  )}
+                  <span className="whitespace-nowrap">{c.label}</span>
+                  <span className={`text-[13px] font-bold opacity-50 ${active ? "text-white" : "text-[#3F2A22]/60"}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </nav>
+        </div>
       </div>
     </header>
   );

@@ -4,7 +4,7 @@ import { orderLink, type Product } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-card shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+    <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       <div className="aspect-square overflow-hidden bg-secondary">
         <img
           src={product.image}
@@ -17,15 +17,15 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
         <div className="flex items-center justify-between">
-          <span className="w-fit rounded-full bg-terracotta/10 px-3 py-1 text-[11px] font-semibold tracking-wider text-terracotta uppercase">
+          <span className="w-fit rounded-full bg-terracotta/10 px-3 py-1 text-[11px] font-bold tracking-wider text-terracotta uppercase">
             {product.badge}
           </span>
-          <span className="font-display text-2xl font-semibold text-foreground">₹{product.price}</span>
+          <span className="font-display text-2xl font-semibold text-[#3F2A22]">₹{product.price}</span>
         </div>
-        <h3 className="font-display text-xl leading-snug font-semibold text-foreground">{product.name}</h3>
-        <p className="text-sm leading-relaxed text-muted-foreground">{product.description}</p>
+        <h3 className="font-display text-xl leading-snug font-semibold text-[#3F2A22]">{product.name}</h3>
+        <p className="text-sm leading-relaxed text-[#3F2A22]/60">{product.description}</p>
         <div className="mt-auto pt-4">
-          <Button asChild className="h-12 w-full rounded-full bg-whatsapp px-6 text-sm font-semibold text-white shadow-md transition-all hover:brightness-110 hover:shadow-lg active:scale-95">
+          <Button asChild className="h-12 w-full rounded-full bg-[#087F69] px-6 text-sm font-semibold text-white shadow-md transition-all hover:brightness-110 hover:shadow-lg active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
               <MessageCircle className="h-4 w-4 fill-current" />
               <span>Order on WhatsApp</span>
