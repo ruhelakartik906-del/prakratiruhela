@@ -46,30 +46,30 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
             </div>
           </a>
           
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 bg-transparent border-none p-0 m-0 shadow-none outline-none ring-0">
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="group flex h-11 w-11 items-center justify-center transition-all active:scale-95 hover:scale-105"
+              className="group relative flex h-11 w-11 items-center justify-center transition-all active:scale-95 hover:scale-105 bg-transparent border-none p-0 shadow-none outline-none ring-0"
             >
               <img 
                 src={instagramAsset.url} 
                 alt="Instagram" 
-                className="h-11 w-11 rounded-full object-contain"
+                className="h-11 w-11 rounded-full object-contain block m-0 p-0 border-none shadow-none ring-0 outline-none"
               />
             </a>
             <a 
               href={waLink("Hi! I'd like to know more about your crochet products.")} 
               target="_blank" 
               rel="noreferrer" 
-              className="transition-all active:scale-95 hover:brightness-105"
+              className="group relative transition-all active:scale-95 hover:brightness-105 bg-transparent border-none p-0 shadow-none outline-none ring-0 flex items-center"
             >
               <img 
                 src={whatsappButtonAsset.url} 
                 alt="Order on WhatsApp" 
-                className="h-[52px] w-auto object-contain"
+                className="h-[52px] w-auto object-contain block m-0 p-0 border-none shadow-none ring-0 outline-none"
               />
             </a>
           </div>
