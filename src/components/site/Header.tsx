@@ -71,7 +71,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
           </div>
         </div>
 
-        <nav className="no-scrollbar -mx-4 mt-8 flex gap-3 overflow-x-auto px-4 pb-4 sm:mx-0 sm:justify-center sm:px-0">
+        <nav className="no-scrollbar -mx-4 mt-8 flex gap-4 overflow-x-auto px-6 pb-6 sm:mx-0 sm:justify-center sm:px-0">
           {categories.map((c) => {
             const active = c.id === category;
             const count = counts[c.id];
