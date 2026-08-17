@@ -198,10 +198,10 @@ function Index() {
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
+                  className={`pill-hover-effect shrink-0 rounded-full border px-5 py-2.5 text-sm font-medium transition-all active:scale-95 ${
                     active
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card hover:bg-secondary"
+                      ? "border-primary/20 bg-primary/5 text-primary shadow-sm ring-1 ring-primary/20"
+                      : "border-border bg-card text-foreground hover:border-border/80 hover:bg-secondary/50"
                   }`}
                 >
                   {c.label}

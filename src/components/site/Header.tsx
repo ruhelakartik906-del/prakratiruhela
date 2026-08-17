@@ -56,36 +56,37 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
           </div>
         </div>
 
-        <div className="mx-auto mt-3 max-w-xl">
-          <div className="relative">
-            <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+        <div className="mx-auto mt-4 max-w-2xl px-2">
+          <div className="relative group">
+            <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-primary" />
             <input
               value={query}
               onChange={(e) => onQuery(e.target.value)}
               type="search"
-              placeholder="Search rakhis, motifs, colours…"
+              placeholder="Search all designs — try 'rose', 'bunny', 'kids'..."
               aria-label="Search products"
-              className="h-11 w-full rounded-full border border-border bg-card pr-4 pl-11 text-sm shadow-soft outline-none placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/20"
+              className="h-14 w-full rounded-full border border-border bg-card pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/40 focus:bg-white focus:ring-4 focus:ring-primary/5"
             />
           </div>
         </div>
 
-        <nav className="no-scrollbar -mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:justify-center sm:px-0">
+        <nav className="no-scrollbar -mx-4 mt-5 flex gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:justify-center sm:px-0">
           {categories.map((c) => {
             const active = c.id === category;
+            const count = counts[c.id];
             return (
               <button
                 key={c.id}
                 onClick={() => onCategory(c.id)}
-                className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
+                className={`pill-hover-effect flex shrink-0 items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-all active:scale-95 ${
                   active
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card text-foreground hover:bg-secondary"
+                    ? "border-primary/20 bg-primary/5 text-primary shadow-sm ring-1 ring-primary/20"
+                    : "border-border bg-card text-foreground hover:border-border/80 hover:bg-secondary/50"
                 }`}
               >
                 {c.label}
-                <span className={active ? "ml-1.5 opacity-80" : "ml-1.5 text-muted-foreground"}>
-                  {counts[c.id]}
+                <span className={`text-[11px] font-semibold ${active ? "text-primary/60" : "text-muted-foreground/50"}`}>
+                  {count}
                 </span>
               </button>
             );
