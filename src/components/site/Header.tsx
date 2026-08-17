@@ -4,6 +4,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import instagramAsset from "@/assets/instagram.png.asset.json";
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
 import whatsappChatAsset from "@/assets/whatsapp-chat.png.asset.json";
+import whatsappButtonAsset from "@/assets/whatsapp-button.png.asset.json";
 import {
   categories,
   categoryCounts,
@@ -59,16 +60,18 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 className="h-11 w-11 rounded-full object-contain"
               />
             </a>
-            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#075E54] px-5 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
-              <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                <img 
-                  src={whatsappChatAsset.url} 
-                  alt="WhatsApp" 
-                  className="h-7 w-7 object-contain"
-                />
-                <span className="text-[15px] font-bold">Chat on WhatsApp</span>
-              </a>
-            </Button>
+            <a 
+              href={waLink("Hi! I'd like to know more about your crochet products.")} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="transition-all active:scale-95 hover:brightness-105"
+            >
+              <img 
+                src={whatsappButtonAsset.url} 
+                alt="Order on WhatsApp" 
+                className="h-11 w-auto object-contain"
+              />
+            </a>
           </div>
         </div>
 
