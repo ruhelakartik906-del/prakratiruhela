@@ -128,8 +128,13 @@ function Index() {
                 Browse Designs
               </Button>
               <Button asChild variant="secondary" size="xl" className="rounded-full border-black/5 bg-white px-8 font-semibold text-[#3F2A22] shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
-                <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer">
-                  <MessageCircle className="h-4 w-4" /> Chat with us
+                <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                    alt="WhatsApp" 
+                    className="h-5 w-5"
+                  />
+                  <span>Chat with us</span>
                 </a>
               </Button>
             </div>
