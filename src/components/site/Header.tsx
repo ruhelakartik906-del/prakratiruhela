@@ -112,5 +112,3 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
     </header>
   );
 }
-  );
-}
