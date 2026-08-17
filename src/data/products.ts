@@ -19,11 +19,11 @@ export type Product = {
 };
 
 export const categories: { id: CategoryId; label: string; icon?: string }[] = [
-  { id: "all", label: "All Items", icon: "✨" },
+  { id: "all", label: "All Designs", icon: "✨" },
   { id: "raksha-bandhan", label: "Raksha Bandhan", icon: "🧵" },
   { id: "hair-accessories", label: "Hair Accessories", icon: "🌸" },
   { id: "keychains", label: "Keychains", icon: "🔑" },
-  { id: "earbuds-cover", label: "Earbuds Cover", icon: "🎧" },
+  { id: "earbuds-cover", label: "Earbuds Covers", icon: "🎧" },
   { id: "gift-combos", label: "Gift Combos", icon: "🎁" },
   { id: "bangles-custom", label: "Bangles & Custom", icon: "🧶" },
   { id: "independence-day", label: "Independence Day", icon: "🇮🇳" },
