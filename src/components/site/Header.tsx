@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Instagram, MessageCircle, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.png.asset.json";
+import instagramAsset from "@/assets/instagram-icon.png.asset.json";
 import {
   categories,
   categoryCounts,
@@ -19,7 +19,6 @@ type Props = {
 
 export function Header({ query, onQuery, category, onCategory }: Props) {
   const counts = categoryCounts();
-  const [logoError] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm">
@@ -39,7 +38,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 Crochet Craft
               </span>
               <span className="block text-[13px] font-medium text-[#3F2A22]/60">
-                by Pooja Jain · Handmade Premium
+                by Pooja Jain
               </span>
             </div>
           </a>
@@ -52,12 +51,20 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               aria-label="Instagram"
               className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-black/5 transition-all hover:ring-terracotta/40 active:scale-95"
             >
-              <Instagram className="h-4.5 w-4.5 text-[#3F2A22] transition-colors group-hover:text-terracotta" />
+              <img 
+                src={instagramAsset.url} 
+                alt="Instagram" 
+                className="h-6 w-6 object-contain"
+              />
             </a>
-            <Button asChild variant="whatsapp" className="h-10 rounded-full bg-[#087F69] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
+            <Button asChild variant="whatsapp" className="h-10 rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer">
-                <MessageCircle className="h-4 w-4 fill-current" />
-                <span>Order on WhatsApp</span>
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                  alt="WhatsApp" 
+                  className="h-5 w-5 invert brightness-0"
+                />
+                <span>Chat on WhatsApp</span>
               </a>
             </Button>
           </div>
@@ -95,7 +102,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                   }`}
                 >
                   {c.icon && (
-                    <span className={`flex h-8 w-8 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
+                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
                       {c.icon}
                     </span>
                   )}

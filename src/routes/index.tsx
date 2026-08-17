@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Heart, Instagram, MessageCircle, Package, Sparkles } from "lucide-react";
+import { Heart, MessageCircle, Package, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -128,8 +128,13 @@ function Index() {
                 Browse Designs
               </Button>
               <Button asChild variant="secondary" size="xl" className="rounded-full border-black/5 bg-white px-8 font-semibold text-[#3F2A22] shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
-                <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer">
-                  <MessageCircle className="h-4 w-4" /> Chat with us
+                <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                    alt="WhatsApp" 
+                    className="h-5 w-5"
+                  />
+                  <span>Chat with us</span>
                 </a>
               </Button>
             </div>
@@ -225,9 +230,14 @@ function Index() {
               Names, favourite characters, wedding colours, office sets — if it can be crocheted, we'll
               try. Send us a reference picture and we'll quote you the same day.
             </p>
-            <Button asChild className="relative mt-10 h-14 rounded-full bg-[#087F69] px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
-              <a href={customOrderLink()} target="_blank" rel="noreferrer">
-                Request a custom rakhi
+            <Button asChild className="relative mt-10 h-14 rounded-full bg-[#25D366] px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
+              <a href={customOrderLink()} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                  alt="WhatsApp" 
+                  className="h-5 w-5 invert brightness-0"
+                />
+                <span>Request a custom rakhi</span>
               </a>
             </Button>
           </div>
@@ -338,16 +348,21 @@ function Index() {
                 Custom orders
               </a>
               <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100">
-                <Instagram className="h-4 w-4" /> Instagram
+                Instagram
               </a>
             </div>
           </div>
           <div className="text-base">
             <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Talk to us</p>
             <p className="mt-6 opacity-60">Mon–Sat, 10am to 7pm IST</p>
-            <Button asChild className="mt-6 h-12 rounded-full bg-[#087F69] px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
-              <a href={waLink("Hi! I'd like to place a rakhi order.")} target="_blank" rel="noreferrer">
-                <MessageCircle className="h-4 w-4 fill-current" /> Order on WhatsApp
+            <Button asChild className="mt-6 h-12 rounded-full bg-[#25D366] px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
+              <a href={waLink("Hi! I'd like to place a rakhi order.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                  alt="WhatsApp" 
+                  className="h-5 w-5 invert brightness-0"
+                />
+                <span>Order on WhatsApp</span>
               </a>
             </Button>
           </div>
@@ -362,9 +377,13 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-[#087F69] text-white shadow-2xl transition-all hover:scale-110 hover:shadow-[#087F69]/20 active:scale-95 sm:right-8 sm:bottom-8"
+        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-[#25D366] text-white shadow-2xl transition-all hover:scale-110 hover:shadow-[#25D366]/20 active:scale-95 sm:right-8 sm:bottom-8"
       >
-        <MessageCircle className="h-7 w-7 fill-current" />
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+          alt="WhatsApp" 
+          className="h-8 w-8 invert brightness-0"
+        />
       </a>
 
       <CookieNotice />
