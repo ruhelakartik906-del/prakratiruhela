@@ -59,14 +59,14 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 className="h-11 w-11 rounded-full object-contain"
               />
             </a>
-            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#075E54] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
+            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#075E54] px-5 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
                 <img 
-                  src={whatsappAsset.url} 
+                  src={whatsappNewAsset.url} 
                   alt="WhatsApp" 
-                  className="h-6 w-6 object-contain"
+                  className="h-7 w-7 object-contain"
                 />
-                <span className="text-[15px] font-bold">Order on WhatsApp</span>
+                <span className="text-[15px] font-bold">Chat on WhatsApp</span>
               </a>
             </Button>
           </div>
