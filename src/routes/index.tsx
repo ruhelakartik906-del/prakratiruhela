@@ -164,18 +164,18 @@ function Index() {
           </div>
         </section>
 
-        <section id="collection" className="mx-auto max-w-6xl scroll-mt-44 px-4 pb-24 sm:px-6">
+        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-24 sm:px-6">
           <div className="text-center">
             <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Our Collection</span>
-            <h2 className="mt-4 font-display text-4xl font-semibold text-foreground sm:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-semibold text-[#3F2A22] sm:text-5xl">
               Raksha Bandhan • 28 August 2026
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground/80">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-[#3F2A22]/70">
               This year's designs, crocheted in limited quantities. Once a colourway runs out, it's
               gone for the season.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <span className="rounded-full bg-card px-4 py-1.5 text-sm font-medium text-foreground shadow-sm ring-1 ring-border/20">
+              <span className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-[#3F2A22] shadow-sm ring-1 ring-black/5">
                 {products.length} designs
               </span>
               <span className="rounded-full bg-terracotta/10 px-4 py-1.5 text-sm font-bold text-terracotta">
@@ -193,8 +193,8 @@ function Index() {
                   onClick={() => setCategory(c.id)}
                   className={`shrink-0 rounded-full border px-6 py-3 text-sm font-semibold transition-all active:scale-95 ${
                     active
-                      ? "border-terracotta/40 bg-white text-terracotta shadow-md ring-1 ring-terracotta/20"
-                      : "border-border/60 bg-card text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
+                      ? "border-terracotta bg-terracotta text-white shadow-md"
+                      : "border-black/5 bg-white text-[#3F2A22]/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
                   {c.label}
