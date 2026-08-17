@@ -71,7 +71,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
           </div>
         </div>
 
-        <nav className="no-scrollbar mt-4 flex w-full items-center gap-4 overflow-x-auto px-4 pb-4 scroll-smooth">
+        <nav className="no-scrollbar mt-4 flex w-full items-center gap-4 overflow-x-auto px-4 pb-8 pt-2 scroll-smooth">
           {categories.map((c) => {
             const active = c.id === category;
             const count = counts[c.id];
@@ -79,10 +79,10 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               <button
                 key={c.id}
                 onClick={() => onCategory(c.id)}
-                className={`flex shrink-0 items-center gap-3 rounded-full border px-8 py-3.5 text-base font-medium transition-all active:scale-95 ${
+                className={`flex shrink-0 items-center gap-3 rounded-full border-2 px-8 py-3.5 text-base font-medium transition-all active:scale-95 ${
                   active
                     ? "border-terracotta bg-terracotta text-white shadow-md"
-                    : "border-border/60 bg-white text-foreground/80 hover:border-terracotta hover:text-terracotta hover:shadow-lg hover:-translate-y-1 hover:ring-2 hover:ring-terracotta/20"
+                    : "border-border/60 bg-white text-foreground/80 hover:border-terracotta hover:text-terracotta hover:shadow-lg hover:-translate-y-1 hover:ring-2 hover:ring-terracotta/10"
                 }`}
               >
                 {c.icon && <span className="text-xl">{c.icon}</span>}
