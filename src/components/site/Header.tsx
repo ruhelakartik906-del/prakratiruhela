@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Instagram, MessageCircle, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/logo.png.asset.json";
 import {
   categories,
   categoryCounts,
@@ -25,8 +26,12 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
       <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <a href="#top" className="flex items-center gap-3">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-border/20">
-              <span className="font-display text-2xl text-primary">त</span>
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-border/10 overflow-hidden">
+              <img 
+                src={logoAsset.url} 
+                alt="Crochet Craft Logo" 
+                className="h-full w-full object-cover"
+              />
             </div>
             <div>
               <span className="block font-display text-2xl leading-none font-semibold text-foreground">

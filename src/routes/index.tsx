@@ -27,13 +27,13 @@ import lumba from "@/assets/rakhi-lumba.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Taar & Tale — Handmade Crochet Rakhi Catalogue" },
+      { title: "Crochet Craft — Handmade Crochet Rakhi Catalogue" },
       {
         name: "description",
         content:
           "Hand-crocheted rakhis, lumba sets and custom designs. Browse the Raksha Bandhan collection and order directly on WhatsApp.",
       },
-      { property: "og:title", content: "Taar & Tale — Handmade Crochet Rakhis" },
+      { property: "og:title", content: "Crochet Craft — Handmade Crochet Rakhis" },
       {
         property: "og:description",
         content:
@@ -252,7 +252,7 @@ function Index() {
                 Two hands, one hook, <br />a lot of chai
               </h2>
               <p className="mt-8 text-lg leading-relaxed text-muted-foreground/90">
-                Taar &amp; Tale started at a kitchen table in 2019, with a ball of leftover cotton and
+                Crochet Craft started at a kitchen table in 2019, with a ball of leftover cotton and
                 one rakhi for a brother who lived too far away to visit. Word travelled, and the
                 orders followed.
               </p>
@@ -323,7 +323,7 @@ function Index() {
       <footer className="bg-brand-deep py-20 text-background">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-3">
           <div>
-            <h3 className="font-display text-3xl font-semibold">Taar &amp; Tale</h3>
+            <h3 className="font-display text-3xl font-semibold">Crochet Craft</h3>
             <p className="mt-6 max-w-xs text-base leading-relaxed opacity-60">
               Handmade crochet rakhis, lumba sets and custom pieces. Shipped across India.
             </p>
@@ -353,7 +353,7 @@ function Index() {
           </div>
         </div>
         <div className="mt-20 border-t border-background/10 pt-8 text-center text-sm opacity-40">
-          © {new Date().getFullYear()} Taar &amp; Tale. Made by hand.
+          © {new Date().getFullYear()} Crochet Craft. Made by hand.
         </div>
       </footer>
 
