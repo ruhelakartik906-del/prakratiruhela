@@ -116,18 +116,18 @@ function Index() {
             <span className="inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-terracotta/5 px-4 py-1.5 text-sm font-medium text-terracotta">
               ✨ Raksha Bandhan · 28 August 2026
             </span>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] font-semibold text-foreground sm:text-6xl md:text-7xl">
+            <h1 className="mt-6 font-display text-5xl leading-[1.05] font-semibold text-[#3F2A22] sm:text-6xl md:text-7xl">
               A rakhi made by hand, tied with <span className="italic text-terracotta font-normal">love</span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground/90">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#3F2A22]/70">
               Every piece is crocheted stitch by stitch in soft cotton yarn — no moulds, no machines.
               Choose from this year's collection or tell us your idea and we'll make it for you.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button size="xl" className="rounded-full bg-foreground px-8 font-semibold text-background shadow-soft transition-all hover:translate-y-[-2px] hover:shadow-lg active:scale-95" onClick={() => scrollToId("collection")}>
+              <Button size="xl" className="rounded-full bg-[#3F2A22] px-8 font-semibold text-white shadow-soft transition-all hover:translate-y-[-2px] hover:shadow-lg active:scale-95" onClick={() => scrollToId("collection")}>
                 Browse Designs
               </Button>
-              <Button asChild variant="secondary" size="xl" className="rounded-full border-border bg-transparent px-8 font-semibold text-foreground shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
+              <Button asChild variant="secondary" size="xl" className="rounded-full border-black/5 bg-white px-8 font-semibold text-[#3F2A22] shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
                 <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer">
                   <MessageCircle className="h-4 w-4" /> Chat with us
                 </a>
