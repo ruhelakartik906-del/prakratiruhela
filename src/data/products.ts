@@ -6,7 +6,7 @@ import lumba from "@/assets/rakhi-lumba.jpg";
 export const WHATSAPP_NUMBER = "919876543210";
 export const INSTAGRAM_URL = "https://instagram.com";
 
-export type CategoryId = "all" | "kids" | "flowers" | "classic" | "lumba";
+export type CategoryId = "all" | "raksha-bandhan" | "hair-accessories" | "keychains" | "earbuds-cover" | "gift-combos" | "bangles-custom" | "independence-day";
 
 export type Product = {
   id: string;
