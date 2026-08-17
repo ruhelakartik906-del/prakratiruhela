@@ -18,12 +18,15 @@ export type Product = {
   image: string;
 };
 
-export const categories: { id: CategoryId; label: string }[] = [
+export const categories: { id: CategoryId; label: string; icon?: string }[] = [
   { id: "all", label: "All Items" },
-  { id: "flowers", label: "🌸 Hair Accessories" },
-  { id: "classic", label: "🔑 Keychains" },
-  { id: "kids", label: "🎧 Earbuds Covers" },
-  { id: "lumba", label: "🎁 Gift Combos" },
+  { id: "raksha-bandhan", label: "Raksha Bandhan", icon: "✨" },
+  { id: "hair-accessories", label: "Hair Accessories", icon: "🌸" },
+  { id: "keychains", label: "Keychains", icon: "🔑" },
+  { id: "earbuds-cover", label: "Earbuds Cover", icon: "🎧" },
+  { id: "gift-combos", label: "Gift Combos", icon: "🎁" },
+  { id: "bangles-custom", label: "Bangles & Custom", icon: "🧶" },
+  { id: "independence-day", label: "Independence Day", icon: "🇮🇳" },
 ];
 
 export const products: Product[] = [
@@ -32,8 +35,8 @@ export const products: Product[] = [
     name: "Marigold Bloom Rakhi",
     description: "Hand-crocheted marigold in scarlet and saffron cotton with gold beads.",
     price: 249,
-    category: "flowers",
-    badge: "Flowers",
+    category: "raksha-bandhan",
+    badge: "Raksha Bandhan",
     image: flower,
   },
   {
@@ -41,8 +44,8 @@ export const products: Product[] = [
     name: "Little Bear Rakhi",
     description: "A soft amigurumi bear on a stretchy band — a favourite with tiny wrists.",
     price: 299,
-    category: "kids",
-    badge: "For Kids",
+    category: "raksha-bandhan",
+    badge: "Raksha Bandhan",
     image: kids,
   },
   {
@@ -50,8 +53,8 @@ export const products: Product[] = [
     name: "Pearl Heirloom Rakhi",
     description: "Ivory lace motif with a freshwater pearl centre and gold silk thread.",
     price: 349,
-    category: "classic",
-    badge: "Classic",
+    category: "raksha-bandhan",
+    badge: "Raksha Bandhan",
     image: classic,
   },
   {
@@ -59,74 +62,76 @@ export const products: Product[] = [
     name: "Teal Rakhi & Lumba Set",
     description: "Matching rakhi and lumba braid for bhaiya-bhabhi, in teal and terracotta.",
     price: 499,
-    category: "lumba",
-    badge: "Rakhi + Lumba",
+    category: "raksha-bandhan",
+    badge: "Raksha Bandhan",
     image: lumba,
   },
   {
     id: "p5",
-    name: "Daisy Chain Rakhi",
+    name: "Daisy Chain Accessories",
     description: "Three tiny crochet daisies strung on a cream cotton cord.",
     price: 229,
-    category: "flowers",
-    badge: "Flowers",
+    category: "hair-accessories",
+    badge: "Hair Accessories",
     image: flower,
   },
   {
     id: "p6",
-    name: "Sunny Bear Duo",
-    description: "Two mini bears for two little brothers, made in a matching pair.",
+    name: "Bunny Earbuds Cover",
+    description: "Soft crochet case for your wireless earbuds with cute bunny ears.",
     price: 449,
-    category: "kids",
-    badge: "For Kids",
+    category: "earbuds-cover",
+    badge: "Earbuds Cover",
     image: kids,
   },
   {
     id: "p7",
-    name: "Golden Zari Rakhi",
+    name: "Golden Flower Keychain",
     description: "Minimal star motif worked in gold zari thread — understated and elegant.",
     price: 279,
-    category: "classic",
-    badge: "Classic",
+    category: "keychains",
+    badge: "Keychains",
     image: classic,
   },
   {
     id: "p8",
-    name: "Festive Lumba Pair",
-    description: "Bangle lumba with a bright crochet flower, paired with a slim rakhi.",
-    price: 529,
-    category: "lumba",
-    badge: "Rakhi + Lumba",
+    name: "Gift Box Deluxe",
+    description: "A complete set of handmade crochet items for your loved ones.",
+    price: 899,
+    category: "gift-combos",
+    badge: "Gift Combos",
     image: lumba,
   },
   {
     id: "p9",
-    name: "Rose Petal Rakhi",
-    description: "Layered rose in blush cotton, finished with a hand-knotted tassel.",
+    name: "Tricolor Rakhi",
+    description: "Special edition rakhi for Independence Day, made in saffron, white and green.",
     price: 269,
-    category: "flowers",
-    badge: "Flowers",
+    category: "independence-day",
+    badge: "Independence Day",
     image: flower,
   },
 ];
 
-export const categoryCounts = (): Record<CategoryId, number> => ({
-  all: products.length,
-  kids: products.filter((p) => p.category === "kids").length,
-  flowers: products.filter((p) => p.category === "flowers").length,
-  classic: products.filter((p) => p.category === "classic").length,
-  lumba: products.filter((p) => p.category === "lumba").length,
-});
+export const categoryCounts = (): Record<CategoryId, number> => {
+  const counts: Record<string, number> = { all: products.length };
+  categories.forEach(cat => {
+    if (cat.id !== "all") {
+      counts[cat.id] = products.filter(p => p.category === cat.id).length;
+    }
+  });
+  return counts as Record<CategoryId, number>;
+};
 
 export const waLink = (message: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 export const orderLink = (p: Product) =>
   waLink(
-    `Hi! I'd like to order the "${p.name}" (₹${p.price}) from your Raksha Bandhan collection. Is it available?`,
+    `Hi! I'd like to order the "${p.name}" (₹${p.price}) from your collection. Is it available?`,
   );
 
 export const customOrderLink = () =>
   waLink(
-    "Hi! I have an idea for a custom crochet rakhi. Can we discuss colours, motif and quantity?",
+    "Hi! I have an idea for a custom crochet order. Can we discuss colours, motif and quantity?",
   );
