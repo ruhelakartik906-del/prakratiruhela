@@ -23,10 +23,10 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-sm leading-relaxed text-muted-foreground">{product.description}</p>
         <div className="mt-auto flex items-center justify-between gap-3 pt-3">
           <span className="font-display text-xl font-semibold">₹{product.price}</span>
-          <Button asChild variant="whatsapp" className="rounded-full">
-            <a href={orderLink(product)} target="_blank" rel="noreferrer">
-              <MessageCircle className="h-4 w-4" />
-              Order
+          <Button asChild variant="whatsapp" className="pill-hover-effect rounded-full bg-[#075E54] px-5 py-2 hover:bg-[#128C7E] active:scale-95">
+            <a href={orderLink(product)} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4 fill-current" />
+              <span className="font-semibold">Order</span>
             </a>
           </Button>
         </div>

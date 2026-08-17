@@ -40,17 +40,21 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               </span>
             </span>
           </a>
-          <div className="flex shrink-0 items-center gap-2">
-            <Button asChild variant="outline" size="icon" className="rounded-full">
-              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram">
-                <Instagram className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild variant="whatsapp" className="rounded-full">
+          <div className="flex shrink-0 items-center gap-3">
+            <a 
+              href={INSTAGRAM_URL} 
+              target="_blank" 
+              rel="noreferrer" 
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E4405F]/10 text-[#E4405F] transition-transform hover:scale-110 active:scale-90"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <Button asChild variant="whatsapp" className="rounded-full bg-[#075E54] hover:bg-[#128C7E] px-6 py-5 shadow-lg transition-all active:scale-95">
               <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer">
-                <MessageCircle className="h-4 w-4" />
-                <span className="hidden sm:inline">Order on WhatsApp</span>
-                <span className="sm:hidden">WhatsApp</span>
+                <MessageCircle className="h-5 w-5 fill-current" />
+                <span className="hidden font-semibold sm:inline">Order on WhatsApp</span>
+                <span className="font-semibold sm:hidden">Order</span>
               </a>
             </Button>
           </div>
