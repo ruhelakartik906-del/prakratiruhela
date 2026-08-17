@@ -2,6 +2,7 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.png.asset.json";
 import instagramAsset from "@/assets/instagram-icon.png.asset.json";
+import socialButtonsAsset from "@/assets/social-buttons.png.asset.json";
 import {
   categories,
   categoryCounts,
@@ -38,35 +39,40 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 Crochet Craft
               </span>
               <span className="block text-[13px] font-medium text-[#3F2A22]/60">
-                by Pooja Jain
+                by Prakrati Ruhela
               </span>
             </div>
           </a>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-black/5 transition-all hover:ring-terracotta/40 active:scale-95"
+              className="relative h-14 w-14 shrink-0 overflow-hidden active:scale-95 transition-transform"
             >
               <img 
-                src={instagramAsset.url} 
+                src={socialButtonsAsset.url} 
                 alt="Instagram" 
-                className="h-6 w-6 object-contain"
+                className="absolute left-0 top-0 h-full w-[auto] object-cover"
+                style={{ clipPath: 'inset(0 80% 0 0)' }}
               />
             </a>
-            <Button asChild variant="whatsapp" className="h-10 rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
-              <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-                  alt="WhatsApp" 
-                  className="h-5 w-5 invert brightness-0"
-                />
-                <span>Chat on WhatsApp</span>
-              </a>
-            </Button>
+            <a 
+              href={waLink("Hi! I'd like to know more about your crochet rakhis.")} 
+              target="_blank" 
+              rel="noreferrer"
+              aria-label="Order on WhatsApp"
+              className="relative h-14 w-[180px] shrink-0 overflow-hidden active:scale-95 transition-transform"
+            >
+              <img 
+                src={socialButtonsAsset.url} 
+                alt="Order on WhatsApp" 
+                className="absolute right-0 top-0 h-full w-[auto] object-cover"
+                style={{ clipPath: 'inset(0 0 0 20%)', transform: 'translateX(18%)' }}
+              />
+            </a>
           </div>
         </div>
 
