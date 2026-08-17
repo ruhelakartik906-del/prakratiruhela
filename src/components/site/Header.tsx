@@ -21,7 +21,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
   const [logoError] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-border/10 bg-white">
       <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <a href="#top" className="flex items-center gap-3">
@@ -81,13 +81,13 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 onClick={() => onCategory(c.id)}
                 className={`flex shrink-0 items-center gap-2 rounded-full border px-6 py-2.5 text-sm font-medium transition-all active:scale-95 ${
                   active
-                    ? "border-terracotta/40 bg-white text-terracotta shadow-md ring-1 ring-terracotta/20"
-                    : "border-border/60 bg-card text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
+                    ? "border-terracotta bg-terracotta text-white shadow-md"
+                    : "border-border/30 bg-white text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                 }`}
               >
                 {c.icon && <span className="text-base">{c.icon}</span>}
                 {c.label}
-                <span className={`text-[11px] font-semibold opacity-60 ${active ? "text-terracotta" : "text-muted-foreground"}`}>
+                <span className={`text-[11px] font-semibold opacity-60 ${active ? "text-white/90" : "text-muted-foreground"}`}>
                   {count}
                 </span>
               </button>
