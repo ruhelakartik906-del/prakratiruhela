@@ -33,10 +33,10 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
             </span>
             <span className="min-w-0">
               <span className="block truncate font-display text-lg leading-tight font-semibold sm:text-xl">
-                Taar &amp; Tale
+                Crochet Craft
               </span>
               <span className="hidden text-xs text-muted-foreground sm:block">
-                Handmade crochet rakhis
+                by Pooja Jain · Handmade Crochet
               </span>
             </span>
           </a>
