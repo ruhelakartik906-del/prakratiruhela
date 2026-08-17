@@ -2,6 +2,7 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.png.asset.json";
 import instagramAsset from "@/assets/instagram-icon.png.asset.json";
+import socialButtonsAsset from "@/assets/social-buttons.png.asset.json";
 import {
   categories,
   categoryCounts,
@@ -38,33 +39,34 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                 Crochet Craft
               </span>
               <span className="block text-[13px] font-medium text-[#3F2A22]/60">
-                by Pooja Jain
+                by Prakrati Ruhela
               </span>
             </div>
           </a>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5">
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-black/5 transition-all hover:ring-terracotta/40 active:scale-95"
+              className="group relative flex h-11 w-11 items-center justify-center overflow-hidden transition-all active:scale-95"
             >
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-full" />
               <img 
                 src={instagramAsset.url} 
                 alt="Instagram" 
-                className="h-6 w-6 object-contain"
+                className="relative z-10 h-6 w-6 object-contain invert brightness-0"
               />
             </a>
-            <Button asChild variant="whatsapp" className="h-10 rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
-              <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer">
+            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-[#075E54] px-6 text-sm font-semibold text-white shadow-soft transition-all hover:brightness-110 active:scale-95">
+              <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
                   alt="WhatsApp" 
                   className="h-5 w-5 invert brightness-0"
                 />
-                <span>Chat on WhatsApp</span>
+                <span className="text-[15px] font-bold">Order on WhatsApp</span>
               </a>
             </Button>
           </div>
