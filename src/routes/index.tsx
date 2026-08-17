@@ -27,13 +27,13 @@ import lumba from "@/assets/rakhi-lumba.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Taar & Tale — Handmade Crochet Rakhi Catalogue" },
+      { title: "Crochet Craft — Handmade Crochet Rakhi Catalogue" },
       {
         name: "description",
         content:
           "Hand-crocheted rakhis, lumba sets and custom designs. Browse the Raksha Bandhan collection and order directly on WhatsApp.",
       },
-      { property: "og:title", content: "Taar & Tale — Handmade Crochet Rakhis" },
+      { property: "og:title", content: "Crochet Craft — Handmade Crochet Rakhis" },
       {
         property: "og:description",
         content:
@@ -252,7 +252,7 @@ function Index() {
                 Two hands, one hook, <br />a lot of chai
               </h2>
               <p className="mt-8 text-lg leading-relaxed text-muted-foreground/90">
-                Taar &amp; Tale started at a kitchen table in 2019, with a ball of leftover cotton and
+                Crochet Craft started at a kitchen table in 2019, with a ball of leftover cotton and
                 one rakhi for a brother who lived too far away to visit. Word travelled, and the
                 orders followed.
               </p>

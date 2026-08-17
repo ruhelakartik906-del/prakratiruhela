@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Taar & Tale — Handmade Crochet Rakhis" },
+      { title: "Crochet Craft — Handmade Crochet Rakhis" },
       {
         name: "description",
         content: "Handmade crochet rakhi catalogue. Order directly on WhatsApp.",
       },
-      { name: "author", content: "Taar & Tale" },
-      { property: "og:title", content: "Taar & Tale — Handmade Crochet Rakhis" },
+      { name: "author", content: "Crochet Craft" },
+      { property: "og:title", content: "Crochet Craft — Handmade Crochet Rakhis" },
       {
         property: "og:description",
         content: "Handmade crochet rakhi catalogue. Order directly on WhatsApp.",
