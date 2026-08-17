@@ -21,60 +21,57 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
   const [logoError] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
-          <a href="#top" className="flex min-w-0 items-center gap-2.5">
-            <span
-              aria-hidden={!logoError}
-              className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-primary font-display text-lg text-primary-foreground"
-            >
-              त
-            </span>
-            <span className="min-w-0">
-              <span className="block truncate font-display text-lg leading-tight font-semibold sm:text-xl">
+    <header className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-md">
+      <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <a href="#top" className="flex items-center gap-3">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-border/20">
+              <span className="font-display text-2xl text-primary">त</span>
+            </div>
+            <div>
+              <span className="block font-display text-2xl leading-none font-semibold text-foreground">
                 Crochet Craft
               </span>
-              <span className="hidden text-xs text-muted-foreground sm:block">
-                by Pooja Jain · Handmade Crochet
+              <span className="mt-1 block text-sm text-muted-foreground/80">
+                by Pooja Jain · Handmade Premium
               </span>
-            </span>
+            </div>
           </a>
-          <div className="flex shrink-0 items-center gap-3">
+          
+          <div className="flex items-center gap-4">
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E4405F]/10 text-[#E4405F] transition-transform hover:scale-110 active:scale-90"
+              className="group flex h-11 w-11 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-border/20 transition-all hover:ring-terracotta/40 active:scale-95"
             >
-              <Instagram className="h-5 w-5" />
+              <Instagram className="h-5 w-5 text-foreground transition-colors group-hover:text-terracotta" />
             </a>
-            <Button asChild variant="whatsapp" className="rounded-full bg-[#075E54] hover:bg-[#128C7E] px-6 py-5 shadow-lg transition-all active:scale-95">
+            <Button asChild variant="whatsapp" className="h-11 rounded-full bg-whatsapp px-8 text-sm font-semibold shadow-soft transition-all hover:brightness-110 active:scale-95">
               <a href={waLink("Hi! I'd like to know more about your crochet rakhis.")} target="_blank" rel="noreferrer">
-                <MessageCircle className="h-5 w-5 fill-current" />
-                <span className="hidden font-semibold sm:inline">Order on WhatsApp</span>
-                <span className="font-semibold sm:hidden">Order</span>
+                <MessageCircle className="h-4 w-4 fill-current" />
+                <span>Order on WhatsApp</span>
               </a>
             </Button>
           </div>
         </div>
 
-        <div className="mx-auto mt-4 max-w-2xl px-2">
+        <div className="mx-auto mt-8 max-w-[680px]">
           <div className="relative group">
-            <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-primary" />
+            <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-terracotta" />
             <input
               value={query}
               onChange={(e) => onQuery(e.target.value)}
               type="search"
               placeholder="Search all designs — try 'rose', 'bunny', 'kids'..."
               aria-label="Search products"
-              className="h-14 w-full rounded-full border border-border bg-card pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/40 focus:bg-white focus:ring-4 focus:ring-primary/5"
+              className="h-[58px] w-full rounded-full border border-border/60 bg-card pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-muted-foreground/50 focus:border-terracotta/40 focus:bg-white focus:ring-4 focus:ring-terracotta/5"
             />
           </div>
         </div>
 
-        <nav className="no-scrollbar -mx-4 mt-5 flex gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:justify-center sm:px-0">
+        <nav className="no-scrollbar -mx-4 mt-8 flex gap-3 overflow-x-auto px-4 pb-4 sm:mx-0 sm:justify-center sm:px-0">
           {categories.map((c) => {
             const active = c.id === category;
             const count = counts[c.id];
@@ -82,14 +79,14 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               <button
                 key={c.id}
                 onClick={() => onCategory(c.id)}
-                className={`pill-hover-effect flex shrink-0 items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-all active:scale-95 ${
+                className={`flex shrink-0 items-center gap-2 rounded-full border px-6 py-2.5 text-sm font-medium transition-all active:scale-95 ${
                   active
-                    ? "border-primary/20 bg-primary/5 text-primary shadow-sm ring-1 ring-primary/20"
-                    : "border-border bg-card text-foreground hover:border-border/80 hover:bg-secondary/50"
+                    ? "border-terracotta/40 bg-white text-terracotta shadow-md ring-1 ring-terracotta/20"
+                    : "border-border/60 bg-card text-foreground/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                 }`}
               >
                 {c.label}
-                <span className={`text-[11px] font-semibold ${active ? "text-primary/60" : "text-muted-foreground/50"}`}>
+                <span className={`text-[11px] font-semibold opacity-60 ${active ? "text-terracotta" : "text-muted-foreground"}`}>
                   {count}
                 </span>
               </button>
