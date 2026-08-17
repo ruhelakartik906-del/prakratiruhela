@@ -225,7 +225,7 @@ function Index() {
               Names, favourite characters, wedding colours, office sets — if it can be crocheted, we'll
               try. Send us a reference picture and we'll quote you the same day.
             </p>
-            <Button asChild className="relative mt-10 h-14 rounded-full bg-whatsapp px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
+            <Button asChild className="relative mt-10 h-14 rounded-full bg-[#087F69] px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
               <a href={customOrderLink()} target="_blank" rel="noreferrer">
                 Request a custom rakhi
               </a>
@@ -362,7 +362,7 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-whatsapp text-white shadow-2xl transition-all hover:scale-110 hover:shadow-whatsapp/20 active:scale-95 sm:right-8 sm:bottom-8"
+        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-[#087F69] text-white shadow-2xl transition-all hover:scale-110 hover:shadow-[#087F69]/20 active:scale-95 sm:right-8 sm:bottom-8"
       >
         <MessageCircle className="h-7 w-7 fill-current" />
       </a>

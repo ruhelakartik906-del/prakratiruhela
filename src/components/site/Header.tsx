@@ -23,7 +23,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm">
-      <div className="mx-auto w-full px-4 pt-6 pb-2 sm:px-6">
+      <div className="mx-auto w-full px-4 pt-4 pb-2 sm:px-6">
         {/* Brand Row */}
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <a href="#top" className="flex items-center gap-4">
