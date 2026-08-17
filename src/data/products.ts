@@ -19,11 +19,11 @@ export type Product = {
 };
 
 export const categories: { id: CategoryId; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "kids", label: "For Kids" },
-  { id: "flowers", label: "Flowers" },
-  { id: "classic", label: "Classic" },
-  { id: "lumba", label: "Rakhi + Lumba Sets" },
+  { id: "all", label: "All Items" },
+  { id: "flowers", label: "🌸 Hair Accessories" },
+  { id: "classic", label: "🔑 Keychains" },
+  { id: "kids", label: "🎧 Earbuds Covers" },
+  { id: "lumba", label: "🎁 Gift Combos" },
 ];
 
 export const products: Product[] = [

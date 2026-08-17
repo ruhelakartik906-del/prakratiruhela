@@ -115,10 +115,10 @@ function Index() {
         <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground">
-              <Heart className="h-3.5 w-3.5 text-primary" /> Small batch · made in Jaipur
+              ✨ Raksha Bandhan · 28 August 2026
             </span>
             <h1 className="mt-5 font-display text-4xl leading-[1.1] font-semibold text-balance sm:text-5xl md:text-6xl">
-              A rakhi made by hand, tied with love
+              A rakhi made by hand, tied with <span className="italic text-primary font-normal">love</span>
             </h1>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
               Every piece is crocheted stitch by stitch in soft cotton yarn — no moulds, no machines.
@@ -175,7 +175,7 @@ function Index() {
         <section id="collection" className="mx-auto max-w-6xl scroll-mt-44 px-4 pb-16 sm:px-6">
           <div className="text-center">
             <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-              Raksha Bandhan Collection
+              Raksha Bandhan • 28 August 2026
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
               This year's designs, crocheted in limited quantities. Once a colourway runs out, it's
@@ -198,10 +198,10 @@ function Index() {
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
+                  className={`pill-hover-effect shrink-0 rounded-full border px-5 py-2.5 text-sm font-medium transition-all active:scale-95 ${
                     active
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card hover:bg-secondary"
+                      ? "border-primary/20 bg-primary/5 text-primary shadow-sm ring-1 ring-primary/20"
+                      : "border-border bg-card text-foreground hover:border-border/80 hover:bg-secondary/50"
                   }`}
                 >
                   {c.label}
