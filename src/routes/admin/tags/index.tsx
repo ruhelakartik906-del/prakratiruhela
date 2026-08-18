@@ -10,7 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 
-export const Route = createFileRoute('/admin/tags')({
+export const Route = createFileRoute('/admin/tags/')({
   component: AdminTags,
 });
 

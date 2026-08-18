@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 
-export const Route = createFileRoute('/admin/categories')({
+export const Route = createFileRoute('/admin/categories/')({
   component: AdminCategories,
 });
 
