@@ -174,7 +174,7 @@ function Index() {
             }}
           />
 
-          <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-8 pt-8 md:pt-[80px] pb-12 md:pb-16 lg:px-[10%] flex flex-col md:grid md:items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div className="relative z-10 desktop-container pt-8 md:pt-[80px] pb-12 md:pb-16 flex flex-col md:grid md:items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
             <div className="max-w-[700px] text-center md:text-left">
               <div className="mx-auto md:mx-0 inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[12px] md:text-[13px] font-medium text-[#3B2922]">

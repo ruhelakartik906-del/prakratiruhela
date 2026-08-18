@@ -198,4 +198,12 @@
   .pill-hover-effect:hover::after {
     left: 100%;
   }
+
+  @media (min-width: 1024px) {
+    .desktop-container {
+      width: min(1280px, calc(100% - 80px));
+      margin: 0 auto;
+    }
+  }
+
 }
