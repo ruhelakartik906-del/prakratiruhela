@@ -13,12 +13,12 @@ export function ProductCard({ product }: { product: Product }) {
       {/* Product Image area: Reference shows a very clean, tightly framed image */}
       <div className={`relative aspect-square overflow-hidden w-full p-3 ${isCustom ? 'bg-gradient-to-br from-[#FDF2F8] to-[#EEF2FF] flex items-center justify-center' : 'bg-[#FBF6EE]/30'}`}>
         {isCustom ? (
-          <div className="text-center space-y-3">
+          <div className="text-center space-y-3 p-4">
             <div className="flex justify-center gap-2">
-              <span className="text-4xl">🧶</span>
-              <span className="text-4xl">✨</span>
+              <span className="text-3xl">🧶</span>
+              <span className="text-3xl">✨</span>
             </div>
-            <p className="text-[14px] font-bold text-[#A85A18] tracking-widest uppercase">Custom Design</p>
+            <p className="text-[12px] font-bold text-[#A85A18] tracking-widest uppercase">Custom Design</p>
           </div>
         ) : (
           <img
