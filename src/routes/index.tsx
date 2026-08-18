@@ -107,15 +107,19 @@ function Index() {
       return matchesRakhiCategory && matchesQuery;
     });
 
-    // Add virtual custom order card
-    list.push({
+    // Add virtual custom order card at the end
+    const customCard = {
       id: "custom-request",
       name: "Have your own idea?",
       description: "A favourite colour, a cartoon character, a name — tell us and we'll crochet a one-of-a-kind rakhi just for you.",
       price: 0,
       category: "classic", // dummy
       image: ""
-    } as any);
+    } as any;
+
+    if (q === "" && rakhiCategory === "all") {
+       list.push(customCard);
+    }
 
     return list;
   }, [query, rakhiCategory]);
@@ -314,7 +318,7 @@ function Index() {
           </div>
 
 
-          <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-2.5">
+          <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-3">
             {rakshaBandhanCategories.map((c) => {
               const active = c.id === rakhiCategory;
               const count = counts[c.id];
@@ -322,7 +326,7 @@ function Index() {
                 <button
                   key={c.id}
                   onClick={() => setRakhiCategory(c.id)}
-                  className={`h-[42px] md:h-[48px] rounded-full px-4 md:px-6 text-[13px] md:text-[15px] font-semibold transition-all active:scale-95 ${
+                  className={`h-[42px] md:h-[48px] rounded-full px-5 md:px-7 text-[13px] md:text-[15px] font-semibold transition-all active:scale-95 whitespace-nowrap ${
                     active
                       ? "bg-[#C94F32] text-white"
                       : "border border-[#D8CEC5] bg-white text-[#3F3028] hover:border-[#C94F32]/30"
