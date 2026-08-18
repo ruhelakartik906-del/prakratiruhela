@@ -4,9 +4,9 @@ import { orderLink, type Product } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-[16px] border border-[#EEE7E1] bg-white shadow-[0_4px_14px_rgba(70,45,30,0.08)] h-full">
-      {/* Image Wrapper */}
-      <div className="relative aspect-square overflow-hidden bg-[#FBF7F0]">
+    <article className="group relative flex flex-col overflow-hidden rounded-[16px] border border-[#EEE7E1] bg-white shadow-[0_3px_12px_rgba(60,40,25,0.06)] h-full transition-all duration-300">
+      {/* Product Image area */}
+      <div className="relative aspect-square overflow-hidden w-full block">
         <img
           src={product.image}
           alt={`${product.name} — handmade crochet rakhi`}
@@ -21,28 +21,30 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
 
-      {/* Content Area */}
-      <div className="flex flex-1 flex-col p-[20px] text-left">
-        {/* Category Label */}
-        <span className="text-[11px] font-bold tracking-wider text-[#3F2A22]/40 uppercase mb-2">
+      {/* Card Content Padding: 14px 20px 16px */}
+      <div className="flex flex-1 flex-col pt-[14px] px-[20px] pb-[16px] text-left">
+        {/* Category Label: uppercase, 10px, spacing 1px, #A85A18 */}
+        <span className="text-[10px] font-semibold tracking-[1px] text-[#A85A18] uppercase mb-[8px]">
           FOR KIDS
         </span>
         
-        {/* Product Name */}
-        <h3 className="text-[17px] font-bold leading-tight text-[#3F2A22] mb-3">
+        {/* Product Title: Playfair Display, 17px, font-weight 600, #3B2922 */}
+        <h3 className="font-display text-[17px] font-semibold leading-[1.25] text-[#3B2922]">
           {product.name}
         </h3>
         
-        {/* Description */}
-        <p className="text-[14px] leading-[1.5] text-[#3F2A22]/60 mb-5 line-clamp-2">
+        {/* Product Description: 12px, Inter, 1.55 line-height, #8A776C, 3 lines clamp */}
+        <p className="mt-[10px] text-[12px] font-normal leading-[1.55] text-[#8A776C] line-clamp-3">
           {product.description}
         </p>
         
-        {/* Price & Order Row */}
-        <div className="mt-auto flex items-center justify-between">
-          <span className="text-[18px] font-bold text-[#3F2A22]">₹{product.price}</span>
+        {/* Price + Order Button on same bottom row */}
+        <div className="mt-auto pt-[16px] flex items-center justify-between">
+          {/* Price: 15px, 600, #3B2922 */}
+          <span className="text-[15px] font-semibold text-[#3B2922]">₹{product.price}</span>
           
-          <Button asChild className="h-[38px] rounded-full bg-[#087F69] px-5 text-[14px] font-bold text-white shadow-none transition-all hover:bg-[#066a57] active:scale-95">
+          {/* Order button: Compact teal pill #087F6D, 12px, 600, 9px 17px padding */}
+          <Button asChild className="h-[34px] rounded-full bg-[#087F6D] px-[17px] py-[9px] text-[12px] font-semibold text-white border-none shadow-none transition-all hover:bg-[#066a57] active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer">
               Order
             </a>
