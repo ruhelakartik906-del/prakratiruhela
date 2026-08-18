@@ -349,35 +349,58 @@ function Index() {
         </section>
 
 
-
-        {/* Brand story */}
-        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
-          <div className="grid items-center gap-16 md:grid-cols-2">
-            <div className="relative">
-              <img
-                src={classic}
-                alt="Crochet work in progress on a cream cloth"
-                loading="lazy"
-                width={800}
-                height={800}
-                className="aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft ring-8 ring-white"
-              />
-              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full border-8 border-white bg-terracotta/10 shadow-lg sm:h-40 sm:w-40" />
-            </div>
-            <div>
-              <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
-                Two hands, one hook, <br />a lot of chai
-              </h2>
-              <p className="mt-8 text-lg leading-relaxed text-muted-foreground/90">
-                Crochet Craft started at a kitchen table in 2019, with a ball of leftover cotton and
-                one rakhi for a brother who lived too far away to visit. Word travelled, and the
-                orders followed.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-muted-foreground/90">
-                Today a small group of women crochet every piece at home, paid per piece and by name.
-                Nothing here is mass produced, so no two rakhis are ever exactly alike.
-              </p>
-            </div>
+        {/* Our Story Section */}
+        <section className="story-section py-[42px] px-4 md:px-0">
+          <div 
+            className="story-box mx-auto w-full flex flex-col items-center justify-center text-center"
+            style={{
+              width: 'min(876px, calc(100% - 48px))',
+              minHeight: '225px',
+              padding: '34px 70px',
+              borderRadius: '18px',
+              background: 'linear-gradient(105deg, #FDE3D7 0%, #F8DDE1 48%, #EBDDF7 100%)',
+              border: '1px solid rgba(255,255,255,0.7)',
+              boxShadow: '0 4px 14px rgba(70,45,30,0.05)',
+            }}
+          >
+            <span 
+              className="story-label"
+              style={{
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                color: '#A96516',
+                marginBottom: '10px',
+              }}
+            >
+              OUR STORY
+            </span>
+            <h2 
+              className="story-title font-display"
+              style={{
+                fontSize: '22px',
+                fontWeight: 600,
+                lineHeight: '1.3',
+                color: '#3B2922',
+                margin: '0 0 12px',
+              }}
+            >
+              Made at home, with a mother's patience
+            </h2>
+            <p 
+              className="story-description"
+              style={{
+                fontSize: '13px',
+                lineHeight: '1.55',
+                fontWeight: 400,
+                color: '#765F55',
+                maxWidth: '620px',
+                margin: '0 auto',
+              }}
+            >
+              Every piece here is crocheted by hand at our home — no machines, no factories. Each one takes its own time and carries its own small imperfections, which is exactly what makes it yours alone. We also take custom orders: tell us a colour, a character, or an idea, and we'll crochet it.
+            </p>
           </div>
         </section>
 
