@@ -16,10 +16,8 @@ export function ProductCard({ product }: { product: Product }) {
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <div className="flex items-center justify-between">
-          <span className="w-fit rounded-full bg-terracotta/10 px-3 py-1 text-[11px] font-bold tracking-wider text-terracotta uppercase">
-            {product.badge}
-          </span>
+        <div className="flex items-center justify-end">
+
           <span className="font-display text-2xl font-semibold text-[#3F2A22]">₹{product.price}</span>
         </div>
         <h3 className="font-display text-xl leading-snug font-semibold text-[#3F2A22]">{product.name}</h3>

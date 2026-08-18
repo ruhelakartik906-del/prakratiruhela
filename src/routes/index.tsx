@@ -102,11 +102,20 @@ function Index() {
       const matchesQuery =
         !q ||
         p.name.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.badge.toLowerCase().includes(q);
+        p.description.toLowerCase().includes(q);
       return matchesCategory && matchesQuery;
     });
   }, [query, category]);
+
+  const counts = useMemo(() => {
+    const c: Record<string, number> = { all: products.length };
+    categories.forEach(cat => {
+      if (cat.id !== "all") {
+        c[cat.id] = products.filter(p => p.category === cat.id).length;
+      }
+    });
+    return c;
+  }, []);
 
   return (
     <div id="top" className="min-h-screen bg-background">
@@ -275,20 +284,21 @@ function Index() {
             <p className="mx-auto mt-[22px] max-w-[650px] text-[18px] leading-[1.55] font-normal text-[#806F64]">
               Tap any design to order it on WhatsApp — tell us the colours you love and we'll make it yours.
             </p>
-            <div className="mt-3 text-[16px] text-[#5E4A40]">
-              {products.length} products
+            <div className="mt-2 text-[16px] text-[#5E4A40]">
+              {filtered.length} products
             </div>
             
-            <div className="mt-[22px]">
+            <div className="mt-[25px]">
               <div className="inline-flex items-center justify-center rounded-full border border-[#EBD4BA] bg-[#F8E9D8] px-6 py-3 text-[16px] font-semibold text-[#9A5A1B]">
                 🎁 Bulk orders: 10% off on 10+ rakhis — mix & match any designs
               </div>
             </div>
           </div>
 
-          <div className="no-scrollbar mt-12 flex items-center justify-start gap-2.5 overflow-x-auto pb-4 sm:flex-wrap sm:justify-center">
+          <div className="no-scrollbar mt-[45px] flex items-center justify-start gap-2.5 overflow-x-auto pb-4 sm:flex-wrap sm:justify-center">
             {categories.map((c) => {
               const active = c.id === category;
+              const count = counts[c.id];
               return (
                 <button
                   key={c.id}
@@ -296,10 +306,10 @@ function Index() {
                   className={`shrink-0 h-[48px] rounded-full px-6 text-[15px] font-semibold transition-all active:scale-95 ${
                     active
                       ? "bg-[#C94F32] text-white"
-                      : "border border-[#E2D7CD] bg-white text-[#5A473E] hover:border-[#C94F32]/30"
+                      : "border border-[#D8CEC5] bg-transparent text-[#3F3028] hover:border-[#C94F32]/30"
                   }`}
                 >
-                  {c.label}
+                  {c.label} {count}
                 </button>
               );
             })}
@@ -311,7 +321,7 @@ function Index() {
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-[40px] grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
