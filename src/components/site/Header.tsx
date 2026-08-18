@@ -1,10 +1,6 @@
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.png.asset.json";
-import instagramAsset from "@/assets/instagram.png.asset.json";
-import whatsappAsset from "@/assets/whatsapp.png.asset.json";
-import whatsappChatAsset from "@/assets/whatsapp-chat.png.asset.json";
-import whatsappButtonAsset from "@/assets/whatsapp-button.png.asset.json";
 import {
   categories,
   categoryCounts,
