@@ -235,11 +235,40 @@ function Index() {
           </div>
         </section>
 
-        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-24 sm:px-6">
+        {/* Feature/Information Strip */}
+        <section 
+          className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
+          style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
+        >
+          <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-center gap-x-[55px] gap-y-4 px-6 sm:px-8 lg:px-[8%]">
+            <div className="flex items-center gap-2.5">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span className="text-[17px] font-medium text-[#4A342A]">Handmade to order</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polyline points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span className="text-[17px] font-medium text-[#4A342A]">Pan-India shipping</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <div className="h-[22px] w-[22px] flex items-center justify-center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </div>
+              <span className="text-[17px] font-medium text-[#4A342A]">Gift-ready packaging</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              <span className="text-[17px] font-medium text-[#4A342A]">Custom colours welcome</span>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Collection Section */}
+        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-24 sm:px-6">
           <div className="text-center">
-            <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Our Collection</span>
-            <h2 className="mt-4 font-display text-4xl font-semibold text-[#3F2A22] sm:text-5xl">
-              Raksha Bandhan • 28 August 2026
+            <span className="text-[15px] font-medium tracking-[0.1em] text-[#C94F32] uppercase block mb-2">28 AUGUST</span>
+            <h2 className="mt-4 font-display text-[48px] font-bold text-[#3B2922] sm:text-[56px]">
+              Raksha Bandhan Collection
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-[#3F2A22]/70">
               This year's designs, crocheted in limited quantities. Once a colourway runs out, it's
