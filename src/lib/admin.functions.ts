@@ -41,16 +41,16 @@ export const upsertProduct = createServerFn({ method: "POST" })
   }) => data)
   .handler(async ({ data }) => {
     const { tag_ids, ...productData } = data;
-    const { data: product, error } = await supabase.from("products").upsert(productData).select().single();
+    const { data: product, error } = await (supabase.from("products").upsert(productData) as any).select().single();
     if (error) throw error;
 
     if (tag_ids) {
       // Simple tag sync: delete existing and insert new
       await supabase.from("product_tags").delete().eq("product_id", product.id);
       if (tag_ids.length > 0) {
-        const { error: tagError } = await supabase.from("product_tags").insert(
+        const { error: tagError } = await (supabase.from("product_tags").insert(
           tag_ids.map(tag_id => ({ product_id: product.id, tag_id }))
-        );
+        ) as any);
         if (tagError) throw tagError;
       }
     }
@@ -76,7 +76,7 @@ export const getCategories = createServerFn({ method: "GET" }).handler(async () 
 export const upsertCategory = createServerFn({ method: "POST" })
   .validator((data: { id?: string; name: string; slug: string; image_url?: string | null }) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("categories").upsert(data);
+    const { error } = await (supabase.from("categories").upsert(data) as any);
     if (error) throw error;
     return { success: true };
   });
@@ -99,7 +99,7 @@ export const getTags = createServerFn({ method: "GET" }).handler(async () => {
 export const upsertTag = createServerFn({ method: "POST" })
   .validator((data: { id?: string; name: string }) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("tags").upsert(data);
+    const { error } = await (supabase.from("tags").upsert(data) as any);
     if (error) throw error;
     return { success: true };
   });
@@ -122,11 +122,11 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 export const updateSiteContent = createServerFn({ method: "POST" })
   .validator((data: { id: string; value: any }) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("site_content").upsert({ 
-      key: data.id, // Assuming the 'id' passed is the key, or we should use a real id
+    const { error } = await (supabase.from("site_content").upsert({ 
+      key: data.id, 
       value: data.value,
       updated_at: new Date().toISOString()
-    }, { onConflict: 'key' });
+    } as any, { onConflict: 'key' } as any) as any);
     if (error) throw error;
     return { success: true };
   });
