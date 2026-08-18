@@ -480,7 +480,7 @@ function Index() {
           </div>
 
           <h3 className="font-display text-[26px] font-semibold text-white mb-2">
-            Crochet Craft by Pooja Jain
+            Crochet Craft by Prakrati Ruhela
           </h3>
           
           <p className="text-[15px] opacity-70 mb-8 max-w-lg leading-relaxed">
