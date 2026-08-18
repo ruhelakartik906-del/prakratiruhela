@@ -266,7 +266,7 @@ function Index() {
         {/* Collection Section */}
         <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-24 sm:px-6">
           <div className="text-center">
-            <span className="text-[14px] font-bold tracking-[0.2em] text-[#C94F32] uppercase block mb-1">28 AUGUST</span>
+            <span className="text-[14px] font-medium tracking-[0.2em] text-[#C94F32] uppercase block mb-1">28 AUGUST</span>
             <h2 className="mt-4 font-display text-[48px] font-bold text-[#3B2922] sm:text-[56px]">
               Raksha Bandhan Collection
             </h2>
