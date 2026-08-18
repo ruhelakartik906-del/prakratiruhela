@@ -113,13 +113,43 @@ function Index() {
       <Header query={query} onQuery={setQuery} category={category} onCategory={setCategory} />
 
       <main>
-        <section className="relative mx-auto max-w-[1440px] px-6 pt-[60px] pb-16 sm:px-8 lg:px-[8%] lg:pt-[80px]" style={{ background: 'linear-gradient(90deg, #FBF6ED 0%, #FCE9D3 50%, #FBF6ED 100%)' }}>
-          {/* Subtle gradient overlay to match reference */}
-          <div className="absolute top-0 left-0 right-0 h-full bg-[radial-gradient(circle_at_50%_20%,rgba(252,233,211,0.6)_0%,transparent_70%)] pointer-events-none" />
+        <section 
+          className="relative mx-auto max-w-[1440px] px-6 pt-[60px] pb-16 sm:px-8 lg:px-[8%] lg:pt-[80px] overflow-hidden" 
+          style={{ 
+            backgroundColor: '#FBF6EE',
+            background: `
+              radial-gradient(
+                ellipse 75% 55% at 50% 5%,
+                rgba(248, 218, 195, 0.72) 0%,
+                rgba(250, 229, 211, 0.52) 28%,
+                rgba(251, 238, 224, 0.30) 50%,
+                rgba(251, 246, 238, 0) 78%
+              ),
+              linear-gradient(
+                to bottom,
+                #FBE6CF 0%,
+                #F9E9DA 18%,
+                #FBF0E5 38%,
+                #FBF5EC 65%,
+                #FBF6EE 100%
+              )`
+          }}
+        >
+          {/* Optional overlay for smoother blending */}
+          <div 
+            className="absolute inset-0 pointer-events-none" 
+            style={{
+              background: `
+                radial-gradient(
+                  ellipse 65% 45% at 50% 0%,
+                  rgba(255, 224, 202, 0.22) 0%,
+                  rgba(255, 239, 223, 0.10) 45%,
+                  transparent 80%
+                )`
+            }}
+          />
 
-
-
-          <div className="relative grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div className="relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
             <div className="max-w-[700px]">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[13px] font-medium text-[#3B2922]">
