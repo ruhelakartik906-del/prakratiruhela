@@ -286,17 +286,17 @@ function Index() {
             </div>
           </div>
 
-          <div className="no-scrollbar mt-12 flex items-center justify-start gap-3 overflow-x-auto pb-6 sm:justify-center">
+          <div className="no-scrollbar mt-12 flex items-center justify-start gap-2.5 overflow-x-auto pb-4 sm:flex-wrap sm:justify-center">
             {categories.map((c) => {
               const active = c.id === category;
               return (
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`shrink-0 h-[42px] rounded-full px-5 text-[16px] font-medium transition-all active:scale-95 ${
+                  className={`shrink-0 h-[48px] rounded-full px-6 text-[15px] font-semibold transition-all active:scale-95 ${
                     active
-                      ? "bg-[#C94F32] text-white shadow-sm"
-                      : "border border-[#D9CEC4] bg-transparent text-[#3F3028] hover:border-[#C94F32]/40"
+                      ? "bg-[#C94F32] text-white"
+                      : "border border-[#E2D7CD] bg-white text-[#5A473E] hover:border-[#C94F32]/30"
                   }`}
                 >
                   {c.label}
