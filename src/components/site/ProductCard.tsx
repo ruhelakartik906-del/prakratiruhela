@@ -43,16 +43,17 @@ export function ProductCard({ product }: { product: Product }) {
         
         {/* Price + Order Button on same bottom row */}
         <div className="mt-auto pt-[24px] flex items-center justify-between">
-          {/* Price: 19px, bold, #2A1B15 */}
-          <span className="text-[19px] font-bold text-[#2A1B15]">₹{product.price}</span>
+          {/* Price: 22px, bold, #2A1B15 */}
+          <span className="text-[22px] font-bold text-[#2A1B15]">₹{product.price}</span>
           
-          {/* Order button: Large teal pill #087F6D, 14px, 700, 12px 24px padding */}
-          <Button asChild className="h-[44px] rounded-full bg-[#087F6D] px-[24px] py-[12px] text-[14px] font-bold text-white border-none shadow-lg transition-all hover:bg-[#066a57] active:scale-95">
+          {/* Order button: Large teal pill #087F6D, 15px, 700, 14px 28px padding */}
+          <Button asChild className="h-[48px] rounded-full bg-[#087F6D] px-[28px] py-[14px] text-[15px] font-bold text-white border-none shadow-lg transition-all hover:bg-[#066a57] active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer">
               Order
             </a>
           </Button>
         </div>
+
       </div>
     </article>
   );
