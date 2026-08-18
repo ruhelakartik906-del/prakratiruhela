@@ -65,24 +65,24 @@ const steps = [
 
 const faqs = [
   {
-    q: "How long does an order take?",
-    a: "Ready designs ship within 2 working days. Custom pieces take 4-6 days depending on the motif and quantity.",
+    q: "When should I order for Raksha Bandhan?",
+    a: "Raksha Bandhan is on 28 August 2026. Since every rakhi is made to order and shipped by post, we recommend ordering by early August to be safe.",
   },
   {
-    q: "Do you take bulk orders?",
-    a: "Yes. Orders of 10 or more rakhis get 15% off, and we can match a colour palette across the whole set.",
+    q: "Do you take custom designs?",
+    a: "Yes! Favourite colours, cartoon characters, name initials — message us your idea on WhatsApp and we'll tell you if we can crochet it.",
   },
   {
-    q: "Are the rakhis safe for babies and toddlers?",
-    a: "The kids' range uses soft cotton yarn with securely stitched features and no loose beads or glue.",
+    q: "How is the rakhi packed?",
+    a: "Each rakhi comes mounted on a card in a clear protective sleeve, ready to gift or post onward to your brother.",
   },
   {
-    q: "Can I request a colour that isn't shown?",
-    a: "Almost always. Send us a reference on WhatsApp and we'll tell you what's in stock that week.",
+    q: "Do you ship across India?",
+    a: "Yes, we ship pan-India. Shipping cost and delivery time are confirmed on WhatsApp when you order.",
   },
   {
-    q: "How do I pay?",
-    a: "We share a UPI link on WhatsApp once your order is confirmed. No payment happens on this website.",
+    q: "Do you offer a discount on bulk orders?",
+    a: "Yes — order 10 or more rakhis (any mix of designs) and get 10% off. Message us on WhatsApp with your quantity and we'll confirm the final price.",
   },
 ];
 
