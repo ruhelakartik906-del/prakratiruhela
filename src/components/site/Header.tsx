@@ -46,7 +46,8 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
-              rel="noreferrer" 
+              rel="noopener noreferrer" 
+
               aria-label="Instagram"
               className="flex h-8 w-8 sm:h-[70px] sm:w-[70px] md:h-10 md:w-10 items-center justify-center rounded-full transition-all hover:scale-105 active:scale-95 sm:order-first"
               style={{
@@ -62,7 +63,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
             <a 
               href={waLink("Hi! I'd like to know more about your crochet products.")} 
               target="_blank" 
-              rel="noreferrer" 
+              rel="noopener noreferrer" 
               className="flex h-8 sm:h-[70px] sm:w-[220px] md:h-10 items-center justify-center gap-1.5 md:gap-2 rounded-full px-3 sm:px-8 md:px-5 transition-all hover:brightness-105 active:scale-95"
               style={{
                 background: "linear-gradient(180deg, #12A66F 0%, #0B7C58 100%)",
