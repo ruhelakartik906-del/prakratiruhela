@@ -529,21 +529,10 @@ function Index() {
         </div>
       </footer>
 
-      <a
-        href={waLink("Hi! I have a question about your crochet rakhis.")}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed right-6 bottom-6 z-40 grid h-16 w-16 place-items-center rounded-full bg-white shadow-2xl transition-all hover:scale-110 active:scale-95 sm:right-8 sm:bottom-8"
-      >
-        <img 
-          src={whatsappAsset.url} 
-          alt="WhatsApp" 
-          className="h-14 w-14 object-contain"
-        />
-      </a>
-
       <CookieNotice />
+    </div>
+  );
+}
     </div>
   );
 }
