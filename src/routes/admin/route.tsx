@@ -10,41 +10,12 @@ export const Route = createFileRoute('/admin')({
 
 function AdminLayout() {
   const router = useRouter();
-  const [isChecking, setIsChecking] = useState(true);
-  const [hasSession, setHasSession] = useState(false);
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      // If we're on /admin/login, we don't redirect to login
-      const isLoginPage = window.location.pathname === '/admin/login';
-      
-      if (!session && !isLoginPage) {
-        router.navigate({ to: '/admin/login' as any });
-      } else if (session && isLoginPage) {
-        router.navigate({ to: '/admin' as any });
-      }
-      
-      setHasSession(!!session);
-      setIsChecking(false);
-    };
-
-    checkAuth();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setHasSession(!!session);
-      if (!session && window.location.pathname !== '/admin/login') {
-        router.navigate({ to: '/admin/login' as any });
-      }
-    });
-
-    return () => subscription.unsubscribe();
-  }, [router]);
-
-  if (isChecking) {
-    return <div className="flex items-center justify-center min-h-screen bg-gray-50 text-[#3B2922]">Verifying access...</div>;
-  }
+  
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast.success('Logged out successfully');
+    router.navigate({ to: '/admin/login' as any });
+  };
 
   
   const handleLogout = async () => {
