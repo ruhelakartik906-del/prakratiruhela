@@ -354,7 +354,7 @@ function Index() {
           <div 
             className="story-box mx-auto w-full flex flex-col items-center justify-center text-center"
             style={{
-              width: 'min(876px, calc(100% - 32px))',
+              width: 'min(900px, calc(100% - 32px))',
               minHeight: '225px',
               padding: '24px 20px',
               borderRadius: '18px',
@@ -406,7 +406,7 @@ function Index() {
 
 
         {/* How to order */}
-        <section className="mx-auto max-w-6xl px-4 pt-16 md:pt-20 pb-20 md:pb-24 sm:px-6">
+        <section className="mx-auto lg:desktop-container px-4 pt-16 md:pt-20 pb-20 md:pb-24 sm:px-6">
           <div className="text-center">
             <span 
               className="text-[11px] font-bold tracking-[2px] uppercase mb-3 block"
@@ -446,7 +446,7 @@ function Index() {
 
 
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 pt-[60px] md:pt-[80px] pb-20 md:pb-24 sm:px-6">
+        <section className="mx-auto px-4 pt-[60px] md:pt-[80px] pb-20 md:pb-24 sm:px-6" style={{ width: 'min(900px, 100%)' }}>
           <div className="text-center">
             <span className="text-[11px] font-bold tracking-[2px] uppercase mb-3 block" style={{ color: '#A96516' }}>GOOD TO KNOW</span>
             <h2 className="font-display text-[32px] md:text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
