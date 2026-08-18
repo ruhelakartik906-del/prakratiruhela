@@ -6,7 +6,7 @@ import lumba from "@/assets/rakhi-lumba.jpg";
 export const WHATSAPP_NUMBER = "919876543210";
 export const INSTAGRAM_URL = "https://instagram.com";
 
-export type CategoryId = "all" | "raksha-bandhan" | "hair-accessories" | "keychains" | "earbuds-cover" | "gift-combos" | "bangles-custom" | "independence-day";
+export type CategoryId = "all" | "kids" | "flowers" | "classic" | "lumba-sets";
 
 export type Product = {
   id: string;
@@ -14,19 +14,15 @@ export type Product = {
   description: string;
   price: number;
   category: Exclude<CategoryId, "all">;
-  badge: string;
   image: string;
 };
 
 export const categories: { id: CategoryId; label: string; icon?: string }[] = [
-  { id: "all", label: "All Designs", icon: "✨" },
-  { id: "raksha-bandhan", label: "Raksha Bandhan", icon: "🧵" },
-  { id: "hair-accessories", label: "Hair Accessories", icon: "🌸" },
-  { id: "keychains", label: "Keychains", icon: "🔑" },
-  { id: "earbuds-cover", label: "Earbuds Covers", icon: "🎧" },
-  { id: "gift-combos", label: "Gift Combos", icon: "🎁" },
-  { id: "bangles-custom", label: "Bangles & Custom", icon: "🧶" },
-  { id: "independence-day", label: "Independence Day", icon: "🇮🇳" },
+  { id: "all", label: "All", icon: "✨" },
+  { id: "kids", label: "For Kids", icon: "🧸" },
+  { id: "flowers", label: "Flowers", icon: "🌸" },
+  { id: "classic", label: "Classic", icon: "✨" },
+  { id: "lumba-sets", label: "Rakhi + Lumba Sets", icon: "🧶" },
 ];
 
 export const products: Product[] = [
@@ -35,8 +31,7 @@ export const products: Product[] = [
     name: "Marigold Bloom Rakhi",
     description: "Hand-crocheted marigold in scarlet and saffron cotton with gold beads.",
     price: 249,
-    category: "raksha-bandhan",
-    badge: "Raksha Bandhan",
+    category: "flowers",
     image: flower,
   },
   {
@@ -44,8 +39,7 @@ export const products: Product[] = [
     name: "Little Bear Rakhi",
     description: "A soft amigurumi bear on a stretchy band — a favourite with tiny wrists.",
     price: 299,
-    category: "raksha-bandhan",
-    badge: "Raksha Bandhan",
+    category: "kids",
     image: kids,
   },
   {
@@ -53,8 +47,7 @@ export const products: Product[] = [
     name: "Pearl Heirloom Rakhi",
     description: "Ivory lace motif with a freshwater pearl centre and gold silk thread.",
     price: 349,
-    category: "raksha-bandhan",
-    badge: "Raksha Bandhan",
+    category: "classic",
     image: classic,
   },
   {
@@ -62,44 +55,39 @@ export const products: Product[] = [
     name: "Teal Rakhi & Lumba Set",
     description: "Matching rakhi and lumba braid for bhaiya-bhabhi, in teal and terracotta.",
     price: 499,
-    category: "raksha-bandhan",
-    badge: "Raksha Bandhan",
+    category: "lumba-sets",
     image: lumba,
   },
   {
     id: "p5",
-    name: "Daisy Chain Accessories",
+    name: "Daisy Chain Rakhi",
     description: "Three tiny crochet daisies strung on a cream cotton cord.",
     price: 229,
-    category: "hair-accessories",
-    badge: "Hair Accessories",
+    category: "flowers",
     image: flower,
   },
   {
     id: "p6",
-    name: "Bunny Earbuds Cover",
-    description: "Soft crochet case for your wireless earbuds with cute bunny ears.",
+    name: "Bunny Kids Rakhi",
+    description: "Soft crochet bear on a comfortable band for kids.",
     price: 449,
-    category: "earbuds-cover",
-    badge: "Earbuds Cover",
+    category: "kids",
     image: kids,
   },
   {
     id: "p7",
-    name: "Golden Flower Keychain",
+    name: "Golden Star Rakhi",
     description: "Minimal star motif worked in gold zari thread — understated and elegant.",
     price: 279,
-    category: "keychains",
-    badge: "Keychains",
+    category: "classic",
     image: classic,
   },
   {
     id: "p8",
-    name: "Gift Box Deluxe",
+    name: "Deluxe Lumba Set",
     description: "A complete set of handmade crochet items for your loved ones.",
     price: 899,
-    category: "gift-combos",
-    badge: "Gift Combos",
+    category: "lumba-sets",
     image: lumba,
   },
   {
@@ -107,8 +95,7 @@ export const products: Product[] = [
     name: "Tricolor Rakhi",
     description: "Special edition rakhi for Independence Day, made in saffron, white and green.",
     price: 269,
-    category: "independence-day",
-    badge: "Independence Day",
+    category: "flowers",
     image: flower,
   },
 ];
