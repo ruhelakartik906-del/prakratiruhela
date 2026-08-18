@@ -97,7 +97,11 @@ export const getTags = createServerFn({ method: "GET" }).handler(async () => {
 export const upsertTag = createServerFn({ method: "POST" })
   .validator((data: any) => data)
   .handler(async ({ data }) => {
-    const { error } = await (supabase.from("tags") as any).upsert(data);
+    // Ensure slug exists for tags
+    if (!data.slug && data.name) {
+      data.slug = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+    const { error } = await (supabase.from("tags") as any).upsert(data, { onConflict: 'slug' });
     if (error) throw error;
     return { success: true };
   });

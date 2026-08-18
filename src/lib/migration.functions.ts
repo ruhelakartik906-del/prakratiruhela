@@ -45,17 +45,17 @@ export const migrateExistingData = createServerFn({ method: "POST" })
       // 2. Tags Migration
       // Extracted from design and common crochet themes
       const tags = [
-        { name: "Flower" },
-        { name: "Kids" },
-        { name: "Classic" },
-        { name: "Lumba" },
-        { name: "Handmade" },
-        { name: "Cotton" },
-        { name: "Gift" },
+        { name: "Flower", slug: "flower" },
+        { name: "Kids", slug: "kids" },
+        { name: "Classic", slug: "classic" },
+        { name: "Lumba", slug: "lumba" },
+        { name: "Handmade", slug: "handmade" },
+        { name: "Cotton", slug: "cotton" },
+        { name: "Gift", slug: "gift" },
       ];
 
       const { data: dbTags, error: tagError } = await (supabaseAdmin.from("tags") as any)
-        .upsert(tags, { onConflict: 'name' })
+        .upsert(tags, { onConflict: 'slug' })
         .select();
 
       if (tagError) throw tagError;
