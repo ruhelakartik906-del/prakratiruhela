@@ -113,24 +113,42 @@ function Index() {
       <Header query={query} onQuery={setQuery} category={category} onCategory={setCategory} />
 
       <main>
-        <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-terracotta/5 px-4 py-1.5 text-sm font-medium text-terracotta">
-              ✨ Raksha Bandhan · 28 August 2026
-            </span>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] font-semibold text-[#3F2A22] sm:text-6xl md:text-7xl">
-              A rakhi made by hand, tied with <span className="italic text-terracotta font-normal">love</span>
-            </h1>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#3F2A22]/70">
-              Every piece is crocheted stitch by stitch in soft cotton yarn — no moulds, no machines.
-              Choose from this year's collection or tell us your idea and we'll make it for you.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button size="xl" className="rounded-full bg-[#3F2A22] px-8 font-semibold text-white shadow-soft transition-all hover:translate-y-[-2px] hover:shadow-lg active:scale-95" onClick={() => scrollToId("collection")}>
-                Browse Designs
-              </Button>
-              <Button asChild variant="secondary" size="xl" className="rounded-full border-black/5 bg-white px-8 font-semibold text-[#3F2A22] shadow-sm transition-all hover:border-terracotta/40 hover:text-terracotta active:scale-95">
-                <a href={waLink("Hi! I'd love to know more about your handmade rakhis.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+        <section className="relative mx-auto max-w-[1440px] px-6 pt-[60px] pb-16 sm:px-8 lg:px-[8%] lg:pt-[80px]">
+          {/* Subtle gradient overlay */}
+          <div className="absolute top-0 left-0 right-0 h-[300px] bg-gradient-to-b from-[#FFF5EC] to-transparent pointer-events-none opacity-60" />
+
+          <div className="relative grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+            {/* Left Column */}
+            <div className="max-w-[700px]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[13px] font-medium text-[#3B2922]">
+                <span className="text-base">✨</span>
+                <span>Raksha Bandhan · 28 August 2026</span>
+              </div>
+              
+              <h1 className="mt-8 font-display text-[52px] leading-[1] font-bold text-[#3B2922] sm:text-[62px] lg:text-[68px]">
+                A rakhi made by hand,<br />
+                tied with <span className="italic font-normal text-[#C94F32] font-display">love</span>
+              </h1>
+
+              <p className="mt-7 max-w-[650px] text-lg leading-[1.6] text-[#3B2922]/70 sm:text-[19px]">
+                Every piece is crocheted stitch by stitch in soft cotton yarn — no moulds, no machines.
+                Choose from this year's collection or tell us your idea and we'll make it for you.
+              </p>
+
+              <div className="mt-9 flex flex-wrap items-center gap-[14px]">
+                <Button 
+                  onClick={() => scrollToId("collection")}
+                  className="h-14 min-w-[190px] rounded-full bg-[#087F6D] text-[16px] font-bold text-white shadow-[0_4px_14px_rgba(8,127,109,0.25)] transition-all hover:scale-[1.02] active:scale-95"
+                >
+                  Browse Designs
+                </Button>
+                
+                <a 
+                  href={waLink("Hi! I'd love to know more about your handmade rakhis.")} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex h-14 min-w-[190px] items-center justify-center gap-2 rounded-full border border-[#3B2922]/20 bg-transparent text-[16px] font-bold text-[#3B2922] transition-all hover:bg-[#3B2922]/5 active:scale-95"
+                >
                   <img 
                     src={whatsappAsset.url} 
                     alt="WhatsApp" 
@@ -138,35 +156,50 @@ function Index() {
                   />
                   <span>Chat with us</span>
                 </a>
-              </Button>
-            </div>
-          </div>
+              </div>
 
-          <div className="relative mx-auto h-[380px] w-full max-w-sm sm:h-[450px]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <img
-                src={flower}
-                alt="Handmade crochet flower rakhi"
-                width={800}
-                height={800}
-                className="h-60 w-60 rounded-full border-8 border-white object-cover shadow-soft sm:h-72 sm:w-72"
-              />
-              <img
-                src={classic}
-                alt="Classic pearl crochet rakhi"
-                loading="lazy"
-                width={800}
-                height={800}
-                className="absolute top-10 right-0 h-44 w-44 rounded-full border-8 border-white object-cover shadow-soft sm:h-52 sm:w-52"
-              />
-              <img
-                src={kids}
-                alt="Crochet teddy bear rakhi for kids"
-                loading="lazy"
-                width={800}
-                height={800}
-                className="absolute bottom-10 left-0 h-40 w-40 rounded-full border-8 border-white object-cover shadow-soft sm:h-48 sm:w-48"
-              />
+              <div className="mt-8 text-[16px] text-[#3B2922]/80">
+                Custom orders close in <span className="font-bold text-[#C94F32]">3 days</span>. Secure yours today.
+              </div>
+            </div>
+
+            {/* Right Column: Circular Image Composition */}
+            <div className="relative aspect-square w-full max-w-[550px] mx-auto">
+              {/* Main Large Image (Top Right) */}
+              <div className="absolute top-[5%] right-[5%] z-20 h-[65%] w-[65%] overflow-hidden rounded-full border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+                <img
+                  src={flower}
+                  alt="Handmade crochet flower rakhi"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+              </div>
+
+              {/* Medium Overlapping 1 (Left Middle) */}
+              <div className="absolute top-[25%] left-0 z-10 h-[48%] w-[48%] overflow-hidden rounded-full border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
+                <img
+                  src={classic}
+                  alt="Classic pearl crochet rakhi"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+              </div>
+
+              {/* Medium Overlapping 2 (Bottom Right) */}
+              <div className="absolute bottom-0 right-[15%] z-30 h-[42%] w-[42%] overflow-hidden rounded-full border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
+                <img
+                  src={lumba}
+                  alt="Rakhi + Lumba set"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+              </div>
+
+              {/* Small Circle (Bottom Left) */}
+              <div className="absolute bottom-[10%] left-[15%] z-40 h-[28%] w-[28%] overflow-hidden rounded-full border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
+                <img
+                  src={kids}
+                  alt="Crochet teddy bear rakhi for kids"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+              </div>
             </div>
           </div>
         </section>
