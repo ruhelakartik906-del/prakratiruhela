@@ -21,9 +21,9 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm">
-      <div className="mx-auto w-full px-4 pt-4 sm:px-6">
+      <div className="mx-auto w-full px-4 pt-2 sm:px-6">
         {/* Brand Row */}
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
           <a href="#top" className="flex items-center gap-3">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-[#EBE3D5] overflow-hidden">
               <img 
@@ -84,7 +84,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         </div>
 
         {/* Search Bar Row */}
-        <div className="mx-auto mt-4 max-w-[700px]">
+        <div className="mx-auto mt-3 max-w-[700px]">
           <div className="relative group">
             <Search className="pointer-events-none absolute top-1/2 left-5 h-5 w-5 -translate-y-1/2 text-[#3F2A22]/40 transition-colors group-focus-within:text-terracotta" />
             <input
@@ -99,8 +99,8 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         </div>
 
         {/* Category Slider Row */}
-        <div className="mt-5 border-b border-black/5">
-          <nav className="no-scrollbar flex w-full items-center gap-3.5 overflow-x-auto px-4 pt-2 pb-6 scroll-smooth">
+        <div className="mt-3 border-b border-black/5">
+          <nav className="no-scrollbar flex w-full items-center gap-3.5 overflow-x-auto px-4 pt-1 pb-4 scroll-smooth">
             {categories.map((c) => {
               const active = c.id === category;
               const count = counts[c.id];
