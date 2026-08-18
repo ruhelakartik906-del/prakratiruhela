@@ -403,26 +403,26 @@ function Index() {
 
 
         {/* How to order */}
-        <section className="mx-auto max-w-6xl px-4 pt-20 pb-24 sm:px-6">
+        <section className="mx-auto max-w-6xl px-4 pt-16 md:pt-20 pb-20 md:pb-24 sm:px-6">
           <div className="text-center">
             <span 
-              className="text-[11px] font-bold tracking-[2px] uppercase mb-4 block"
+              className="text-[11px] font-bold tracking-[2px] uppercase mb-3 block"
               style={{ color: '#A96516' }}
             >
               ORDERING
             </span>
-            <h2 className="font-display text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
+            <h2 className="font-display text-[32px] md:text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
               How to order
             </h2>
-            <p className="mt-4 text-[16px] leading-[1.55] text-[#765F55] max-w-[500px] mx-auto">
+            <p className="mt-4 text-[15px] md:text-[16px] leading-[1.55] text-[#765F55] max-w-[500px] mx-auto">
               No sign-ups, no checkout forms — just a WhatsApp message, the way you already shop with us.
             </p>
           </div>
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 md:mt-16 grid gap-10 md:gap-8 md:grid-cols-3">
             {steps.map((s, i) => (
               <div
                 key={s.title}
-                className="group relative rounded-[22px] border border-[#EEE7E1] bg-white p-10 pt-14 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all hover:-translate-y-1"
+                className="group relative rounded-[22px] border border-[#EEE7E1] bg-white p-8 md:p-10 pt-12 md:pt-14 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all hover:-translate-y-1"
               >
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2">
                   <span 
@@ -434,38 +434,40 @@ function Index() {
                     {i + 1}
                   </span>
                 </div>
-                <h3 className="font-display text-[22px] font-semibold text-[#3B2922]">{s.title}</h3>
-                <p className="mt-4 text-[15px] leading-[1.6] text-[#765F55]">{s.body}</p>
+                <h3 className="font-display text-[20px] md:text-[22px] font-semibold text-[#3B2922]">{s.title}</h3>
+                <p className="mt-4 text-[14px] md:text-[15px] leading-[1.6] text-[#765F55]">{s.body}</p>
               </div>
             ))}
           </div>
         </section>
 
+
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 pt-[80px] pb-24 sm:px-6">
+        <section className="mx-auto max-w-3xl px-4 pt-[60px] md:pt-[80px] pb-20 md:pb-24 sm:px-6">
           <div className="text-center">
-            <span className="text-[11px] font-bold tracking-[2px] uppercase mb-4 block" style={{ color: '#A96516' }}>GOOD TO KNOW</span>
-            <h2 className="font-display text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
+            <span className="text-[11px] font-bold tracking-[2px] uppercase mb-3 block" style={{ color: '#A96516' }}>GOOD TO KNOW</span>
+            <h2 className="font-display text-[32px] md:text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
               Common questions
             </h2>
           </div>
-          <Accordion type="single" collapsible className="mt-12 space-y-4">
+          <Accordion type="single" collapsible className="mt-10 md:mt-12 space-y-4">
             {faqs.map((f, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="border border-[#EEE7E1] bg-white rounded-[14px] px-6 overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all hover:border-[#EBD4BA]"
+                className="border border-[#EEE7E1] bg-white rounded-[14px] px-5 md:px-6 overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all hover:border-[#EBD4BA]"
               >
-                <AccordionTrigger className="hover:no-underline py-5 text-[17px] font-medium text-[#3B2922] text-left">
+                <AccordionTrigger className="hover:no-underline py-4 md:py-5 text-[15px] md:text-[17px] font-medium text-[#3B2922] text-left">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 text-[15px] leading-[1.6] text-[#765F55]">
+                <AccordionContent className="pb-4 md:pb-5 text-[14px] md:text-[15px] leading-[1.6] text-[#765F55]">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </section>
+
       </main>
 
       <footer className="bg-[#3B2922] py-12 text-white">
