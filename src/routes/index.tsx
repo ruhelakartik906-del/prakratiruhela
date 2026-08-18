@@ -14,12 +14,11 @@ import logoAsset from "@/assets/logo-transparent.png.asset.json";
 import { Header } from "@/components/site/Header";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CookieNotice } from "@/components/site/CookieNotice";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import {
-  mainCategories,
-  rakshaBandhanCategories,
   customOrderLink,
   INSTAGRAM_URL,
-  products,
   waLink,
   type MainCategoryId,
   type RakshaBandhanCategoryId,
@@ -98,9 +97,38 @@ function Index() {
   const [mainCategory, setMainCategory] = useState<MainCategoryId>("all");
   const [rakhiCategory, setRakhiCategory] = useState<RakshaBandhanCategoryId>("all");
 
+  const { data: dbProducts = [] } = useQuery<any[]>({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const { data, error } = await supabase.from('products').select('*, categories(*)');
+      if (error) throw error;
+      return (data || []).map((p: any) => ({
+        id: p.id,
+        name: p.name,
+        description: p.description,
+        price: p.price,
+        category: p.categories?.slug === 'raksha-bandhan' ? 'classic' : p.categories?.slug || 'classic',
+        image: p.image_url
+      }));
+    }
+  });
+
+  const { data: dbContent = [] } = useQuery<any[]>({
+    queryKey: ['siteContent'],
+    queryFn: async () => {
+      const { data, error } = await supabase.from('site_content').select('*');
+      if (error) throw error;
+      return data || [];
+    }
+  });
+
+  const getContent = (key: string, fallback: string) => {
+    return dbContent.find((c: any) => c.key === key)?.value || fallback;
+  };
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const list = products.filter((p) => {
+    const list = dbProducts.filter((p: any) => {
       const matchesRakhiCategory = rakhiCategory === "all" || p.category === rakhiCategory;
       const matchesQuery =
         !q ||
@@ -124,17 +152,17 @@ function Index() {
     }
 
     return list;
-  }, [query, rakhiCategory]);
+  }, [query, rakhiCategory, dbProducts]);
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: products.length };
-    rakshaBandhanCategories.forEach(cat => {
-      if (cat.id !== "all") {
-        c[cat.id] = products.filter(p => p.category === cat.id).length;
-      }
+    const c: Record<string, number> = { all: dbProducts.length };
+    // Hardcoded logic for now to match demo
+    const rakhiCats = ["kids", "flowers", "classic", "lumba-sets"];
+    rakhiCats.forEach(cat => {
+      c[cat] = dbProducts.filter((p: any) => p.category === cat).length;
     });
     return c;
-  }, []);
+  }, [dbProducts]);
 
   return (
     <div id="top" className="min-h-screen bg-background overflow-x-hidden w-full">
@@ -189,12 +217,16 @@ function Index() {
               </div>
               
               <h1 className="mt-6 md:mt-8 font-display text-[42px] sm:text-[48px] md:text-[56px] lg:text-[70px] leading-[1.05] font-bold text-[#3B2922] max-w-[680px]">
-                A rakhi made by hand,<br className="hidden md:block" />
-                tied with <span className="italic font-normal text-[#C94F32] font-display">love</span>
+                {getContent('hero_title', 'A rakhi made by hand, tied with love').split(',').map((part: any, i: number, arr: any[]) => (
+                  <span key={i}>
+                    {part}{i < arr.length - 1 ? ',' : ''}
+                    {i === 0 && <br className="hidden md:block" />}
+                  </span>
+                ))}
               </h1>
 
               <p className="mt-5 md:mt-7 mx-auto md:mx-0 max-w-[650px] text-[18px] md:text-lg leading-[1.45] md:leading-[1.6] text-[#3B2922]/70 sm:text-[19px]">
-                Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf.
+                {getContent('hero_description', 'Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf.')}
               </p>
 
               <div className="mt-7 md:mt-9 flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-[12px] md:gap-[14px]">
@@ -322,13 +354,19 @@ function Index() {
 
 
           <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-3">
-            {rakshaBandhanCategories.map((c) => {
+            {[
+              { id: "all", label: "All" },
+              { id: "kids", label: "For Kids" },
+              { id: "flowers", label: "Flowers" },
+              { id: "classic", label: "Classic" },
+              { id: "lumba-sets", label: "Rakhi + Lumba Sets" },
+            ].map((c) => {
               const active = c.id === rakhiCategory;
-              const count = counts[c.id];
+              const count = counts[c.id] || 0;
               return (
                 <button
                   key={c.id}
-                  onClick={() => setRakhiCategory(c.id)}
+                  onClick={() => setRakhiCategory(c.id as any)}
                   className={`h-[42px] md:h-[48px] rounded-full px-5 md:px-7 text-[13px] md:text-[15px] font-semibold transition-all active:scale-95 whitespace-nowrap ${
                     active
                       ? "bg-[#C94F32] text-white"
