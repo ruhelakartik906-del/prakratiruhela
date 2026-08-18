@@ -42,12 +42,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+      <div className="max-w-2xl text-left bg-white p-8 rounded-lg shadow-lg border border-red-100">
+        <h1 className="text-2xl font-bold text-red-600 mb-4">
+          SSR Execution Error
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <div className="bg-gray-900 text-green-400 p-4 rounded font-mono text-sm overflow-auto max-h-[400px] mb-6">
+          <p className="font-bold mb-2">Error: {error.message}</p>
+          <pre className="whitespace-pre-wrap">{error.stack}</pre>
+        </div>
+        <p className="text-gray-600 mb-6">
+          This error occurred during server-side rendering. Check the stack trace above for details.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
