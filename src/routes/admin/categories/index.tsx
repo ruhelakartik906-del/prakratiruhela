@@ -4,7 +4,7 @@ import { getCategories } from '@/lib/admin.functions';
 import { Button } from '@/components/ui/button';
 import { Plus, Edit, Trash2 } from 'lucide-react';
 
-export const Route = createFileRoute('/admin/categories')({
+export const Route = createFileRoute('/admin/categories/')({
   component: AdminCategories,
 });
 
