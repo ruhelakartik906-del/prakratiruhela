@@ -242,11 +242,11 @@ function Index() {
         >
           <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-center gap-x-[55px] gap-y-4 px-6 sm:px-8 lg:px-[8%]">
             <div className="flex items-center gap-2.5">
-              <Heart className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
               <span className="text-[17px] font-medium text-[#4A342A]">Handmade to order</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Package className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polyline points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               <span className="text-[17px] font-medium text-[#4A342A]">Pan-India shipping</span>
             </div>
             <div className="flex items-center gap-2.5">
