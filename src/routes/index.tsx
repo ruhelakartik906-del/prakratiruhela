@@ -264,37 +264,39 @@ function Index() {
 
 
         {/* Collection Section */}
-        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-24 sm:px-6">
+        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 pt-[65px] pb-8 sm:px-6">
           <div className="text-center">
-            <span className="text-[15px] font-medium tracking-[0.1em] text-[#C94F32] uppercase block mb-2">28 AUGUST</span>
-            <h2 className="mt-4 font-display text-[48px] font-bold text-[#3B2922] sm:text-[56px]">
+            <span className="block mb-7 text-[14px] font-semibold tracking-[3px] text-[#A85A18] uppercase">
+              28 AUGUST
+            </span>
+            <h2 className="font-display text-[46px] font-semibold leading-[1.1] text-[#3B2922] sm:text-[48px]">
               Raksha Bandhan Collection
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-[#3F2A22]/70">
-              This year's designs, crocheted in limited quantities. Once a colourway runs out, it's
-              gone for the season.
+            <p className="mx-auto mt-[22px] max-w-[650px] text-[18px] leading-[1.55] font-normal text-[#806F64]">
+              Tap any design to order it on WhatsApp — tell us the colours you love and we'll make it yours.
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <span className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-[#3F2A22] shadow-sm ring-1 ring-black/5">
-                {products.length} designs
-              </span>
-              <span className="rounded-full bg-terracotta/10 px-4 py-1.5 text-sm font-bold text-terracotta">
-                15% OFF ON 10+ RAKHIS
-              </span>
+            <div className="mt-3 text-[16px] text-[#5E4A40]">
+              {products.length} products
+            </div>
+            
+            <div className="mt-[22px]">
+              <div className="inline-flex items-center justify-center rounded-full border border-[#EBD4BA] bg-[#F8E9D8] px-6 py-3 text-[16px] font-semibold text-[#9A5A1B]">
+                🎁 Bulk orders: 10% off on 10+ rakhis — mix & match any designs
+              </div>
             </div>
           </div>
 
-          <div className="no-scrollbar mt-12 flex justify-start gap-3 overflow-x-auto pb-6 sm:justify-center">
+          <div className="no-scrollbar mt-12 flex items-center justify-start gap-3 overflow-x-auto pb-6 sm:justify-center">
             {categories.map((c) => {
               const active = c.id === category;
               return (
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`shrink-0 rounded-full border px-6 py-3 text-sm font-semibold transition-all active:scale-95 ${
+                  className={`shrink-0 h-[42px] rounded-full px-5 text-[16px] font-medium transition-all active:scale-95 ${
                     active
-                      ? "border-terracotta bg-terracotta text-white shadow-md"
-                      : "border-black/5 bg-white text-[#3F2A22]/80 hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
+                      ? "bg-[#C94F32] text-white shadow-sm"
+                      : "border border-[#D9CEC4] bg-transparent text-[#3F3028] hover:border-[#C94F32]/40"
                   }`}
                 >
                   {c.label}
@@ -302,6 +304,7 @@ function Index() {
               );
             })}
           </div>
+
 
           {filtered.length === 0 ? (
             <p className="mt-20 text-center text-lg text-muted-foreground">
