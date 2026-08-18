@@ -23,10 +23,6 @@ import {
   type MainCategoryId,
   type RakshaBandhanCategoryId,
 } from "@/data/products";
-import flower from "@/assets/rakhi-flower.jpg";
-import kids from "@/assets/rakhi-kids.jpg";
-import classic from "@/assets/rakhi-classic.jpg";
-import lumba from "@/assets/rakhi-lumba.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
