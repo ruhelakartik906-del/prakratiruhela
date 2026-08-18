@@ -402,7 +402,7 @@ function Index() {
         </section>
 
         {/* How to order */}
-        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
+        <section className="mx-auto max-w-6xl px-4 pt-20 pb-24 sm:px-6">
           <div className="text-center">
             <span 
               className="text-[11px] font-bold tracking-[2px] uppercase mb-4 block"
