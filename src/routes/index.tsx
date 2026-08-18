@@ -268,7 +268,6 @@ function Index() {
 
         {/* Feature/Information Strip */}
         <section 
-          className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
           style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
           className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0 overflow-x-auto no-scrollbar"
         >
