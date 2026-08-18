@@ -100,16 +100,33 @@ function Index() {
   const { data: dbProducts = [] } = useQuery<any[]>({
     queryKey: ['products'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('products').select('*, categories(*)');
+      const { data, error } = await supabase
+        .from('products')
+        .select('*, categories(*), product_tags(tags(*))');
+      
       if (error) throw error;
-      return (data || []).map((p: any) => ({
-        id: p.id,
-        name: p.name,
-        description: p.description,
-        price: p.price,
-        category: p.categories?.slug === 'raksha-bandhan' ? 'classic' : p.categories?.slug || 'classic',
-        image: p.image_url
-      }));
+      
+      return (data || []).map((p: any) => {
+        // Map database category to UI sub-category logic
+        // If product has a "Kids" tag, we can map it to 'kids' UI category, etc.
+        const tags = p.product_tags?.map((pt: any) => pt.tags?.name) || [];
+        let uiCategory = 'classic';
+        
+        if (tags.includes('Kids')) uiCategory = 'kids';
+        else if (tags.includes('Flower')) uiCategory = 'flowers';
+        else if (tags.includes('Lumba')) uiCategory = 'lumba-sets';
+        else if (p.categories?.slug === 'raksha-bandhan') uiCategory = 'classic';
+        
+        return {
+          id: p.id,
+          name: p.name,
+          description: p.description,
+          price: p.price,
+          category: uiCategory,
+          image: p.image_url,
+          tags: tags
+        };
+      });
     }
   });
 

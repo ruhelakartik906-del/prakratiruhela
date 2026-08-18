@@ -31,11 +31,20 @@ export const upsertProduct = createServerFn({ method: "POST" })
   .validator((data: any) => data)
   .handler(async ({ data }) => {
     const { tag_ids, ...productData } = data;
+    
+    // Ensure slug exists
+    if (!productData.slug && productData.name) {
+      productData.slug = productData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
     const { data: product, error } = await (supabase.from("products") as any).upsert(productData).select().single();
     if (error) throw error;
 
     if (tag_ids && product) {
+      // Use upsert pattern for tags to avoid unnecessary deletes or to manage them properly
+      // For now, simpler to delete and re-insert if we don't have composite keys enforced correctly for upsert in UI
       await (supabase.from("product_tags") as any).delete().eq("product_id", product.id);
+      
       if (tag_ids.length > 0) {
         const { error: tagError } = await (supabase.from("product_tags") as any).insert(
           tag_ids.map((tag_id: string) => ({ product_id: product.id, tag_id }))
