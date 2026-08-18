@@ -280,7 +280,7 @@ function Index() {
               {/* Main Large Image */}
               <div className="absolute top-[10%] left-[20%] z-20 h-[50%] w-[50%] sm:h-[240px] sm:w-[240px] md:h-[300px] md:w-[300px] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
                 <img
-                  src={flower}
+                  src="/assets/rakhi-flower.jpg"
                   alt="Handmade crochet flower rakhi"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
