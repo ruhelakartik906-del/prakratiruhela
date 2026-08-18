@@ -295,7 +295,7 @@ function Index() {
 
 
         {/* Collection Section */}
-        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 md:px-0 lg:px-8 pt-12 md:pt-[65px] pb-12 lg:desktop-container">
+        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 md:px-0 lg:px-8 pt-12 md:pt-[65px] pb-12 desktop-container">
           <div className="text-center">
             <span className="block mb-5 md:mb-7 text-[13px] md:text-[14px] font-semibold tracking-[3px] text-[#A85A18] uppercase">
               28 AUGUST
