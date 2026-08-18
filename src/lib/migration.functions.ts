@@ -129,18 +129,18 @@ export const migrateExistingData = createServerFn({ method: "POST" })
 
       // 5. Site Content Migration
       const content = [
-        { key: "hero_title", value: "A rakhi made by hand, tied with love" },
-        { key: "hero_description", value: "Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf." },
-        { key: "whatsapp_number", value: "919876543210" },
-        { key: "instagram_handle", value: "@crochet_by_prakrati" },
-        { key: "instagram_url", value: "https://www.instagram.com/crochet_by_prakrati/" },
-        { key: "story_title", value: "Stitched with love, one hook at a time." },
-        { key: "story_body", value: "What started as a hobby in a quiet corner of our home has grown into a small collection of handmade treasures. We believe that in a world of machines, something made by hand carries a soul of its own." },
-        { key: "footer_about", value: "Handmade crochet rakhis and gifts made with love at home." }
+        { section: "hero", content_key: "hero_title", content_value: "A rakhi made by hand, tied with love", content_type: "text" },
+        { section: "hero", content_key: "hero_description", content_value: "Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf.", content_type: "text" },
+        { section: "social", content_key: "whatsapp_number", content_value: "919876543210", content_type: "text" },
+        { section: "social", content_key: "instagram_handle", content_value: "@crochet_by_prakrati", content_type: "text" },
+        { section: "social", content_key: "instagram_url", content_value: "https://www.instagram.com/crochet_by_prakrati/", content_type: "text" },
+        { section: "story", content_key: "story_title", content_value: "Stitched with love, one hook at a time.", content_type: "text" },
+        { section: "story", content_key: "story_body", content_value: "What started as a hobby in a quiet corner of our home has grown into a small collection of handmade treasures. We believe that in a world of machines, something made by hand carries a soul of its own.", content_type: "text" },
+        { section: "footer", content_key: "footer_about", content_value: "Handmade crochet rakhis and gifts made with love at home.", content_type: "text" }
       ];
-
+      
       const { data: dbContent, error: contentError } = await (supabaseAdmin.from("site_content") as any)
-        .upsert(content, { onConflict: 'key' })
+        .upsert(content, { onConflict: 'section,content_key' })
         .select();
 
       if (contentError) {
