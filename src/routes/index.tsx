@@ -113,9 +113,10 @@ function Index() {
       <Header query={query} onQuery={setQuery} category={category} onCategory={setCategory} />
 
       <main>
-        <section className="relative mx-auto max-w-[1440px] px-6 pt-[60px] pb-16 sm:px-8 lg:px-[8%] lg:pt-[80px]">
+        <section className="relative mx-auto max-w-[1440px] px-6 pt-[60px] pb-16 sm:px-8 lg:px-[8%] lg:pt-[80px]" style={{ background: 'radial-gradient(circle at 70% 0%, rgba(252, 233, 211, 0.45) 0%, rgba(248, 239, 227, 0.5) 45%, #FBF6ED 100%)' }}>
           {/* Subtle gradient overlay */}
-          <div className="absolute top-0 left-0 right-0 h-[300px] bg-gradient-to-b from-[#FFF5EC] to-transparent pointer-events-none opacity-60" />
+          <div className="absolute top-0 left-0 right-0 h-[400px] bg-gradient-to-b from-[#FCE9D3]/20 to-transparent pointer-events-none opacity-40" />
+
 
           <div className="relative grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
