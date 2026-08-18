@@ -7,47 +7,47 @@ export function ProductCard({ product }: { product: Product }) {
   const categoryLabel = rakshaBandhanCategories.find(c => c.id === product.category)?.label || product.category;
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-[16px] border border-[#EEE7E1] bg-white shadow-[0_3px_12px_rgba(60,40,25,0.06)] h-full min-h-[540px] transition-all duration-300">
-      {/* Product Image area: Square container, but image padded to appear smaller */}
-      <div className="relative aspect-square overflow-hidden w-full bg-[#FBF6EE]/30 p-4">
+    <article className="group relative flex flex-col overflow-hidden rounded-[20px] border border-[#EEE7E1] bg-white shadow-[0_4px_16px_rgba(60,40,25,0.06)] h-full min-h-[580px] transition-all duration-300">
+      {/* Product Image area: Square container with more padding for a "framed" gallery look */}
+      <div className="relative aspect-square overflow-hidden w-full bg-[#FBF6EE]/40 p-[22px]">
         <img
           src={product.image}
           alt={`${product.name} — handmade crochet rakhi`}
           loading="lazy"
           width={800}
           height={800}
-          className="h-full w-full object-cover rounded-[12px] transition-transform duration-300 ease-in-out group-hover:scale-[1.06]"
+          className="h-full w-full object-cover rounded-[14px] transition-transform duration-500 ease-out group-hover:scale-[1.08]"
         />
-        {/* Bestseller Badge: Smaller pill style */}
-        <div className="absolute top-[24px] left-[24px] z-10 rounded-full bg-[#C94F32] px-[8px] py-[3px] text-[10px] font-bold text-white transition-all duration-[180ms] ease-in-out group-hover:invisible group-hover:opacity-0">
+        {/* Bestseller Badge: Very small, premium pill */}
+        <div className="absolute top-[32px] left-[32px] z-10 rounded-full bg-[#C94F32] px-[10px] py-[4px] text-[9px] font-bold tracking-wider text-white transition-all duration-[250ms] ease-in-out group-hover:invisible group-hover:opacity-0 shadow-sm uppercase">
           Bestseller
         </div>
       </div>
 
-      {/* Card Content Padding: 18px 24px 22px */}
-      <div className="flex flex-1 flex-col pt-[20px] px-[26px] pb-[24px] text-left">
-        {/* Category Label: uppercase, 12px, #A85A18 */}
-        <span className="text-[12px] font-bold tracking-[1.5px] text-[#A85A18] uppercase mb-[10px]">
+      {/* Card Content Padding: Consistent editorial spacing */}
+      <div className="flex flex-1 flex-col pt-[24px] px-[28px] pb-[28px] text-left">
+        {/* Category Label: uppercase, 11px, #A85A18 */}
+        <span className="text-[11px] font-bold tracking-[2px] text-[#A85A18] uppercase mb-[12px]">
           {categoryLabel}
         </span>
         
-        {/* Product Title: Playfair Display, 22px, font-weight 700, #2A1B15 */}
-        <h3 className="font-display text-[22px] font-bold leading-[1.2] text-[#2A1B15]">
+        {/* Product Title: Playfair Display, 24px, font-weight 700, #1A110D */}
+        <h3 className="font-display text-[24px] font-bold leading-[1.15] text-[#1A110D]">
           {product.name}
         </h3>
         
-        {/* Product Description: 14px, Inter, 1.6 line-height, #6B5A51 */}
-        <p className="mt-[14px] text-[14px] font-medium leading-[1.6] text-[#6B5A51] line-clamp-3">
+        {/* Product Description: 15px, Inter, 1.6 line-height, #4A3B34 */}
+        <p className="mt-[16px] text-[15px] font-medium leading-[1.6] text-[#4A3B34] line-clamp-3">
           {product.description}
         </p>
         
         {/* Price + Order Button on same bottom row */}
-        <div className="mt-auto pt-[24px] flex items-center justify-between">
-          {/* Price: 22px, bold, #2A1B15 */}
-          <span className="text-[22px] font-bold text-[#2A1B15]">₹{product.price}</span>
+        <div className="mt-auto pt-[28px] flex items-center justify-between">
+          {/* Price: 24px, bold, #1A110D */}
+          <span className="text-[24px] font-bold text-[#1A110D]">₹{product.price}</span>
           
-          {/* Order button: Large teal pill #087F6D, 15px, 700, 14px 28px padding */}
-          <Button asChild className="h-[48px] rounded-full bg-[#087F6D] px-[28px] py-[14px] text-[15px] font-bold text-white border-none shadow-lg transition-all hover:bg-[#066a57] active:scale-95">
+          {/* Order button: Prominent teal pill #087F6D, 16px, 700 */}
+          <Button asChild className="h-[52px] rounded-full bg-[#087F6D] px-[32px] text-[16px] font-bold text-white border-none shadow-[0_6px_18px_rgba(8,127,109,0.2)] transition-all hover:bg-[#066a57] active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer">
               Order
             </a>
