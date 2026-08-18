@@ -307,7 +307,7 @@ function Index() {
               {/* Small Circle */}
               <div className="absolute bottom-[20%] left-[5%] z-40 h-[30%] w-[30%] sm:h-[115px] sm:w-[115px] md:h-[140px] md:w-[140px] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
                 <img
-                  src={kids}
+                  src="/assets/rakhi-kids.jpg"
                   alt="Crochet teddy bear rakhi for kids"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
