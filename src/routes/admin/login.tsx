@@ -8,17 +8,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin/login')({
-  beforeLoad: async () => {
-    // Basic check for session if we can, but skip if it causes loops
-    try {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
-        throw redirect({ to: '/admin' as any });
-      }
-    } catch (err) {
-      if (err && typeof err === 'object' && ('status' in err || 'isRedirect' in err)) throw err;
-    }
-  },
   component: AdminLogin,
 });
 

@@ -6,8 +6,8 @@ import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin')({
   beforeLoad: async ({ location }) => {
-    // If the target is exactly /admin/login, don't check auth here to prevent loops
-    if (location.pathname === '/admin/login') {
+    // Prevent redirect loops by allowing /admin/login to load without an auth check here
+    if (location.pathname.startsWith('/admin/login')) {
       return;
     }
 
