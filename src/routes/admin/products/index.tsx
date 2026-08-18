@@ -18,7 +18,7 @@ function AdminProducts() {
   });
 
   const deleteMutation = useMutation({
-    mutationFn: deleteProduct,
+    mutationFn: (id: string) => deleteProduct({ data: id }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['adminProducts'] });
       toast.success('Product deleted');
