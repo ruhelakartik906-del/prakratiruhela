@@ -178,7 +178,7 @@ function Index() {
             }}
           />
 
-          <div className="relative z-10 desktop-container pt-8 md:pt-[80px] pb-12 md:pb-16 flex flex-col md:grid md:items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div className="relative z-10 desktop-container tablet-container pt-8 md:pt-[80px] pb-12 md:pb-16 flex flex-col md:grid md:items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
             <div className="max-w-[700px] text-center md:text-left">
               <div className="mx-auto md:mx-0 inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[12px] md:text-[13px] font-medium text-[#3B2922]">
@@ -271,7 +271,7 @@ function Index() {
           className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
           style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
         >
-          <div className="w-full lg:desktop-container grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-x-4 md:gap-x-[55px] gap-y-6 md:gap-y-4 px-4 md:px-0">
+          <div className="w-full lg:desktop-container tablet-container grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-x-4 md:gap-x-[55px] gap-y-6 md:gap-y-4 px-4 md:px-0">
             <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
               <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               <span className="text-[14px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Handmade to order</span>
@@ -344,7 +344,7 @@ function Index() {
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-[30px] md:mt-[40px] grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[28px]">
+            <div className="mt-[30px] md:mt-[40px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[28px]">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}

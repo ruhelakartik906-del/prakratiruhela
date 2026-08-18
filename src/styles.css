@@ -206,4 +206,11 @@
     }
   }
 
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .tablet-container {
+      width: calc(100% - 60px);
+      margin: 0 auto;
+    }
+  }
+
 }
