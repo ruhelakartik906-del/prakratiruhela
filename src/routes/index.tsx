@@ -519,9 +519,6 @@ function Index() {
             </Button>
           </div>
 
-          <div className="mt-12 w-full border-t border-white/10 pt-6 text-[12px] opacity-30 tracking-wider uppercase">
-            © {new Date().getFullYear()} CROCHET CRAFT. MADE BY HAND.
-          </div>
         </div>
       </footer>
 
