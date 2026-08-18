@@ -97,9 +97,38 @@ function Index() {
   const [mainCategory, setMainCategory] = useState<MainCategoryId>("all");
   const [rakhiCategory, setRakhiCategory] = useState<RakshaBandhanCategoryId>("all");
 
+  const { data: dbProducts = [] } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const { data, error } = await supabase.from('products').select('*, categories(*)');
+      if (error) throw error;
+      return data.map(p => ({
+        id: p.id,
+        name: p.name,
+        description: p.description,
+        price: p.price,
+        category: p.categories?.slug === 'raksha-bandhan' ? 'classic' : p.categories?.slug || 'classic',
+        image: p.image_url
+      }));
+    }
+  });
+
+  const { data: dbContent = [] } = useQuery({
+    queryKey: ['siteContent'],
+    queryFn: async () => {
+      const { data, error } = await supabase.from('site_content').select('*');
+      if (error) throw error;
+      return data;
+    }
+  });
+
+  const getContent = (key: string, fallback: string) => {
+    return dbContent.find(c => c.key === key)?.value || fallback;
+  };
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const list = products.filter((p) => {
+    const list = dbProducts.filter((p: any) => {
       const matchesRakhiCategory = rakhiCategory === "all" || p.category === rakhiCategory;
       const matchesQuery =
         !q ||
@@ -123,7 +152,7 @@ function Index() {
     }
 
     return list;
-  }, [query, rakhiCategory]);
+  }, [query, rakhiCategory, dbProducts]);
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { all: dbProducts.length };
