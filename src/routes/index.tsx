@@ -291,27 +291,28 @@ function Index() {
 
 
         {/* Collection Section */}
-        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-8 pt-[65px] pb-12 lg:px-[10%]">
+        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 md:px-8 pt-12 md:pt-[65px] pb-12 lg:px-[10%]">
           <div className="text-center">
-            <span className="block mb-7 text-[14px] font-semibold tracking-[3px] text-[#A85A18] uppercase">
+            <span className="block mb-5 md:mb-7 text-[13px] md:text-[14px] font-semibold tracking-[3px] text-[#A85A18] uppercase">
               28 AUGUST
             </span>
-            <h2 className="font-display text-[46px] font-semibold leading-[1.1] text-[#3B2922] sm:text-[48px]">
+            <h2 className="font-display text-[32px] md:text-[46px] font-semibold leading-[1.1] text-[#3B2922] sm:text-[48px]">
               Raksha Bandhan Collection
             </h2>
-            <p className="mx-auto mt-[22px] max-w-[650px] text-[18px] leading-[1.55] font-normal text-[#806F64]">
+            <p className="mx-auto mt-4 md:mt-[22px] max-w-[650px] text-[15px] md:text-[18px] leading-[1.55] font-normal text-[#806F64]">
               Tap any design to order it on WhatsApp — tell us the colours you love and we'll make it yours.
             </p>
-            <div className="mt-2 text-[16px] text-[#5E4A40]">
+            <div className="mt-2 text-[15px] md:text-[16px] text-[#5E4A40]">
               {filtered.length} products
             </div>
             
-            <div className="mt-[25px]">
-              <div className="inline-flex items-center justify-center rounded-full border border-[#EBD4BA] bg-[#F8E9D8] px-6 py-3 text-[16px] font-semibold text-[#9A5A1B]">
+            <div className="mt-5 md:mt-[25px]">
+              <div className="inline-flex items-center justify-center rounded-2xl md:rounded-full border border-[#EBD4BA] bg-[#F8E9D8] px-5 md:px-6 py-2.5 md:py-3 text-[14px] md:text-[16px] font-semibold text-[#9A5A1B] leading-tight max-w-[90%] mx-auto">
                 🎁 Bulk orders: 10% off on 10+ rakhis — mix & match any designs
               </div>
             </div>
           </div>
+
 
           <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-2.5">
             {rakshaBandhanCategories.map((c) => {
