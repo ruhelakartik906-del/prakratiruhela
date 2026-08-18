@@ -347,13 +347,13 @@ function Index() {
 
 
         {/* Our Story Section */}
-        <section className="story-section pt-[80px] pb-[60px] px-4 md:px-0 bg-[#FBF6EE]">
+        <section className="story-section pt-[60px] md:pt-[80px] pb-[40px] md:pb-[60px] px-4 md:px-0 bg-[#FBF6EE]">
           <div 
             className="story-box mx-auto w-full flex flex-col items-center justify-center text-center"
             style={{
-              width: 'min(876px, calc(100% - 48px))',
+              width: 'min(876px, calc(100% - 32px))',
               minHeight: '225px',
-              padding: '34px 70px',
+              padding: '24px 20px',
               borderRadius: '18px',
               background: 'linear-gradient(105deg, #FDE3D7 0%, #F8DDE1 48%, #EBDDF7 100%)',
               border: '1px solid rgba(255,255,255,0.7)',
@@ -376,7 +376,7 @@ function Index() {
             <h2 
               className="story-title font-display"
               style={{
-                fontSize: '22px',
+                fontSize: '20px',
                 fontWeight: 600,
                 lineHeight: '1.3',
                 color: '#3B2922',
@@ -388,7 +388,7 @@ function Index() {
             <p 
               className="story-description"
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 lineHeight: '1.55',
                 fontWeight: 400,
                 color: '#765F55',
@@ -400,6 +400,7 @@ function Index() {
             </p>
           </div>
         </section>
+
 
         {/* How to order */}
         <section className="mx-auto max-w-6xl px-4 pt-20 pb-24 sm:px-6">
