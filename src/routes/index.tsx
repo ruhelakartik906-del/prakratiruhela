@@ -298,7 +298,7 @@ function Index() {
               {/* Overlapping 2 */}
               <div className="absolute bottom-[5%] right-[20%] z-30 h-[35%] w-[35%] sm:h-[120px] sm:w-[120px] md:h-[160px] md:w-[160px] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
                 <img
-                  src={lumba}
+                  src="/assets/rakhi-lumba.jpg"
                   alt="Rakhi + Lumba set"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
