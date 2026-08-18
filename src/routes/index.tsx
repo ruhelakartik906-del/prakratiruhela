@@ -337,26 +337,34 @@ function Index() {
         </section>
 
         {/* Custom order */}
-        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-blush/60 px-6 py-16 text-center text-foreground sm:px-12">
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--color-terracotta) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-            <h2 className="relative font-display text-4xl font-semibold sm:text-5xl">Have your own idea?</h2>
-            <p className="relative mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground/90">
-              Names, favourite characters, wedding colours, office sets — if it can be crocheted, we'll
-              try. Send us a reference picture and we'll quote you the same day.
+        <section className="mx-auto max-w-[1440px] px-8 pb-24 lg:px-[10%]">
+          <div 
+            className="relative overflow-hidden rounded-[2rem] px-8 py-14 text-center border-2 border-dashed border-[#EBD4BA] max-w-[500px]"
+            style={{
+              background: 'linear-gradient(135deg, #FDF2F8 0%, #EEF2FF 100%)'
+            }}
+          >
+            <div className="flex justify-center gap-3 mb-6">
+              <span className="text-3xl">🧶</span>
+              <span className="text-3xl">✨</span>
+            </div>
+            
+            <h2 className="font-display text-[28px] font-bold text-[#3B2922] leading-tight mb-4">
+              Have your own idea?
+            </h2>
+            
+            <p className="text-[16px] leading-relaxed text-[#5E4A40] mb-8">
+              A favourite colour, a cartoon character, a name — tell us and we'll crochet a one-of-a-kind rakhi just for you.
             </p>
-            <Button asChild className="relative mt-10 h-14 rounded-full bg-[#25D366] px-10 text-base font-semibold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 active:scale-95">
-              <a href={customOrderLink()} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                <img 
-                  src={whatsappAsset.url} 
-                  alt="WhatsApp" 
-                  className="h-5 w-5 object-contain"
-                />
-                <span>Request a custom rakhi</span>
+
+            <Button asChild className="h-12 rounded-full bg-[#087F6D] px-8 text-[15px] font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95 border-none">
+              <a href={customOrderLink()} target="_blank" rel="noreferrer">
+                Request a custom rakhi
               </a>
             </Button>
           </div>
         </section>
+
 
         {/* Brand story */}
         <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
