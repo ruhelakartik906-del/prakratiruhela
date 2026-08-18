@@ -1,6 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
-import { z } from "zod";
 
 // Stats
 export const getAdminStats = createServerFn({ method: "GET" })
@@ -29,7 +28,8 @@ export const getProducts = createServerFn({ method: "GET" }).handler(async () =>
 });
 
 export const deleteProduct = createServerFn({ method: "POST" })
-  .handler(async ({ data: id }: { data: string }) => {
+  .validator((data: string) => data)
+  .handler(async ({ data: id }) => {
     const { error } = await supabase.from("products").delete().eq("id", id);
     if (error) throw error;
     return { success: true };
@@ -43,7 +43,8 @@ export const getCategories = createServerFn({ method: "GET" }).handler(async () 
 });
 
 export const upsertCategory = createServerFn({ method: "POST" })
-  .handler(async ({ data }: { data: { id?: string; name: string; slug: string; image_url?: string | null } }) => {
+  .validator((data: { id?: string; name: string; slug: string; image_url?: string | null }) => data)
+  .handler(async ({ data }) => {
     const { error } = await supabase.from("categories").upsert(data);
     if (error) throw error;
     return { success: true };
@@ -64,7 +65,8 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 });
 
 export const updateSiteContent = createServerFn({ method: "POST" })
-  .handler(async ({ data }: { data: { id: string; value: any } }) => {
+  .validator((data: { id: string; value: any }) => data)
+  .handler(async ({ data }) => {
     const { error } = await supabase.from("site_content").update({ value: data.value }).eq("id", data.id);
     if (error) throw error;
     return { success: true };
