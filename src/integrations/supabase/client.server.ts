@@ -1,35 +1,22 @@
 import { createClient } from '@supabase/supabase-js';
+import { Tables } from './client';
 
-const supabaseUrl = import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'];
-const supabaseAnonKey = import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'];
+const supabaseUrl = process.env['EXT_SUPABASE_URL'] || process.env['VITE_EXT_SUPABASE_URL'];
+const supabaseAnonKey = process.env['EXT_SUPABASE_ANON_KEY'] || process.env['VITE_EXT_SUPABASE_ANON_KEY'];
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase credentials missing from environment variables');
+  console.error('Server Supabase credentials missing');
 }
 
-export const supabase = createClient(
+export const supabase = createClient<Tables>(
   supabaseUrl || '',
   supabaseAnonKey || '',
   {
     auth: {
-      persistSession: true,
-      autoRefreshToken: true,
-      detectSessionInUrl: true
+      persistSession: false
     }
   }
 );
-
-export type Tables = {
-  products: {
-    Row: {
-      id: string;
-      name: string;
-      description: string | null;
-      price: number;
-      image_url: string | null;
-      category_id: string | null;
-      created_at: string;
-    };
     Insert: {
       id?: string;
       name: string;
