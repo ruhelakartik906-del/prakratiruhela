@@ -2,7 +2,6 @@ import { createFileRoute, Outlet, Link, useRouter } from '@tanstack/react-router
 import { supabase } from '@/integrations/supabase/client';
 import { LayoutDashboard, Package, Tags, Layers, FileText, LogOut, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
-import { useEffect, useState } from 'react';
 
 export const Route = createFileRoute('/admin')({
   component: AdminLayout,
@@ -10,13 +9,6 @@ export const Route = createFileRoute('/admin')({
 
 function AdminLayout() {
   const router = useRouter();
-  
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    toast.success('Logged out successfully');
-    router.navigate({ to: '/admin/login' as any });
-  };
-
   
   const handleLogout = async () => {
     await supabase.auth.signOut();
