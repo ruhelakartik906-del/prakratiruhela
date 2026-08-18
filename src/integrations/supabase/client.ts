@@ -1,10 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'];
-const supabaseAnonKey = import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'];
+const supabaseUrl = import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'] || (typeof process !== 'undefined' ? process.env['EXT_SUPABASE_URL'] : undefined);
+const supabaseAnonKey = import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'] || (typeof process !== 'undefined' ? process.env['EXT_SUPABASE_ANON_KEY'] : undefined);
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase credentials missing from environment variables');
+  if (typeof window !== 'undefined') {
+    console.error('Supabase credentials missing from environment variables');
+  }
 }
 
 export type Database = {
