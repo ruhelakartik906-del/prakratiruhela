@@ -4,7 +4,7 @@ import classic from "@/assets/rakhi-classic.jpg";
 import lumba from "@/assets/rakhi-lumba.jpg";
 
 export const WHATSAPP_NUMBER = "919876543210";
-export const INSTAGRAM_URL = "https://instagram.com";
+export const INSTAGRAM_URL = "https://www.instagram.com/crochet_by_prakrati/";
 
 export type MainCategoryId = "all" | "raksha-bandhan" | "hair-accessories" | "keychains" | "earbuds-covers" | "gift-combos" | "bangles-custom" | "independence-day";
 export type RakshaBandhanCategoryId = "all" | "kids" | "flowers" | "classic" | "lumba-sets";

@@ -499,7 +499,7 @@ function Index() {
                   <img src={instagramAsset.url} alt="Instagram" className="h-full w-full object-contain brightness-0 invert" />
                 </div>
               </div>
-              <span className="text-[15px] font-medium tracking-wide">@cro_chetcraft</span>
+              <span className="text-[15px] font-medium tracking-wide">@crochet_by_prakrati</span>
             </a>
 
             <Button 
