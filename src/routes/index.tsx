@@ -404,7 +404,7 @@ function Index() {
           </div>
         </section>
 
-        {/* Brand story - Keeping existing one below as requested "next existing section" */}
+        {/* How to order */}
         <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
 
         {/* How to order */}
