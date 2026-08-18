@@ -30,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
         </p>
 
         <Button asChild className="h-11 rounded-full bg-[#087F6D] px-8 text-[14px] font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95 border-none mt-auto">
-          <a href={customOrderLink()} target="_blank" rel="noreferrer">
+          <a href={customOrderLink()} target="_blank" rel="noopener noreferrer">
             Request a custom rakhi
           </a>
         </Button>
@@ -80,7 +80,7 @@ export function ProductCard({ product }: { product: Product }) {
           
           {/* Order button: Compact teal pill */}
           <Button asChild className="h-8 sm:h-[42px] md:h-10 rounded-full bg-[#087F6D] px-3 sm:px-5 md:px-6 text-[12px] sm:text-[14px] md:text-[14px] font-bold text-white border-none shadow-md transition-all hover:bg-[#066a57] active:scale-95">
-            <a href={orderLink(product)} target="_blank" rel="noreferrer">
+            <a href={orderLink(product)} target="_blank" rel="noopener noreferrer">
               Order
             </a>
           </Button>

@@ -208,7 +208,8 @@ function Index() {
                 <a 
                   href={waLink("Hi! I'd love to know more about your handmade rakhis.")} 
                   target="_blank" 
-                  rel="noreferrer" 
+                  rel="noopener noreferrer" 
+
                   className="flex h-[52px] md:h-14 flex-1 md:flex-none md:min-w-[190px] items-center justify-center gap-2 rounded-full border border-[#3B2922]/20 bg-transparent text-[15px] md:text-[16px] font-bold text-[#3B2922] transition-all hover:bg-[#3B2922]/5 active:scale-95"
                 >
                   <img 
@@ -503,7 +504,8 @@ function Index() {
             <a 
               href={INSTAGRAM_URL} 
               target="_blank" 
-              rel="noreferrer" 
+              rel="noopener noreferrer" 
+
               className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95"
             >
               <div 
@@ -525,7 +527,8 @@ function Index() {
             <a 
               href={waLink("Hi! I'd like to place an order.")} 
               target="_blank" 
-              rel="noreferrer" 
+              rel="noopener noreferrer" 
+
               className="group relative flex h-12 md:h-14 items-center gap-3 overflow-hidden rounded-full border-none px-6 md:px-8 outline-none ring-0 transition-all hover:scale-105 active:scale-95"
               style={{
                 background: "linear-gradient(180deg, #12A66F 0%, #0B7C58 100%)",
@@ -546,7 +549,7 @@ function Index() {
       <a
         href={waLink("Hi! I have a question about your crochet rakhis.")}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
         className="fixed right-6 bottom-6 z-40 group flex items-center justify-center transition-all hover:scale-110 active:scale-95 sm:right-8 sm:bottom-8"
       >
