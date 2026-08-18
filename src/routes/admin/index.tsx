@@ -53,7 +53,7 @@ function AdminDashboard() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {stats.map((stat) => (
-          <Card key={stat.title} className="bg-white border-[#3B2922]/10 shadow-sm">
+          <Card key={stat.title} className="bg-white border-[#3B2922]/10 shadow-sm transition-all hover:shadow-md">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-[#3B2922]/70">{stat.title}</CardTitle>
               <stat.icon className="h-4 w-4 text-[#C94F32]" />
