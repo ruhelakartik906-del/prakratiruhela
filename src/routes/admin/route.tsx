@@ -6,11 +6,17 @@ import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin')({
   beforeLoad: async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        throw redirect({ to: '/admin/login' as any });
+      }
+      return { session };
+    } catch (err) {
+      if (err instanceof Error && err.message.includes('redirect')) throw err;
+      console.error('Auth check failed:', err);
       throw redirect({ to: '/admin/login' as any });
     }
-    return { session };
   },
   component: AdminLayout,
 });
