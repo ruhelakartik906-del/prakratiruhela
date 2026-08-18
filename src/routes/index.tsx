@@ -492,14 +492,21 @@ function Index() {
               href={INSTAGRAM_URL} 
               target="_blank" 
               rel="noreferrer" 
-              className="flex items-center gap-2.5 group"
+              className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95"
             >
-              <div className="h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#FFD600] via-[#FF0069] to-[#7638FA] p-0.5 shadow-lg group-hover:scale-105 transition-transform">
-                <div className="h-full w-full flex items-center justify-center rounded-full bg-[#3B2922] p-2">
-                  <img src={instagramAsset.url} alt="Instagram" className="h-full w-full object-contain brightness-0 invert" />
-                </div>
+              <div 
+                className="flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
+                style={{
+                  background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="white" strokeWidth="2" />
+                  <circle cx="12" cy="12" r="4.2" stroke="white" strokeWidth="2" />
+                  <circle cx="17.6" cy="6.4" r="1.3" fill="white" />
+                </svg>
               </div>
-              <span className="text-[15px] font-medium tracking-wide">@crochet_by_prakrati</span>
+              <span className="text-[16px] font-semibold tracking-wide text-white/90 group-hover:text-white">@crochet_by_prakrati</span>
             </a>
 
             <Button 
