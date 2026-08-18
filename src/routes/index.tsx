@@ -465,7 +465,6 @@ function Index() {
             ))}
           </Accordion>
         </section>
-        </section>
       </main>
 
       <footer className="bg-[#3F2A22] py-20 text-white">
