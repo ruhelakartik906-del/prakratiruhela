@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
-import { orderLink, rakshaBandhanCategories, type Product } from "@/data/products";
+import { orderLink, customOrderLink, rakshaBandhanCategories, type Product } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
   // Find the display label for the category
