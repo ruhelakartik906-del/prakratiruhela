@@ -100,7 +100,7 @@ function Index() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return products.filter((p) => {
+    const list = products.filter((p) => {
       const matchesRakhiCategory = rakhiCategory === "all" || p.category === rakhiCategory;
       const matchesQuery =
         !q ||
@@ -108,6 +108,18 @@ function Index() {
         p.description.toLowerCase().includes(q);
       return matchesRakhiCategory && matchesQuery;
     });
+
+    // Add virtual custom order card
+    list.push({
+      id: "custom-request",
+      name: "Have your own idea?",
+      description: "A favourite colour, a cartoon character, a name — tell us and we'll crochet a one-of-a-kind rakhi just for you.",
+      price: 0,
+      category: "classic", // dummy
+      image: ""
+    } as any);
+
+    return list;
   }, [query, rakhiCategory]);
 
   const counts = useMemo(() => {
@@ -328,7 +340,7 @@ function Index() {
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-[40px] grid gap-[24px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="mt-[40px] grid gap-[24px] sm:grid-cols-2 md:grid-cols-3">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
