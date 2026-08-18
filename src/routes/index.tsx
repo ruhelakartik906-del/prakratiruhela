@@ -325,7 +325,7 @@ function Index() {
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-[40px] grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-[40px] grid gap-[34px] sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
