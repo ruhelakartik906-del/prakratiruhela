@@ -57,34 +57,35 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Card Content Padding: Tight, clean layout per reference */}
-      <div className="flex flex-1 flex-col pt-4 px-5 pb-5 text-left">
+      <div className="flex flex-1 flex-col pt-3 md:pt-4 px-3 md:px-5 pb-3 md:pb-5 text-left">
         {/* Category Label: subtle */}
-        <span className="text-[10px] font-bold tracking-wider text-[#A85A18] uppercase mb-2 opacity-80">
+        <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-[#A85A18] uppercase mb-1 md:mb-2 opacity-80">
           {categoryLabel}
         </span>
         
         {/* Product Title: Elegant serif, medium size */}
-        <h3 className="font-display text-[20px] font-bold leading-tight text-[#1D1613]">
+        <h3 className="font-display text-[16px] md:text-[20px] font-bold leading-tight text-[#1D1613]">
           {product.name}
         </h3>
         
         {/* Product Description: Clean, readable */}
-        <p className="mt-3 text-[13px] font-medium leading-relaxed text-[#5E4A40] line-clamp-2">
+        <p className="mt-2 md:mt-3 text-[12px] md:text-[13px] font-medium leading-relaxed text-[#5E4A40] line-clamp-2">
           {product.description}
         </p>
         
         {/* Price + Order Button: Horizontal alignment */}
-        <div className="mt-auto pt-5 flex items-center justify-between">
+        <div className="mt-auto pt-3 md:pt-5 flex items-center justify-between gap-2">
           {/* Price: Bold, prominent */}
-          <span className="text-[20px] font-bold text-[#1D1613]">₹{product.price}</span>
+          <span className="text-[16px] md:text-[20px] font-bold text-[#1D1613]">₹{product.price}</span>
           
           {/* Order button: Compact teal pill */}
-          <Button asChild className="h-10 rounded-full bg-[#087F6D] px-6 text-[14px] font-bold text-white border-none shadow-md transition-all hover:bg-[#066a57] active:scale-95">
+          <Button asChild className="h-8 md:h-10 rounded-full bg-[#087F6D] px-3 md:px-6 text-[12px] md:text-[14px] font-bold text-white border-none shadow-md transition-all hover:bg-[#066a57] active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer">
               Order
             </a>
           </Button>
         </div>
+
 
       </div>
     </article>
