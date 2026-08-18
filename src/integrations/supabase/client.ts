@@ -128,8 +128,8 @@ export type Database = {
 export type Tables<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Row'];
 
 export const supabase = createClient<Database>(
-  supabaseUrl || 'https://placeholder.supabase.co',
-  supabaseAnonKey || 'placeholder',
+  supabaseUrl || 'https://wxqzyvrvaflenisqsahz.supabase.co',
+  supabaseAnonKey || 'sb_publishable_uw68otvfEAlQLMVoR4YW1Q_Q-_NqLLN',
   {
     auth: {
       persistSession: true,

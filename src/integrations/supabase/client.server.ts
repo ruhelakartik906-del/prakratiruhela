@@ -9,8 +9,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase = createClient<Database>(
-  supabaseUrl || 'https://placeholder.supabase.co',
-  supabaseAnonKey || 'placeholder',
+  supabaseUrl || 'https://wxqzyvrvaflenisqsahz.supabase.co',
+  supabaseAnonKey || 'sb_publishable_uw68otvfEAlQLMVoR4YW1Q_Q-_NqLLN',
   {
     auth: {
       persistSession: false
