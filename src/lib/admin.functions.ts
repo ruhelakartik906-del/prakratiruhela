@@ -81,12 +81,36 @@ export const upsertCategory = createServerFn({ method: "POST" })
     return { success: true };
   });
 
+export const deleteCategory = createServerFn({ method: "POST" })
+  .validator((data: string) => data)
+  .handler(async ({ data: id }) => {
+    const { error } = await supabase.from("categories").delete().eq("id", id);
+    if (error) throw error;
+    return { success: true };
+  });
+
 // Tags
 export const getTags = createServerFn({ method: "GET" }).handler(async () => {
   const { data, error } = await supabase.from("tags").select("*").order("name");
   if (error) throw error;
   return data;
 });
+
+export const upsertTag = createServerFn({ method: "POST" })
+  .validator((data: { id?: string; name: string }) => data)
+  .handler(async ({ data }) => {
+    const { error } = await supabase.from("tags").upsert(data);
+    if (error) throw error;
+    return { success: true };
+  });
+
+export const deleteTag = createServerFn({ method: "POST" })
+  .validator((data: string) => data)
+  .handler(async ({ data: id }) => {
+    const { error } = await supabase.from("tags").delete().eq("id", id);
+    if (error) throw error;
+    return { success: true };
+  });
 
 // Site Content
 export const getSiteContent = createServerFn({ method: "GET" }).handler(async () => {
