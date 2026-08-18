@@ -3,10 +3,10 @@ import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
 // Assets to be migrated/handled
 const FAKE_IMAGES = {
-  flower: "https://prakratiruhela.lovable.app/assets/rakhi-flower.jpg",
-  kids: "https://prakratiruhela.lovable.app/assets/rakhi-kids.jpg",
-  classic: "https://prakratiruhela.lovable.app/assets/rakhi-classic.jpg",
-  lumba: "https://prakratiruhela.lovable.app/assets/rakhi-lumba.jpg"
+  flower: "/assets/rakhi-flower.jpg",
+  kids: "/assets/rakhi-kids.jpg",
+  classic: "/assets/rakhi-classic.jpg",
+  lumba: "/assets/rakhi-lumba.jpg"
 };
 
 export const migrateExistingData = createServerFn({ method: "POST" })
