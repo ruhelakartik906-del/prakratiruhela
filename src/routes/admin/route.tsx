@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin')({
   beforeLoad: async ({ location }) => {
-    // Avoid redirect loop if we're already going to login
+    // If the target is exactly /admin/login, don't check auth here to prevent loops
     if (location.pathname === '/admin/login') {
       return;
     }
@@ -19,7 +19,6 @@ export const Route = createFileRoute('/admin')({
       return { session };
     } catch (err) {
       if (err && typeof err === 'object' && ('status' in err || 'isRedirect' in err)) throw err;
-      console.error('Admin Auth Error:', err);
       throw redirect({ to: '/admin/login' as any });
     }
   },
