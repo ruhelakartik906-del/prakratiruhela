@@ -11,6 +11,14 @@ import {
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
 import instagramAsset from "@/assets/instagram.png.asset.json";
 import logoAsset from "@/assets/logo-transparent.png.asset.json";
+
+const SUPABASE_STORAGE_URL = "https://wxqzyvrvaflenisqsahz.supabase.co/storage/v1/object/public/website-images";
+const HERO_IMAGES = {
+  flower: `${SUPABASE_STORAGE_URL}/products/rakhi-flower.jpg`,
+  classic: `${SUPABASE_STORAGE_URL}/products/rakhi-classic.jpg`,
+  lumba: `${SUPABASE_STORAGE_URL}/products/rakhi-lumba.jpg`,
+  kids: `${SUPABASE_STORAGE_URL}/products/rakhi-kids.jpg`,
+};
 import { Header } from "@/components/site/Header";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CookieNotice } from "@/components/site/CookieNotice";
