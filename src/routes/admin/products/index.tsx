@@ -15,7 +15,7 @@ import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { supabase } from '@/integrations/supabase/client';
 
-export const Route = createFileRoute('/admin/products/')({
+export const Route = createFileRoute('/admin/products')({
   component: AdminProducts,
 });
 
