@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Plus, X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
-export const Route = createFileRoute('/admin/tags/')({
+export const Route = createFileRoute('/admin/tags')({
   component: AdminTags,
 });
 

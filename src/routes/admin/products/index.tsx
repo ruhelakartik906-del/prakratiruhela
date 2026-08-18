@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Plus, Edit, Trash2, Package } from 'lucide-react';
 import { toast } from 'sonner';
 
-export const Route = createFileRoute('/admin/products/')({
+export const Route = createFileRoute('/admin/products')({
   component: AdminProducts,
 });
 
