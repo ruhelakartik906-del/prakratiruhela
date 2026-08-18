@@ -35,8 +35,7 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         { name: "Independence Day", slug: "independence-day" },
       ];
 
-      const { data: dbCategories, error: catError } = await supabaseAdmin
-        .from("categories")
+      const { data: dbCategories, error: catError } = await (supabaseAdmin.from("categories") as any)
         .upsert(mainCategories, { onConflict: 'slug' })
         .select();
       
@@ -55,8 +54,7 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         { name: "Gift" },
       ];
 
-      const { data: dbTags, error: tagError } = await supabaseAdmin
-        .from("tags")
+      const { data: dbTags, error: tagError } = await (supabaseAdmin.from("tags") as any)
         .upsert(tags, { onConflict: 'name' })
         .select();
 
@@ -77,7 +75,7 @@ export const migrateExistingData = createServerFn({ method: "POST" })
       ];
 
       for (const p of productsData) {
-        const cat = dbCategories?.find((c: any) => c.slug === p.category_slug);
+        const cat = (dbCategories as any[])?.find((c: any) => c.slug === p.category_slug);
         if (cat) {
           const { category_slug, tags: pTags, ...pData } = p;
           const { data: dbProduct, error: pError } = await (supabaseAdmin.from("products") as any).upsert({
@@ -91,8 +89,8 @@ export const migrateExistingData = createServerFn({ method: "POST" })
           // 4. Product-Tags Relationship
           if (pTags && dbProduct) {
             const tagRelationships = pTags.map(tagName => {
-              const tagObj = dbTags?.find(t => t.name === tagName);
-              return tagObj ? { product_id: dbProduct.id, tag_id: tagObj.id } : null;
+              const tagObj = (dbTags as any[])?.find(t => t.name === tagName);
+              return tagObj ? { product_id: (dbProduct as any).id, tag_id: tagObj.id } : null;
             }).filter(Boolean);
 
             if (tagRelationships.length > 0) {
