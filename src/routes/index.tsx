@@ -235,6 +235,32 @@ function Index() {
           </div>
         </section>
 
+        {/* Feature/Information Strip */}
+        <section 
+          className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
+          style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
+        >
+          <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-center gap-x-[55px] gap-y-4 px-6 sm:px-8 lg:px-[8%]">
+            <div className="flex items-center gap-2.5">
+              <Heart className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <span className="text-[17px] font-medium text-[#4A342A]">Handmade to order</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <Package className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <span className="text-[17px] font-medium text-[#4A342A]">Pan-India shipping</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <Sparkles className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <span className="text-[17px] font-medium text-[#4A342A]">Gift-ready packaging</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <Heart className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <span className="text-[17px] font-medium text-[#4A342A]">Custom colours welcome</span>
+            </div>
+          </div>
+        </section>
+
+
         <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-24 sm:px-6">
           <div className="text-center">
             <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Our Collection</span>
