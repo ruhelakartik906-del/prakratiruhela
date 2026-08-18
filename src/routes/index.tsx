@@ -468,7 +468,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bg-[#3B2922] py-20 text-white">
+      <footer className="bg-[#3B2922] py-12 text-white">
         <div className="mx-auto flex flex-col items-center text-center px-4 max-w-4xl">
           {/* Logo Container */}
           <div className="h-28 w-28 rounded-full border border-white/20 mb-6 flex items-center justify-center overflow-hidden">
@@ -483,7 +483,7 @@ function Index() {
             Crochet Craft by Prakrati Ruhela
           </h3>
           
-          <p className="text-[15px] opacity-70 mb-8 max-w-lg leading-relaxed">
+          <p className="text-[14px] opacity-70 mb-6 max-w-lg leading-relaxed">
             Handmade crochet · Made with love at home · Shipping across India
           </p>
 
@@ -519,7 +519,7 @@ function Index() {
             </Button>
           </div>
 
-          <div className="mt-20 w-full border-t border-white/10 pt-8 text-[13px] opacity-30 tracking-wider">
+          <div className="mt-12 w-full border-t border-white/10 pt-6 text-[12px] opacity-30 tracking-wider uppercase">
             © {new Date().getFullYear()} CROCHET CRAFT. MADE BY HAND.
           </div>
         </div>
