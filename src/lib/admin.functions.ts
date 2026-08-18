@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client.server";
 
 // Stats
 export const getAdminStats = createServerFn({ method: "GET" })
