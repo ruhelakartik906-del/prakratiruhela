@@ -8,18 +8,18 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-[16px] border border-[#EEE7E1] bg-white shadow-[0_3px_12px_rgba(60,40,25,0.06)] h-full min-h-[540px] transition-all duration-300">
-      {/* Product Image area: 1:1, cover, no padding */}
-      <div className="relative aspect-square overflow-hidden w-full block">
+      {/* Product Image area: Square container, but image padded to appear smaller */}
+      <div className="relative aspect-square overflow-hidden w-full bg-[#FBF6EE]/30 p-4">
         <img
           src={product.image}
           alt={`${product.name} — handmade crochet rakhi`}
           loading="lazy"
           width={800}
           height={800}
-          className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-[1.06]"
+          className="h-full w-full object-cover rounded-[12px] transition-transform duration-300 ease-in-out group-hover:scale-[1.06]"
         />
-        {/* Bestseller Badge: Small, top-left, disappears on hover */}
-        <div className="absolute top-[12px] left-[12px] z-10 rounded-full bg-[#C94F32] px-[12px] py-[6px] text-[12px] font-bold text-white transition-all duration-[180ms] ease-in-out group-hover:invisible group-hover:opacity-0">
+        {/* Bestseller Badge: Smaller pill style */}
+        <div className="absolute top-[24px] left-[24px] z-10 rounded-full bg-[#C94F32] px-[8px] py-[3px] text-[10px] font-bold text-white transition-all duration-[180ms] ease-in-out group-hover:invisible group-hover:opacity-0">
           Bestseller
         </div>
       </div>
