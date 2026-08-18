@@ -284,7 +284,7 @@ function Index() {
               {/* Main Large Image */}
               <div className="absolute top-[10%] left-[20%] z-20 h-[50%] w-[50%] sm:h-[240px] sm:w-[240px] md:h-[300px] md:w-[300px] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
                 <img
-                  src="/assets/rakhi-flower.jpg"
+                  src={HERO_IMAGES.flower}
                   alt="Handmade crochet flower rakhi"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
@@ -293,7 +293,7 @@ function Index() {
               {/* Overlapping 1 */}
               <div className="absolute top-[5%] right-[5%] z-10 h-[40%] w-[40%] sm:h-[130px] sm:w-[130px] md:h-[180px] md:w-[180px] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
                 <img
-                  src="/assets/rakhi-classic.jpg"
+                  src={HERO_IMAGES.classic}
                   alt="Classic pearl crochet rakhi"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
@@ -302,7 +302,7 @@ function Index() {
               {/* Overlapping 2 */}
               <div className="absolute bottom-[5%] right-[20%] z-30 h-[35%] w-[35%] sm:h-[120px] sm:w-[120px] md:h-[160px] md:w-[160px] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
                 <img
-                  src="/assets/rakhi-lumba.jpg"
+                  src={HERO_IMAGES.lumba}
                   alt="Rakhi + Lumba set"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
@@ -311,7 +311,7 @@ function Index() {
               {/* Small Circle */}
               <div className="absolute bottom-[20%] left-[5%] z-40 h-[30%] w-[30%] sm:h-[115px] sm:w-[115px] md:h-[140px] md:w-[140px] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
                 <img
-                  src="/assets/rakhi-kids.jpg"
+                  src={HERO_IMAGES.kids}
                   alt="Crochet teddy bear rakhi for kids"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
