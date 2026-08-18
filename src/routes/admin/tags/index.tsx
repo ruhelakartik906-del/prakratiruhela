@@ -25,7 +25,10 @@ function AdminTags() {
   });
 
   const upsertMutation = useMutation({
-    mutationFn: (name: string) => upsertTag({ data: { name } }),
+    mutationFn: (name: string) => {
+      const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      return upsertTag({ data: { name, slug } });
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['adminTags'] });
       setIsDialogOpen(false);
