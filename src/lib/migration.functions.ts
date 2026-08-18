@@ -76,29 +76,42 @@ export const migrateExistingData = createServerFn({ method: "POST" })
 
       for (const p of productsData) {
         const cat = (dbCategories as any[])?.find((c: any) => c.slug === p.category_slug);
-        if (cat) {
-          const { category_slug, tags: pTags, ...pData } = p;
-          const { data: dbProduct, error: pError } = await (supabaseAdmin.from("products") as any).upsert({
+        if (!cat) {
+          console.warn(`Skipping product ${p.name}: Category slug ${p.category_slug} not found.`);
+          continue;
+        }
+
+        const { category_slug, tags: pTags, ...pData } = p;
+        const { data: dbProduct, error: pError } = await (supabaseAdmin.from("products") as any)
+          .upsert({
             ...pData,
             category_id: cat.id
-          }, { onConflict: 'slug' }).select().single();
+          }, { onConflict: 'slug' })
+          .select()
+          .single();
 
-          if (pError) throw pError;
-          results.products++;
+        if (pError) {
+          console.error(`Error migrating product ${p.name}:`, pError);
+          throw new Error(`Product migration failed for ${p.name}: ${pError.message}`);
+        }
 
-          // 4. Product-Tags Relationship
-          if (pTags && dbProduct) {
-            const tagRelationships = pTags.map(tagName => {
-              const tagObj = (dbTags as any[])?.find(t => t.name === tagName);
-              return tagObj ? { product_id: (dbProduct as any).id, tag_id: tagObj.id } : null;
-            }).filter(Boolean);
+        results.products++;
 
-            if (tagRelationships.length > 0) {
-              const { error: ptError } = await (supabaseAdmin.from("product_tags") as any)
-                .upsert(tagRelationships, { onConflict: 'product_id,tag_id' });
-              if (ptError) throw ptError;
-              results.productTags += tagRelationships.length;
+        // 4. Product-Tags Relationship
+        if (pTags && dbProduct) {
+          const tagRelationships = pTags.map(tagName => {
+            const tagObj = (dbTags as any[])?.find(t => t.name === tagName);
+            return tagObj ? { product_id: (dbProduct as any).id, tag_id: tagObj.id } : null;
+          }).filter(Boolean);
+
+          if (tagRelationships.length > 0) {
+            const { error: ptError } = await (supabaseAdmin.from("product_tags") as any)
+              .upsert(tagRelationships, { onConflict: 'product_id,tag_id' });
+            if (ptError) {
+              console.error(`Error migrating tags for ${p.name}:`, ptError);
+              throw new Error(`Product-Tag relationship failed for ${p.name}: ${ptError.message}`);
             }
+            results.productTags += tagRelationships.length;
           }
         }
       }
@@ -108,6 +121,7 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         { key: "hero_title", value: "A rakhi made by hand, tied with love" },
         { key: "hero_description", value: "Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf." },
         { key: "whatsapp_number", value: "919876543210" },
+        { key: "instagram_handle", value: "@crochet_by_prakrati" },
         { key: "instagram_url", value: "https://www.instagram.com/crochet_by_prakrati/" },
         { key: "story_title", value: "Stitched with love, one hook at a time." },
         { key: "story_body", value: "What started as a hobby in a quiet corner of our home has grown into a small collection of handmade treasures. We believe that in a world of machines, something made by hand carries a soul of its own." },
@@ -118,7 +132,10 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         .upsert(content, { onConflict: 'key' })
         .select();
 
-      if (contentError) throw contentError;
+      if (contentError) {
+        console.error("Error migrating site content:", contentError);
+        throw new Error(`Site content migration failed: ${contentError.message}`);
+      }
       results.siteContent = dbContent?.length || 0;
 
       return { success: true, results };
