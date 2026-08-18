@@ -250,11 +250,13 @@ function Index() {
               <span className="text-[17px] font-medium text-[#4A342A]">Pan-India shipping</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Sparkles className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <div className="h-[22px] w-[22px] flex items-center justify-center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </div>
               <span className="text-[17px] font-medium text-[#4A342A]">Gift-ready packaging</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Heart className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
+              <Sparkles className="h-[22px] w-[22px] stroke-[1.5] text-[#C94F32]" />
               <span className="text-[17px] font-medium text-[#4A342A]">Custom colours welcome</span>
             </div>
           </div>
