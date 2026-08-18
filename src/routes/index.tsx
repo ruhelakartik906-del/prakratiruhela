@@ -348,34 +348,6 @@ function Index() {
           )}
         </section>
 
-        {/* Custom order */}
-        <section className="mx-auto max-w-[1440px] px-8 pb-24 lg:px-[10%]">
-          <div 
-            className="relative overflow-hidden rounded-[2rem] px-8 py-14 text-center border-2 border-dashed border-[#EBD4BA] max-w-[500px]"
-            style={{
-              background: 'linear-gradient(135deg, #FDF2F8 0%, #EEF2FF 100%)'
-            }}
-          >
-            <div className="flex justify-center gap-3 mb-6">
-              <span className="text-3xl">🧶</span>
-              <span className="text-3xl">✨</span>
-            </div>
-            
-            <h2 className="font-display text-[28px] font-bold text-[#3B2922] leading-tight mb-4">
-              Have your own idea?
-            </h2>
-            
-            <p className="text-[16px] leading-relaxed text-[#5E4A40] mb-8">
-              A favourite colour, a cartoon character, a name — tell us and we'll crochet a one-of-a-kind rakhi just for you.
-            </p>
-
-            <Button asChild className="h-12 rounded-full bg-[#087F6D] px-8 text-[15px] font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95 border-none">
-              <a href={customOrderLink()} target="_blank" rel="noreferrer">
-                Request a custom rakhi
-              </a>
-            </Button>
-          </div>
-        </section>
 
 
         {/* Brand story */}
