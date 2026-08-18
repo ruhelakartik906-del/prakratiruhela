@@ -1,4 +1,5 @@
 import { createFileRoute, Outlet, Link, useRouter } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { LayoutDashboard, Package, Tags, Layers, FileText, LogOut, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
@@ -9,6 +10,47 @@ export const Route = createFileRoute('/admin')({
 
 function AdminLayout() {
   const router = useRouter();
+  const [isChecking, setIsChecking] = useState(true);
+  const [hasSession, setHasSession] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      const isLoginPage = window.location.pathname === '/admin/login';
+      
+      if (!session && !isLoginPage) {
+        router.navigate({ to: '/admin/login' as any });
+      } else if (session && isLoginPage) {
+        router.navigate({ to: '/admin' as any });
+      }
+      
+      setHasSession(!!session);
+      setIsChecking(false);
+    };
+
+    checkAuth();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setHasSession(!!session);
+      if (!session && window.location.pathname !== '/admin/login') {
+        router.navigate({ to: '/admin/login' as any });
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [router]);
+
+  if (isChecking) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-50 text-[#3B2922]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-8 h-8 border-4 border-[#C94F32] border-t-transparent rounded-full animate-spin"></div>
+          <p className="font-medium">Verifying access...</p>
+        </div>
+      </div>
+    );
+  }
+
   
   const handleLogout = async () => {
     await supabase.auth.signOut();
