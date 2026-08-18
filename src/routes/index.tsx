@@ -126,8 +126,7 @@ function Index() {
 
       <main>
         <section 
-          className="relative mx-auto max-w-[1440px] px-8 pt-[60px] pb-16 lg:px-[10%] lg:pt-[80px] overflow-hidden" 
-
+          className="relative w-full overflow-hidden" 
           style={{ 
             backgroundColor: '#FBF6EE',
             background: `
@@ -149,6 +148,8 @@ function Index() {
           }}
         >
           {/* Optional overlay for smoother blending */}
+
+          {/* Optional overlay for smoother blending */}
           <div 
             className="absolute inset-0 pointer-events-none" 
             style={{
@@ -162,7 +163,7 @@ function Index() {
             }}
           />
 
-          <div className="relative z-10 grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div className="relative z-10 mx-auto max-w-[1440px] px-8 pt-[60px] pb-16 lg:px-[10%] lg:pt-[80px] grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
             <div className="max-w-[700px]">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[13px] font-medium text-[#3B2922]">
@@ -247,6 +248,7 @@ function Index() {
             </div>
           </div>
         </section>
+
 
         {/* Feature/Information Strip */}
         <section 
