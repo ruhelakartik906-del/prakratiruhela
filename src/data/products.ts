@@ -1,7 +1,3 @@
-import flower from "@/assets/rakhi-flower.jpg";
-import kids from "@/assets/rakhi-kids.jpg";
-import classic from "@/assets/rakhi-classic.jpg";
-import lumba from "@/assets/rakhi-lumba.jpg";
 
 export const WHATSAPP_NUMBER = "919876543210";
 export const INSTAGRAM_URL = "https://www.instagram.com/crochet_by_prakrati/";
@@ -44,7 +40,7 @@ export const products: Product[] = [
     description: "Hand-crocheted marigold in scarlet and saffron cotton with gold beads.",
     price: 249,
     category: "flowers",
-    image: flower,
+    image: "/assets/rakhi-flower.jpg",
   },
   {
     id: "p2",
@@ -52,7 +48,7 @@ export const products: Product[] = [
     description: "A soft amigurumi bear on a stretchy band — a favourite with tiny wrists.",
     price: 299,
     category: "kids",
-    image: kids,
+    image: "/assets/rakhi-kids.jpg",
   },
   {
     id: "p3",
@@ -60,7 +56,7 @@ export const products: Product[] = [
     description: "Ivory lace motif with a freshwater pearl centre and gold silk thread.",
     price: 349,
     category: "classic",
-    image: classic,
+    image: "/assets/rakhi-classic.jpg",
   },
   {
     id: "p4",
@@ -68,7 +64,7 @@ export const products: Product[] = [
     description: "Matching rakhi and lumba braid for bhaiya-bhabhi, in teal and terracotta.",
     price: 499,
     category: "lumba-sets",
-    image: lumba,
+    image: "/assets/rakhi-lumba.jpg",
   },
   {
     id: "p5",
@@ -76,7 +72,7 @@ export const products: Product[] = [
     description: "Three tiny crochet daisies strung on a cream cotton cord.",
     price: 229,
     category: "flowers",
-    image: flower,
+    image: "/assets/rakhi-flower.jpg",
   },
   {
     id: "p6",
@@ -84,7 +80,7 @@ export const products: Product[] = [
     description: "Soft crochet bear on a comfortable band for kids.",
     price: 449,
     category: "kids",
-    image: kids,
+    image: "/assets/rakhi-kids.jpg",
   },
   {
     id: "p7",
@@ -92,7 +88,7 @@ export const products: Product[] = [
     description: "Minimal star motif worked in gold zari thread — understated and elegant.",
     price: 279,
     category: "classic",
-    image: classic,
+    image: "/assets/rakhi-classic.jpg",
   },
   {
     id: "p8",
@@ -100,7 +96,7 @@ export const products: Product[] = [
     description: "A complete set of handmade crochet items for your loved ones.",
     price: 899,
     category: "lumba-sets",
-    image: lumba,
+    image: "/assets/rakhi-lumba.jpg",
   },
   {
     id: "p9",
@@ -108,7 +104,7 @@ export const products: Product[] = [
     description: "Special edition rakhi for Independence Day, made in saffron, white and green.",
     price: 269,
     category: "flowers",
-    image: flower,
+    image: "/assets/rakhi-flower.jpg",
   },
 ];
 
