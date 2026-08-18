@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Package, Tags, Layers } from 'lucide-react';
-import { useQuery, useMutation } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { getAdminStats } from '@/lib/admin.functions';
 import { migrateExistingData } from '@/lib/migration.functions';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,7 @@ export const Route = createFileRoute('/admin/')({
 });
 
 function AdminDashboard() {
+  const queryClient = useQueryClient();
   const { data, isLoading } = useQuery({
     queryKey: ['adminStats'],
     queryFn: () => getAdminStats(),
