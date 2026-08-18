@@ -50,19 +50,16 @@ export const Route = createFileRoute("/")({
 
 const steps = [
   {
-    icon: Sparkles,
-    title: "Pick your design",
-    body: "Browse the collection, or send us a picture of what you have in mind.",
+    title: "Pick a design",
+    body: "Browse the collection and tap \"Order\" on the rakhi you love.",
   },
   {
-    icon: MessageCircle,
     title: "Message us on WhatsApp",
-    body: "Tap Order and we'll confirm colours, quantity and delivery date.",
+    body: "Your message opens ready-made. Add colours, quantity, or a custom idea.",
   },
   {
-    icon: Package,
-    title: "Made and posted",
-    body: "We crochet your order and ship it wrapped in handmade paper, all India.",
+    title: "We make it & ship it",
+    body: "We confirm the price and delivery date, then ship anywhere in India.",
   },
 ];
 
@@ -407,27 +404,37 @@ function Index() {
         {/* How to order */}
         <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
           <div className="text-center">
-            <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Process</span>
-            <h2 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
+            <span 
+              className="text-[11px] font-bold tracking-[2px] uppercase mb-4 block"
+              style={{ color: '#A96516' }}
+            >
+              ORDERING
+            </span>
+            <h2 className="font-display text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
               How to order
             </h2>
+            <p className="mt-4 text-[16px] leading-[1.55] text-[#765F55] max-w-[500px] mx-auto">
+              No sign-ups, no checkout forms — just a WhatsApp message, the way you already shop with us.
+            </p>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
             {steps.map((s, i) => (
               <div
                 key={s.title}
-                className="group relative rounded-[2rem] border border-border/40 bg-card p-8 shadow-soft transition-all hover:-translate-y-2 hover:shadow-xl"
+                className="group relative rounded-[22px] border border-[#EEE7E1] bg-white p-10 pt-14 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all hover:-translate-y-1"
               >
-                <div className="flex items-center gap-4">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-terracotta/10 text-terracotta font-bold text-lg">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                  <span 
+                    className="flex h-12 w-12 items-center justify-center rounded-full text-white font-bold text-lg shadow-md"
+                    style={{ 
+                      background: 'linear-gradient(135deg, #E29E6B 0%, #C94F32 100%)' 
+                    }}
+                  >
                     {i + 1}
                   </span>
-                  <span className="text-xs font-bold tracking-widest text-muted-foreground/60 uppercase">
-                    Step {i + 1}
-                  </span>
                 </div>
-                <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{s.title}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground/80">{s.body}</p>
+                <h3 className="font-display text-[22px] font-semibold text-[#3B2922]">{s.title}</h3>
+                <p className="mt-4 text-[15px] leading-[1.6] text-[#765F55]">{s.body}</p>
               </div>
             ))}
           </div>
