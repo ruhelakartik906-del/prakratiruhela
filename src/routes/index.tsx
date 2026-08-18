@@ -441,7 +441,7 @@ function Index() {
         </section>
 
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 pb-24 sm:px-6">
+        <section className="mx-auto max-w-3xl px-4 pt-[80px] pb-24 sm:px-6">
           <div className="text-center">
             <span className="text-[11px] font-bold tracking-[2px] uppercase mb-4 block" style={{ color: '#A96516' }}>GOOD TO KNOW</span>
             <h2 className="font-display text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
