@@ -471,7 +471,7 @@ function Index() {
       <footer className="bg-[#3B2922] py-20 text-white">
         <div className="mx-auto flex flex-col items-center text-center px-4 max-w-4xl">
           {/* Logo Container */}
-          <div className="h-20 w-20 rounded-full border border-white/20 bg-white p-2 shadow-sm mb-6 flex items-center justify-center">
+          <div className="h-28 w-28 rounded-full border border-white/20 mb-6 flex items-center justify-center overflow-hidden">
              <img 
                src={logoAsset.url} 
                alt="Crochet Craft" 
