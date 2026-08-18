@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
 
-export const Route = createFileRoute('/admin/content')({
+export const Route = createFileRoute('/admin/content/')({
   component: AdminContent,
 });
 

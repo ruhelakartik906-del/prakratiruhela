@@ -29,7 +29,7 @@ export const getProducts = createServerFn({ method: "GET" }).handler(async () =>
 });
 
 export const deleteProduct = createServerFn({ method: "POST" })
-  .input(z.string())
+  .validator((data: string) => data)
   .handler(async ({ data: id }) => {
     const { error } = await supabase.from("products").delete().eq("id", id);
     if (error) throw error;
