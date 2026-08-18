@@ -29,8 +29,7 @@ export const getProducts = createServerFn({ method: "GET" }).handler(async () =>
 });
 
 export const deleteProduct = createServerFn({ method: "POST" })
-  .validator((data: string) => data)
-  .handler(async ({ data: id }) => {
+  .handler(async ({ data: id }: { data: string }) => {
     const { error } = await supabase.from("products").delete().eq("id", id);
     if (error) throw error;
     return { success: true };
@@ -44,8 +43,7 @@ export const getCategories = createServerFn({ method: "GET" }).handler(async () 
 });
 
 export const upsertCategory = createServerFn({ method: "POST" })
-  .validator((data: { id?: string; name: string; slug: string; image_url?: string | null }) => data)
-  .handler(async ({ data }) => {
+  .handler(async ({ data }: { data: { id?: string; name: string; slug: string; image_url?: string | null } }) => {
     const { error } = await supabase.from("categories").upsert(data);
     if (error) throw error;
     return { success: true };
@@ -66,8 +64,7 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 });
 
 export const updateSiteContent = createServerFn({ method: "POST" })
-  .validator((data: { id: string; value: any }) => data)
-  .handler(async ({ data }) => {
+  .handler(async ({ data }: { data: { id: string; value: any } }) => {
     const { error } = await supabase.from("site_content").update({ value: data.value }).eq("id", data.id);
     if (error) throw error;
     return { success: true };
