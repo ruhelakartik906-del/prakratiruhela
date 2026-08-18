@@ -35,7 +35,7 @@ function AdminLogin() {
       if (error) throw error;
       
       toast.success('Logged in successfully');
-      window.location.href = '/admin';
+      router.navigate({ to: '/admin' as any });
     } catch (error: any) {
       toast.error(error.message || 'Failed to login');
     } finally {
