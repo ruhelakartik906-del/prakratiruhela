@@ -483,7 +483,7 @@ function Index() {
             Crochet Craft by Prakrati Ruhela
           </h3>
           
-          <p className="text-[14px] opacity-70 mb-6 max-w-lg leading-relaxed">
+          <p className="text-[17px] md:text-[18px] opacity-80 mb-6 max-w-lg leading-relaxed font-medium">
             Handmade crochet · Made with love at home · Shipping across India
           </p>
 
