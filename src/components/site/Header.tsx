@@ -91,7 +91,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         </div>
  
         {/* Category Slider Row */}
-        <div className="mt-2 md:mt-3 sm:mt-12 border-b border-black/5 px-4 md:px-0 tablet-container md:tablet-auto">
+        <div className="mt-2 md:mt-3 sm:mt-16 border-b border-black/5 px-4 md:px-0 tablet-container md:tablet-auto">
           <nav className="no-scrollbar flex w-full items-center gap-2 md:gap-3 overflow-x-auto pb-3 md:pb-4">
             {mainCategories.map((c) => {
               const active = c.id === category;
