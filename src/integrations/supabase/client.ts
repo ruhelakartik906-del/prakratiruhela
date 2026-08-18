@@ -16,6 +16,7 @@ export type Database = {
         Row: {
           id: string;
           name: string;
+          slug: string;
           description: string | null;
           price: number;
           image_url: string | null;
@@ -27,6 +28,7 @@ export type Database = {
         Insert: {
           id?: string;
           name: string;
+          slug: string;
           description?: string | null;
           price?: number;
           image_url?: string | null;
@@ -38,6 +40,7 @@ export type Database = {
         Update: {
           id?: string;
           name?: string;
+          slug?: string;
           description?: string | null;
           price?: number;
           image_url?: string | null;
