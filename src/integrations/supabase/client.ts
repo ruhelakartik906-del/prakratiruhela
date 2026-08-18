@@ -110,20 +110,26 @@ export type Database = {
       site_content: {
         Row: {
           id: string;
-          key: string;
-          value: any;
+          section: string;
+          content_key: string;
+          content_value: string | null;
+          content_type: string;
           updated_at: string;
         };
         Insert: {
           id?: string;
-          key: string;
-          value: any;
+          section: string;
+          content_key: string;
+          content_value?: string | null;
+          content_type?: string;
           updated_at?: string;
         };
         Update: {
           id?: string;
-          key?: string;
-          value?: any;
+          section?: string;
+          content_key?: string;
+          content_value?: string | null;
+          content_type?: string;
           updated_at?: string;
         };
       };

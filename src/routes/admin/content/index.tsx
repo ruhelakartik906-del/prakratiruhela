@@ -20,7 +20,7 @@ function AdminContent() {
   });
 
   const mutation = useMutation({
-    mutationFn: (data: { id: string; value: any }) => updateSiteContent({ data }),
+    mutationFn: (data: { id: string; content_value: string }) => updateSiteContent({ data }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['adminContent'] });
       toast.success('Content updated');
@@ -36,32 +36,36 @@ function AdminContent() {
       <div className="grid grid-cols-1 gap-6">
         {content?.map((item: any) => (
           <Card key={item.id} className="border-[#3B2922]/10">
-            <CardHeader>
-              <CardTitle className="text-lg font-semibold text-[#3B2922]">{item.key}</CardTitle>
+            <CardHeader className="pb-2">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-lg font-semibold text-[#3B2922]">
+                  {item.content_key.split('_').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                </CardTitle>
+                <span className="text-[10px] font-mono text-[#3B2922]/40 bg-[#3B2922]/5 px-2 py-0.5 rounded">
+                  {item.section}
+                </span>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label>Content Value</Label>
-                {typeof item.value === 'string' && item.value.length > 100 ? (
+                <Label className="text-xs text-[#3B2922]/60 uppercase tracking-wider">Content Value</Label>
+                {item.content_value && item.content_value.length > 80 ? (
                   <Textarea 
-                    defaultValue={item.value} 
-                    className="min-h-[120px]"
+                    defaultValue={item.content_value} 
+                    className="min-h-[100px] border-[#3B2922]/10 focus-visible:ring-[#087F6D]"
                     onBlur={(e) => {
-                      if (e.target.value !== item.value) {
-                        mutation.mutate({ id: item.id, value: e.target.value });
+                      if (e.target.value !== item.content_value) {
+                        mutation.mutate({ id: item.id, content_value: e.target.value });
                       }
                     }}
                   />
                 ) : (
                   <Input 
-                    defaultValue={typeof item.value === 'string' ? item.value : JSON.stringify(item.value)} 
+                    defaultValue={item.content_value || ''} 
+                    className="border-[#3B2922]/10 focus-visible:ring-[#087F6D]"
                     onBlur={(e) => {
-                      if (e.target.value !== (typeof item.value === 'string' ? item.value : JSON.stringify(item.value))) {
-                        let value = e.target.value;
-                        try {
-                          if (typeof item.value !== 'string') value = JSON.parse(e.target.value);
-                        } catch (e) {}
-                        mutation.mutate({ id: item.id, value });
+                      if (e.target.value !== item.content_value) {
+                        mutation.mutate({ id: item.id, content_value: e.target.value });
                       }
                     }}
                   />
