@@ -135,8 +135,8 @@ function Index() {
     }
   });
 
-  const getContent = (key: string, fallback: string) => {
-    return dbContent.find((c: any) => c.key === key)?.value || fallback;
+  const getContent = (contentKey: string, fallback: string) => {
+    return dbContent.find((c: any) => c.content_key === contentKey)?.content_value || fallback;
   };
 
   const filtered = useMemo(() => {
