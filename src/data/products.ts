@@ -6,18 +6,30 @@ import lumba from "@/assets/rakhi-lumba.jpg";
 export const WHATSAPP_NUMBER = "919876543210";
 export const INSTAGRAM_URL = "https://instagram.com";
 
-export type CategoryId = "all" | "kids" | "flowers" | "classic" | "lumba-sets";
+export type MainCategoryId = "all" | "raksha-bandhan" | "hair-accessories" | "keychains" | "earbuds-covers" | "gift-combos" | "bangles-custom" | "independence-day";
+export type RakshaBandhanCategoryId = "all" | "kids" | "flowers" | "classic" | "lumba-sets";
 
 export type Product = {
   id: string;
   name: string;
   description: string;
   price: number;
-  category: Exclude<CategoryId, "all">;
+  category: Exclude<RakshaBandhanCategoryId, "all">;
   image: string;
 };
 
-export const categories: { id: CategoryId; label: string; icon?: string }[] = [
+export const mainCategories: { id: MainCategoryId; label: string; icon?: string }[] = [
+  { id: "all", label: "All Designs", icon: "✨" },
+  { id: "raksha-bandhan", label: "Raksha Bandhan", icon: "🧵" },
+  { id: "hair-accessories", label: "Hair Accessories", icon: "🌸" },
+  { id: "keychains", label: "Keychains", icon: "🔑" },
+  { id: "earbuds-covers", label: "Earbuds Covers", icon: "🎧" },
+  { id: "gift-combos", label: "Gift Combos", icon: "🎁" },
+  { id: "bangles-custom", label: "Bangles & Custom", icon: "🧶" },
+  { id: "independence-day", label: "Independence Day", icon: "🇮🇳" },
+];
+
+export const rakshaBandhanCategories: { id: RakshaBandhanCategoryId; label: string; icon?: string }[] = [
   { id: "all", label: "All", icon: "✨" },
   { id: "kids", label: "For Kids", icon: "🧸" },
   { id: "flowers", label: "Flowers", icon: "🌸" },
@@ -100,14 +112,29 @@ export const products: Product[] = [
   },
 ];
 
-export const categoryCounts = (): Record<CategoryId, number> => {
+export const getRakshaBandhanCounts = (): Record<RakshaBandhanCategoryId, number> => {
   const counts: Record<string, number> = { all: products.length };
-  categories.forEach(cat => {
+  rakshaBandhanCategories.forEach(cat => {
     if (cat.id !== "all") {
       counts[cat.id] = products.filter(p => p.category === cat.id).length;
     }
   });
-  return counts as Record<CategoryId, number>;
+  return counts as Record<RakshaBandhanCategoryId, number>;
+};
+
+export const getMainCategoryCounts = (): Record<MainCategoryId, number> => {
+  // Mock counts for main categories since all demo products are Rakhi
+  const counts: Record<string, number> = {
+    all: products.length,
+    "raksha-bandhan": products.length,
+    "hair-accessories": 0,
+    "keychains": 0,
+    "earbuds-covers": 0,
+    "gift-combos": 0,
+    "bangles-custom": 0,
+    "independence-day": 0
+  };
+  return counts as Record<MainCategoryId, number>;
 };
 
 export const waLink = (message: string) =>

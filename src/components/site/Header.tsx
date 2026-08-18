@@ -2,22 +2,22 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/logo.png.asset.json";
 import {
-  categories,
-  categoryCounts,
+  mainCategories,
+  getMainCategoryCounts,
   INSTAGRAM_URL,
   waLink,
-  type CategoryId,
+  type MainCategoryId,
 } from "@/data/products";
 
 type Props = {
   query: string;
   onQuery: (v: string) => void;
-  category: CategoryId;
-  onCategory: (c: CategoryId) => void;
+  category: MainCategoryId;
+  onCategory: (c: MainCategoryId) => void;
 };
 
 export function Header({ query, onQuery, category, onCategory }: Props) {
-  const counts = categoryCounts();
+  const counts = getMainCategoryCounts();
 
   return (
     <header className="sticky top-0 z-40 bg-[#FFFDF9]/92 backdrop-blur-md border-b border-[#EBE3D5]/50 shadow-sm">
@@ -101,7 +101,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         {/* Category Slider Row */}
         <div className="mt-3 border-b border-black/5">
           <nav className="no-scrollbar flex w-full items-center gap-3.5 overflow-x-auto px-4 pt-1 pb-4 scroll-smooth">
-            {categories.map((c) => {
+            {mainCategories.map((c) => {
               const active = c.id === category;
               const count = counts[c.id];
               return (
