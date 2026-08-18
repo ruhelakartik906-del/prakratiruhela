@@ -21,7 +21,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
 
   return (
     <header className="sticky top-0 z-40 bg-[#FFFDF9]/92 backdrop-blur-md border-b border-[#EBE3D5]/50 shadow-sm">
-      <div className="mx-auto w-full px-4 pt-2 sm:px-6">
+      <div className="mx-auto w-full px-8 pt-2 lg:px-[10%]">
         {/* Brand Row */}
         <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
           <a href="#top" className="flex items-center gap-3">
@@ -100,7 +100,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
 
         {/* Category Slider Row */}
         <div className="mt-3 border-b border-black/5">
-          <nav className="no-scrollbar flex w-full items-center gap-3.5 overflow-x-auto px-4 pt-1 pb-4 scroll-smooth">
+          <nav className="no-scrollbar flex w-full items-center gap-3.5 overflow-x-auto px-1 pt-1 pb-4 scroll-smooth">
             {mainCategories.map((c) => {
               const active = c.id === category;
               const count = counts[c.id];
