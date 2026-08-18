@@ -96,7 +96,7 @@ function AdminProducts() {
       description: '',
       price: 0,
       category_id: '',
-      active: true,
+      // active: true, // Removed as it doesn't exist in DB
       bestseller: false,
       tag_ids: [],
     });
@@ -155,10 +155,8 @@ function AdminProducts() {
                 <TableCell className="text-[#3B2922]/70">{product.category?.name || 'Uncategorized'}</TableCell>
                 <TableCell className="font-semibold text-[#3B2922]">₹{product.price}</TableCell>
                 <TableCell>
-                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                    product.active !== false ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
-                  }`}>
-                    {product.active !== false ? 'Active' : 'Inactive'}
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800`}>
+                    Active
                   </span>
                 </TableCell>
                 <TableCell className="text-right">
@@ -243,8 +241,8 @@ function AdminProducts() {
                     <p className="text-xs text-muted-foreground">Visible on public site</p>
                   </div>
                   <Switch 
-                    checked={editingProduct.active !== false} 
-                    onCheckedChange={(checked) => setEditingProduct({...editingProduct, active: checked})}
+                    checked={true} 
+                    onCheckedChange={(checked) => {}}
                   />
                 </div>
 

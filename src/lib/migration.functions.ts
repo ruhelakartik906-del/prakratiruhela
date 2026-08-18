@@ -72,15 +72,15 @@ export const migrateExistingData = createServerFn({ method: "POST" })
 
       // 3. Products Migration
       const productsData = [
-        { name: "Marigold Bloom Rakhi", slug: "marigold-bloom-rakhi", description: "Hand-crocheted marigold in scarlet and saffron cotton with gold beads.", price: 249, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.flower, active: true, tags: ["Flower", "Handmade"] },
-        { name: "Little Bear Rakhi", slug: "little-bear-rakhi", description: "A soft amigurumi bear on a stretchy band — a favourite with tiny wrists.", price: 299, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.kids, active: true, tags: ["Kids", "Handmade"] },
-        { name: "Pearl Heirloom Rakhi", slug: "pearl-heirloom-rakhi", description: "Ivory lace motif with a freshwater pearl centre and gold silk thread.", price: 349, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.classic, active: true, tags: ["Classic", "Handmade"] },
-        { name: "Teal Rakhi & Lumba Set", slug: "teal-rakhi-lumba-set", description: "Matching rakhi and lumba braid for bhaiya-bhabhi, in teal and terracotta.", price: 499, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.lumba, active: true, tags: ["Lumba", "Handmade"] },
-        { name: "Daisy Chain Rakhi", slug: "daisy-chain-rakhi", description: "Three tiny crochet daisies strung on a cream cotton cord.", price: 229, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.flower, active: true, tags: ["Flower", "Handmade"] },
-        { name: "Bunny Kids Rakhi", slug: "bunny-kids-rakhi", description: "Soft crochet bear on a comfortable band for kids.", price: 449, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.kids, active: true, tags: ["Kids", "Handmade"] },
-        { name: "Golden Star Rakhi", slug: "golden-star-rakhi", description: "Minimal star motif worked in gold zari thread — understated and elegant.", price: 279, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.classic, active: true, tags: ["Classic", "Handmade"] },
-        { name: "Deluxe Lumba Set", slug: "deluxe-lumba-set", description: "A complete set of handmade crochet items for your loved ones.", price: 899, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.lumba, active: true, tags: ["Lumba", "Handmade"] },
-        { name: "Tricolor Rakhi", slug: "tricolor-rakhi", description: "Special edition rakhi for Independence Day, made in saffron, white and green.", price: 269, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.flower, active: true, tags: ["Flower", "Handmade"] },
+        { name: "Marigold Bloom Rakhi", slug: "marigold-bloom-rakhi", description: "Hand-crocheted marigold in scarlet and saffron cotton with gold beads.", price: 249, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.flower, tags: ["Flower", "Handmade"] },
+        { name: "Little Bear Rakhi", slug: "little-bear-rakhi", description: "A soft amigurumi bear on a stretchy band — a favourite with tiny wrists.", price: 299, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.kids, tags: ["Kids", "Handmade"] },
+        { name: "Pearl Heirloom Rakhi", slug: "pearl-heirloom-rakhi", description: "Ivory lace motif with a freshwater pearl centre and gold silk thread.", price: 349, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.classic, tags: ["Classic", "Handmade"] },
+        { name: "Teal Rakhi & Lumba Set", slug: "teal-rakhi-lumba-set", description: "Matching rakhi and lumba braid for bhaiya-bhabhi, in teal and terracotta.", price: 499, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.lumba, tags: ["Lumba", "Handmade"] },
+        { name: "Daisy Chain Rakhi", slug: "daisy-chain-rakhi", description: "Three tiny crochet daisies strung on a cream cotton cord.", price: 229, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.flower, tags: ["Flower", "Handmade"] },
+        { name: "Bunny Kids Rakhi", slug: "bunny-kids-rakhi", description: "Soft crochet bear on a comfortable band for kids.", price: 449, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.kids, tags: ["Kids", "Handmade"] },
+        { name: "Golden Star Rakhi", slug: "golden-star-rakhi", description: "Minimal star motif worked in gold zari thread — understated and elegant.", price: 279, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.classic, tags: ["Classic", "Handmade"] },
+        { name: "Deluxe Lumba Set", slug: "deluxe-lumba-set", description: "A complete set of handmade crochet items for your loved ones.", price: 899, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.lumba, tags: ["Lumba", "Handmade"] },
+        { name: "Tricolor Rakhi", slug: "tricolor-rakhi", description: "Special edition rakhi for Independence Day, made in saffron, white and green.", price: 269, category_slug: "raksha-bandhan", image_url: FAKE_IMAGES.flower, tags: ["Flower", "Handmade"] },
       ];
 
       for (const p of productsData) {

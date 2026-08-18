@@ -21,7 +21,7 @@ export type Database = {
           price: number;
           image_url: string | null;
           category_id: string | null;
-          active: boolean;
+          // active: boolean; // Removed as it doesn't exist in DB
           bestseller: boolean;
           created_at: string;
         };
@@ -33,7 +33,7 @@ export type Database = {
           price?: number;
           image_url?: string | null;
           category_id?: string | null;
-          active?: boolean;
+          // active?: boolean;
           bestseller?: boolean;
           created_at?: string;
         };
@@ -45,7 +45,7 @@ export type Database = {
           price?: number;
           image_url?: string | null;
           category_id?: string | null;
-          active?: boolean;
+          // active?: boolean;
           bestseller?: boolean;
           created_at?: string;
         };
