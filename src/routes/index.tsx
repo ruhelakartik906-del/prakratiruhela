@@ -601,7 +601,7 @@ function Index() {
       </footer>
 
       <a
-        href={waLink("Hi! I have a question about your crochet rakhis.")}
+        href={waLink(getContent('whatsapp_floating_message', "Hi! I have a question about your crochet rakhis."))}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
