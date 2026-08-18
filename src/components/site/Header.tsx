@@ -20,7 +20,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
   const counts = getMainCategoryCounts();
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FFFDF9]/92 backdrop-blur-md border-b border-[#EBE3D5]/50 shadow-sm">
+    <header className="sticky top-0 z-40 bg-[#FBF6EE] border-b border-[#EBE3D5]/50 shadow-sm">
       <div className="mx-auto w-full px-8 pt-2 lg:px-[10%]">
         {/* Brand Row */}
         <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
@@ -93,7 +93,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               type="search"
               placeholder="Search all designs — try 'rose', 'bunny', 'kids'..."
               aria-label="Search products"
-              className="h-[52px] w-full rounded-full border border-black/5 bg-white pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-[#3F2A22]/40 focus:border-terracotta/40 focus:ring-4 focus:ring-terracotta/5"
+              className="h-[52px] w-full rounded-full border border-black/5 bg-[#FFFDF9] pr-6 pl-13 text-base shadow-soft outline-none transition-all placeholder:text-[#3F2A22]/40 focus:border-terracotta/40 focus:ring-4 focus:ring-terracotta/5"
             />
           </div>
         </div>
@@ -111,12 +111,12 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                   className={`flex min-h-[64px] shrink-0 items-center rounded-full border px-[18px] transition-all active:scale-95 ${
                     active
                       ? "border-terracotta bg-terracotta text-white shadow-md"
-                      : "border-black/5 bg-white text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
+                      : "border-black/5 bg-[#FFFDF9] text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
                   {/* Icon Circle */}
                   {c.icon && (
-                    <span className={`flex h-10 w-10 min-w-[40px] shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/5'}`}>
+                    <span className={`flex h-10 w-10 min-w-[40px] shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/10'}`}>
                       {c.icon}
                     </span>
                   )}
