@@ -473,7 +473,7 @@ function Index() {
       <footer className="bg-[#3B2922] py-12 text-white">
         <div className="mx-auto flex flex-col items-center text-center px-4 max-w-4xl">
           {/* Logo Container */}
-          <div className="h-28 w-28 rounded-full border border-white/20 mb-6 flex items-center justify-center overflow-hidden">
+          <div className="h-20 w-20 md:h-28 md:w-28 rounded-full border border-white/20 mb-6 flex items-center justify-center overflow-hidden">
              <img 
                src={logoAsset.url} 
                alt="Crochet Craft" 
@@ -481,13 +481,14 @@ function Index() {
              />
           </div>
 
-          <h3 className="font-display text-[26px] font-semibold text-white mb-2">
+          <h3 className="font-display text-[22px] md:text-[26px] font-semibold text-white mb-2">
             Crochet Craft by Prakrati Ruhela
           </h3>
           
-          <p className="text-[17px] md:text-[18px] opacity-80 mb-6 max-w-lg leading-relaxed font-medium">
+          <p className="text-[15px] md:text-[18px] opacity-80 mb-6 max-w-lg leading-relaxed font-medium">
             Handmade crochet · Made with love at home · Shipping across India
           </p>
+
 
           <div className="flex flex-col items-center gap-6">
             <a 
@@ -497,34 +498,36 @@ function Index() {
               className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95"
             >
               <div 
-                className="flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
+                className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full shadow-lg"
                 style={{
                   background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
                 }}
               >
-                <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true">
                   <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="white" strokeWidth="2" />
                   <circle cx="12" cy="12" r="4.2" stroke="white" strokeWidth="2" />
                   <circle cx="17.6" cy="6.4" r="1.3" fill="white" />
                 </svg>
               </div>
-              <span className="text-[16px] font-semibold tracking-wide text-white/90 group-hover:text-white">@crochet_by_prakrati</span>
+              <span className="text-[14px] md:text-[16px] font-semibold tracking-wide text-white/90 group-hover:text-white">@crochet_by_prakrati</span>
+
             </a>
 
             <a 
               href={waLink("Hi! I'd like to place an order.")} 
               target="_blank" 
               rel="noreferrer" 
-              className="group relative flex h-14 items-center gap-3 overflow-hidden rounded-full border-none px-8 outline-none ring-0 transition-all hover:scale-105 active:scale-95"
+              className="group relative flex h-12 md:h-14 items-center gap-3 overflow-hidden rounded-full border-none px-6 md:px-8 outline-none ring-0 transition-all hover:scale-105 active:scale-95"
               style={{
                 background: "linear-gradient(180deg, #12A66F 0%, #0B7C58 100%)",
                 boxShadow: "0 8px 20px -8px rgba(11,124,88,0.6)",
               }}
             >
-              <svg viewBox="0 0 24 24" fill="white" className="relative h-6 w-6" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="white" className="relative h-5 w-5 md:h-6 md:w-6" aria-hidden="true">
                 <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.25-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.17 1.72 2.62 4.16 3.67.58.25 1.03.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z" />
               </svg>
-              <span className="relative text-[16px] font-bold tracking-tight text-white">Order on WhatsApp</span>
+              <span className="relative text-[14px] md:text-[16px] font-bold tracking-tight text-white">Order on WhatsApp</span>
+
             </a>
           </div>
 
