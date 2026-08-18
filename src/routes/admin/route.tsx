@@ -5,16 +5,19 @@ import { LayoutDashboard, Package, Tags, Layers, FileText, LogOut, ExternalLink 
 import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin')({
-  beforeLoad: async () => {
+  beforeLoad: async ({ location }) => {
+    // Avoid redirect loop if we're already going to login
+    if (location.pathname === '/admin/login') {
+      return;
+    }
+
     try {
       const { data: { session }, error } = await supabase.auth.getSession();
       if (error || !session) {
-        console.warn('No session found in /admin, redirecting to login');
         throw redirect({ to: '/admin/login' as any });
       }
       return { session };
     } catch (err) {
-      // TanStack redirect is an object with a status or special symbol
       if (err && typeof err === 'object' && ('status' in err || 'isRedirect' in err)) throw err;
       console.error('Admin Auth Error:', err);
       throw redirect({ to: '/admin/login' as any });
