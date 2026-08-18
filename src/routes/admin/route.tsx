@@ -5,23 +5,6 @@ import { LayoutDashboard, Package, Tags, Layers, FileText, LogOut, ExternalLink 
 import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin')({
-  beforeLoad: async ({ location }) => {
-    // Prevent redirect loops by allowing /admin/login to load without an auth check here
-    if (location.pathname.startsWith('/admin/login')) {
-      return;
-    }
-
-    try {
-      const { data: { session }, error } = await supabase.auth.getSession();
-      if (error || !session) {
-        throw redirect({ to: '/admin/login' as any });
-      }
-      return { session };
-    } catch (err) {
-      if (err && typeof err === 'object' && ('status' in err || 'isRedirect' in err)) throw err;
-      throw redirect({ to: '/admin/login' as any });
-    }
-  },
   component: AdminLayout,
 });
 
