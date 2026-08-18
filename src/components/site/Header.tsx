@@ -23,7 +23,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
     <header className="sticky top-0 z-40 bg-[#FBF6EE]/92 backdrop-blur-md border-b border-[#EBE3D5]/50 shadow-sm">
       <div className="w-full pt-2 lg:desktop-container tablet-container">
         {/* Brand Row */}
-        <div className="flex items-center justify-between gap-3 px-4 md:px-0">
+        <div className="flex items-center justify-between gap-3 px-4 lg:px-8 md:px-0">
           <a href="#top" className="flex items-center gap-2 md:gap-3">
             <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-[#EBE3D5] overflow-hidden">
               <img 
@@ -77,7 +77,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         </div>
  
         {/* Search Bar Row */}
-        <div className="mt-3 md:mt-4 flex justify-center px-4 md:px-0">
+        <div className="mt-3 md:mt-4 lg:mt-5 flex justify-center px-4 lg:px-8 md:px-0">
           <div className="relative w-full md:w-[620px] tablet-container md:tablet-auto">
             <Search className="pointer-events-none absolute top-1/2 left-4 md:left-5 h-4 w-4 md:h-5 md:w-5 -translate-y-1/2 text-[#3F2A22]/40" />
             <input
