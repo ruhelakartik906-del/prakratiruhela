@@ -1,3 +1,10 @@
+const SUPABASE_STORAGE_URL = "https://wxqzyvrvaflenisqsahz.supabase.co/storage/v1/object/public/website-images";
+const STATIC_IMAGES = {
+  flower: `${SUPABASE_STORAGE_URL}/products/rakhi-flower.jpg`,
+  kids: `${SUPABASE_STORAGE_URL}/products/rakhi-kids.jpg`,
+  classic: `${SUPABASE_STORAGE_URL}/products/rakhi-classic.jpg`,
+  lumba: `${SUPABASE_STORAGE_URL}/products/rakhi-lumba.jpg`,
+};
 
 export const WHATSAPP_NUMBER = "919876543210";
 export const INSTAGRAM_URL = "https://www.instagram.com/crochet_by_prakrati/";
