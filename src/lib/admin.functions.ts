@@ -27,6 +27,37 @@ export const getProducts = createServerFn({ method: "GET" }).handler(async () =>
   return data;
 });
 
+export const upsertProduct = createServerFn({ method: "POST" })
+  .validator((data: { 
+    id?: string; 
+    name: string; 
+    description?: string | null; 
+    price: number; 
+    image_url?: string | null; 
+    category_id?: string | null;
+    active?: boolean;
+    bestseller?: boolean;
+    tag_ids?: string[];
+  }) => data)
+  .handler(async ({ data }) => {
+    const { tag_ids, ...productData } = data;
+    const { data: product, error } = await supabase.from("products").upsert(productData).select().single();
+    if (error) throw error;
+
+    if (tag_ids) {
+      // Simple tag sync: delete existing and insert new
+      await supabase.from("product_tags").delete().eq("product_id", product.id);
+      if (tag_ids.length > 0) {
+        const { error: tagError } = await supabase.from("product_tags").insert(
+          tag_ids.map(tag_id => ({ product_id: product.id, tag_id }))
+        );
+        if (tagError) throw tagError;
+      }
+    }
+
+    return { success: true, product };
+  });
+
 export const deleteProduct = createServerFn({ method: "POST" })
   .validator((data: string) => data)
   .handler(async ({ data: id }) => {
@@ -50,12 +81,36 @@ export const upsertCategory = createServerFn({ method: "POST" })
     return { success: true };
   });
 
+export const deleteCategory = createServerFn({ method: "POST" })
+  .validator((data: string) => data)
+  .handler(async ({ data: id }) => {
+    const { error } = await supabase.from("categories").delete().eq("id", id);
+    if (error) throw error;
+    return { success: true };
+  });
+
 // Tags
 export const getTags = createServerFn({ method: "GET" }).handler(async () => {
   const { data, error } = await supabase.from("tags").select("*").order("name");
   if (error) throw error;
   return data;
 });
+
+export const upsertTag = createServerFn({ method: "POST" })
+  .validator((data: { id?: string; name: string }) => data)
+  .handler(async ({ data }) => {
+    const { error } = await supabase.from("tags").upsert(data);
+    if (error) throw error;
+    return { success: true };
+  });
+
+export const deleteTag = createServerFn({ method: "POST" })
+  .validator((data: string) => data)
+  .handler(async ({ data: id }) => {
+    const { error } = await supabase.from("tags").delete().eq("id", id);
+    if (error) throw error;
+    return { success: true };
+  });
 
 // Site Content
 export const getSiteContent = createServerFn({ method: "GET" }).handler(async () => {
@@ -67,7 +122,11 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 export const updateSiteContent = createServerFn({ method: "POST" })
   .validator((data: { id: string; value: any }) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("site_content").update({ value: data.value }).eq("id", data.id);
+    const { error } = await supabase.from("site_content").upsert({ 
+      key: data.id, // Assuming the 'id' passed is the key, or we should use a real id
+      value: data.value,
+      updated_at: new Date().toISOString()
+    }, { onConflict: 'key' });
     if (error) throw error;
     return { success: true };
   });
