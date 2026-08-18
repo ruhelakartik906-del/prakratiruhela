@@ -14,7 +14,7 @@ function AdminDashboard() {
     queryFn: () => getAdminStats(),
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="p-8 text-center text-[#3B2922]/60">Loading dashboard...</div>;
 
   const stats = [
     { title: 'Total Products', value: data?.productsCount || 0, icon: Package },
@@ -27,13 +27,13 @@ function AdminDashboard() {
       <h2 className="text-2xl font-bold text-[#3B2922]">Dashboard</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {stats.map((stat) => (
-          <Card key={stat.title} className="border-[#3B2922]/10">
+          <Card key={stat.title} className="bg-white border-[#3B2922]/10 shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{stat.title}</CardTitle>
+              <CardTitle className="text-sm font-medium text-[#3B2922]/70">{stat.title}</CardTitle>
               <stat.icon className="h-4 w-4 text-[#C94F32]" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stat.value}</div>
+              <div className="text-2xl font-bold text-[#3B2922]">{stat.value}</div>
             </CardContent>
           </Card>
         ))}
