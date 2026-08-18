@@ -473,7 +473,7 @@ function Index() {
           {/* Logo Container */}
           <div className="h-20 w-20 rounded-full border border-white/20 bg-white p-2 shadow-sm mb-6 flex items-center justify-center">
              <img 
-               src="https://raw.githubusercontent.com/ruhelak/crochet-craft/main/logo.png" 
+               src={logoAsset.url} 
                alt="Crochet Craft" 
                className="h-full w-full object-contain"
              />
