@@ -311,7 +311,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="no-scrollbar mt-[45px] flex items-center justify-start gap-2.5 overflow-x-auto pb-4 sm:flex-wrap sm:justify-center">
+          <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-2.5">
             {rakshaBandhanCategories.map((c) => {
               const active = c.id === rakhiCategory;
               const count = counts[c.id];
@@ -319,11 +319,10 @@ function Index() {
                 <button
                   key={c.id}
                   onClick={() => setRakhiCategory(c.id)}
-
-                  className={`shrink-0 h-[48px] rounded-full px-6 text-[15px] font-semibold transition-all active:scale-95 ${
+                  className={`h-[42px] md:h-[48px] rounded-full px-4 md:px-6 text-[13px] md:text-[15px] font-semibold transition-all active:scale-95 ${
                     active
                       ? "bg-[#C94F32] text-white"
-                      : "border border-[#D8CEC5] bg-transparent text-[#3F3028] hover:border-[#C94F32]/30"
+                      : "border border-[#D8CEC5] bg-white text-[#3F3028] hover:border-[#C94F32]/30"
                   }`}
                 >
                   {c.label} {count}
@@ -338,7 +337,7 @@ function Index() {
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-[40px] grid gap-[24px] sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-[30px] md:mt-[40px] grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
