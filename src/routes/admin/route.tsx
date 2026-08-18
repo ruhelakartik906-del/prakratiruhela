@@ -9,6 +9,7 @@ export const Route = createFileRoute('/admin')({
     try {
       const { data: { session }, error } = await supabase.auth.getSession();
       if (error || !session) {
+        console.warn('No session found in /admin, redirecting to login');
         throw redirect({ to: '/admin/login' as any });
       }
       return { session };

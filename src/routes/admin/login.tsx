@@ -10,8 +10,8 @@ import { toast } from 'sonner';
 export const Route = createFileRoute('/admin/login')({
   beforeLoad: async () => {
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
+      const { data: { session }, error } = await supabase.auth.getSession();
+      if (session && !error) {
         throw redirect({ to: '/admin' as any });
       }
     } catch (err) {
