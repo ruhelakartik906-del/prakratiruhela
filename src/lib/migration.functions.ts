@@ -100,11 +100,13 @@ export const migrateExistingData = createServerFn({ method: "POST" })
           .single();
 
         if (pError) {
+          results.details.push(`Error migrating product ${p.name}: ${pError.message}`);
           console.error(`Error migrating product ${p.name}:`, pError);
           throw new Error(`Product migration failed for ${p.name}: ${pError.message}`);
         }
 
         results.products++;
+        results.details.push(`Migrated product: ${p.name}`);
 
         // 4. Product-Tags Relationship
         if (pTags && dbProduct) {
