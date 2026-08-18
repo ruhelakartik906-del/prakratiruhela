@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+
 
 function NotFoundComponent() {
   return (
@@ -37,9 +37,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,20 +74,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Crochet Craft — Handmade Crochet Rakhis" },
+      { title: "Crochet Craft by Prakrati Ruhela" },
       {
         name: "description",
-        content: "Handmade crochet rakhi catalogue. Order directly on WhatsApp.",
+        content: "Handmade crochet rakhis, gifts and custom designs made with love at home.",
       },
-      { name: "author", content: "Crochet Craft" },
-      { property: "og:title", content: "Crochet Craft — Handmade Crochet Rakhis" },
+      { name: "author", content: "Prakrati Ruhela" },
+      { property: "og:title", content: "Crochet Craft by Prakrati Ruhela" },
       {
         property: "og:description",
-        content: "Handmade crochet rakhi catalogue. Order directly on WhatsApp.",
+        content: "Handmade crochet rakhis, gifts and custom designs made with love at home.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -103,7 +99,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: logoAsset.url },
+      { rel: "apple-touch-icon", href: logoAsset.url },
     ],
   }),
   shellComponent: RootShell,
