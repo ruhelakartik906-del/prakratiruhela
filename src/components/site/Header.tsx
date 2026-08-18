@@ -1,6 +1,6 @@
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoAsset from "@/assets/logo-transparent.png.asset.json";
 import {
   mainCategories,
   getMainCategoryCounts,
