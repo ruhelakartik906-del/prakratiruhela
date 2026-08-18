@@ -263,7 +263,8 @@ function Index() {
         </section>
 
 
-        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-24 sm:px-6">
+        {/* Collection Section */}
+        <section id="collection" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-24 sm:px-6">
           <div className="text-center">
             <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Our Collection</span>
             <h2 className="mt-4 font-display text-4xl font-semibold text-[#3F2A22] sm:text-5xl">
