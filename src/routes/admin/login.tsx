@@ -1,4 +1,4 @@
-import { createFileRoute, redirect } from '@tanstack/react-router';
+import { createFileRoute, redirect, useRouter } from '@tanstack/react-router';
 import { supabase } from '@/integrations/supabase/client';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -8,16 +8,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin/login')({
-  beforeLoad: async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-      throw redirect({ to: '/admin' as any });
-    }
-  },
   component: AdminLogin,
 });
 
 function AdminLogin() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -35,7 +30,7 @@ function AdminLogin() {
       if (error) throw error;
       
       toast.success('Logged in successfully');
-      window.location.href = '/admin';
+      router.navigate({ to: '/admin' as any });
     } catch (error: any) {
       toast.error(error.message || 'Failed to login');
     } finally {

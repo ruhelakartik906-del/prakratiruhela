@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client.server";
 
 // Stats
 export const getAdminStats = createServerFn({ method: "GET" })
@@ -28,28 +28,17 @@ export const getProducts = createServerFn({ method: "GET" }).handler(async () =>
 });
 
 export const upsertProduct = createServerFn({ method: "POST" })
-  .validator((data: { 
-    id?: string; 
-    name: string; 
-    description?: string | null; 
-    price: number; 
-    image_url?: string | null; 
-    category_id?: string | null;
-    active?: boolean;
-    bestseller?: boolean;
-    tag_ids?: string[];
-  }) => data)
+  .validator((data: any) => data)
   .handler(async ({ data }) => {
     const { tag_ids, ...productData } = data;
-    const { data: product, error } = await supabase.from("products").upsert(productData).select().single();
+    const { data: product, error } = await (supabase.from("products") as any).upsert(productData).select().single();
     if (error) throw error;
 
-    if (tag_ids) {
-      // Simple tag sync: delete existing and insert new
-      await supabase.from("product_tags").delete().eq("product_id", product.id);
+    if (tag_ids && product) {
+      await (supabase.from("product_tags") as any).delete().eq("product_id", product.id);
       if (tag_ids.length > 0) {
-        const { error: tagError } = await supabase.from("product_tags").insert(
-          tag_ids.map(tag_id => ({ product_id: product.id, tag_id }))
+        const { error: tagError } = await (supabase.from("product_tags") as any).insert(
+          tag_ids.map((tag_id: string) => ({ product_id: product.id, tag_id }))
         );
         if (tagError) throw tagError;
       }
@@ -59,7 +48,7 @@ export const upsertProduct = createServerFn({ method: "POST" })
   });
 
 export const deleteProduct = createServerFn({ method: "POST" })
-  .validator((data: string) => data)
+  .validator((data: any) => data)
   .handler(async ({ data: id }) => {
     const { error } = await supabase.from("products").delete().eq("id", id);
     if (error) throw error;
@@ -74,15 +63,15 @@ export const getCategories = createServerFn({ method: "GET" }).handler(async () 
 });
 
 export const upsertCategory = createServerFn({ method: "POST" })
-  .validator((data: { id?: string; name: string; slug: string; image_url?: string | null }) => data)
+  .validator((data: any) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("categories").upsert(data);
+    const { error } = await (supabase.from("categories") as any).upsert(data);
     if (error) throw error;
     return { success: true };
   });
 
 export const deleteCategory = createServerFn({ method: "POST" })
-  .validator((data: string) => data)
+  .validator((data: any) => data)
   .handler(async ({ data: id }) => {
     const { error } = await supabase.from("categories").delete().eq("id", id);
     if (error) throw error;
@@ -97,15 +86,15 @@ export const getTags = createServerFn({ method: "GET" }).handler(async () => {
 });
 
 export const upsertTag = createServerFn({ method: "POST" })
-  .validator((data: { id?: string; name: string }) => data)
+  .validator((data: any) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("tags").upsert(data);
+    const { error } = await (supabase.from("tags") as any).upsert(data);
     if (error) throw error;
     return { success: true };
   });
 
 export const deleteTag = createServerFn({ method: "POST" })
-  .validator((data: string) => data)
+  .validator((data: any) => data)
   .handler(async ({ data: id }) => {
     const { error } = await supabase.from("tags").delete().eq("id", id);
     if (error) throw error;
@@ -120,10 +109,10 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 });
 
 export const updateSiteContent = createServerFn({ method: "POST" })
-  .validator((data: { id: string; value: any }) => data)
+  .validator((data: any) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("site_content").upsert({ 
-      key: data.id, // Assuming the 'id' passed is the key, or we should use a real id
+    const { error } = await (supabase.from("site_content") as any).upsert({ 
+      key: data.id, 
       value: data.value,
       updated_at: new Date().toISOString()
     }, { onConflict: 'key' });

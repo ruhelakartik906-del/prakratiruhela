@@ -305,7 +305,7 @@ function AdminProducts() {
                   <Label>Tags</Label>
                   <div className="flex flex-wrap gap-1.5 mb-2">
                     {editingProduct.tag_ids?.map((tagId: string) => {
-                      const tag = tags?.find((t: any) => t.id === tagId);
+                      const tag = (tags as any[])?.find((t: any) => t.id === tagId);
                       return tag ? (
                         <Badge key={tagId} variant="secondary" className="flex items-center gap-1">
                           {tag.name}
