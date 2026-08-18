@@ -106,7 +106,7 @@ function AdminProducts() {
   const openEditDialog = (product: any) => {
     setEditingProduct({
       ...product,
-      tag_ids: product.tags?.map((t: any) => t.tag?.id).filter(Boolean) || [],
+      tag_ids: product.tags?.map((t: any) => t.tag?.id || t.id).filter(Boolean) || [],
     });
     setIsDialogOpen(true);
   };

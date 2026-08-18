@@ -20,9 +20,17 @@ function AdminDashboard() {
 
   const mutation = useMutation({
     mutationFn: () => migrateExistingData(),
-    onSuccess: (res) => {
+    onSuccess: (res: any) => {
       if (res.success) {
-        toast.success('Static data migrated to database');
+        const { results } = res;
+        toast.success(
+          `Migration successful:
+          - ${results.products} Products
+          - ${results.categories} Categories
+          - ${results.tags} Tags
+          - ${results.productTags} Product-Tag links
+          - ${results.siteContent} Content records`
+        );
         queryClient.invalidateQueries({ queryKey: ['adminStats'] });
       } else {
         toast.error('Migration failed: ' + res.error);
