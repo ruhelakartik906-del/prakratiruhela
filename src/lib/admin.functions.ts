@@ -44,12 +44,7 @@ export const getCategories = createServerFn({ method: "GET" }).handler(async () 
 });
 
 export const upsertCategory = createServerFn({ method: "POST" })
-  .input(z.object({
-    id: z.string().optional(),
-    name: z.string(),
-    slug: z.string(),
-    image_url: z.string().optional().nullable(),
-  }))
+  .validator((data: { id?: string; name: string; slug: string; image_url?: string | null }) => data)
   .handler(async ({ data }) => {
     const { error } = await supabase.from("categories").upsert(data);
     if (error) throw error;
@@ -71,7 +66,7 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 });
 
 export const updateSiteContent = createServerFn({ method: "POST" })
-  .input(z.object({ id: z.string(), value: z.any() }))
+  .validator((data: { id: string; value: any }) => data)
   .handler(async ({ data }) => {
     const { error } = await supabase.from("site_content").update({ value: data.value }).eq("id", data.id);
     if (error) throw error;
