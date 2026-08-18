@@ -14,12 +14,14 @@ import { Header } from "@/components/site/Header";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CookieNotice } from "@/components/site/CookieNotice";
 import {
-  categories,
+  mainCategories,
+  rakshaBandhanCategories,
   customOrderLink,
   INSTAGRAM_URL,
   products,
   waLink,
-  type CategoryId,
+  type MainCategoryId,
+  type RakshaBandhanCategoryId,
 } from "@/data/products";
 import flower from "@/assets/rakhi-flower.jpg";
 import kids from "@/assets/rakhi-kids.jpg";
@@ -93,23 +95,24 @@ function scrollToId(id: string) {
 
 function Index() {
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<CategoryId>("all");
+  const [mainCategory, setMainCategory] = useState<MainCategoryId>("all");
+  const [rakhiCategory, setRakhiCategory] = useState<RakshaBandhanCategoryId>("all");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return products.filter((p) => {
-      const matchesCategory = category === "all" || p.category === category;
+      const matchesRakhiCategory = rakhiCategory === "all" || p.category === rakhiCategory;
       const matchesQuery =
         !q ||
         p.name.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q);
-      return matchesCategory && matchesQuery;
+      return matchesRakhiCategory && matchesQuery;
     });
-  }, [query, category]);
+  }, [query, rakhiCategory]);
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { all: products.length };
-    categories.forEach(cat => {
+    rakshaBandhanCategories.forEach(cat => {
       if (cat.id !== "all") {
         c[cat.id] = products.filter(p => p.category === cat.id).length;
       }
@@ -119,7 +122,7 @@ function Index() {
 
   return (
     <div id="top" className="min-h-screen bg-background">
-      <Header query={query} onQuery={setQuery} category={category} onCategory={setCategory} />
+      <Header query={query} onQuery={setQuery} category={mainCategory} onCategory={setMainCategory} />
 
       <main>
         <section 
@@ -296,13 +299,14 @@ function Index() {
           </div>
 
           <div className="no-scrollbar mt-[45px] flex items-center justify-start gap-2.5 overflow-x-auto pb-4 sm:flex-wrap sm:justify-center">
-            {categories.map((c) => {
-              const active = c.id === category;
+            {rakshaBandhanCategories.map((c) => {
+              const active = c.id === rakhiCategory;
               const count = counts[c.id];
               return (
                 <button
                   key={c.id}
-                  onClick={() => setCategory(c.id)}
+                  onClick={() => setRakhiCategory(c.id)}
+
                   className={`shrink-0 h-[48px] rounded-full px-6 text-[15px] font-semibold transition-all active:scale-95 ${
                     active
                       ? "bg-[#C94F32] text-white"
