@@ -406,9 +406,6 @@ function Index() {
 
         {/* How to order */}
         <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
-
-        {/* How to order */}
-        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
           <div className="text-center">
             <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">Process</span>
             <h2 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
