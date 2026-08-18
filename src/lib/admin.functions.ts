@@ -122,7 +122,11 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 export const updateSiteContent = createServerFn({ method: "POST" })
   .validator((data: { id: string; value: any }) => data)
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("site_content").update({ value: data.value }).eq("id", data.id);
+    const { error } = await supabase.from("site_content").upsert({ 
+      key: data.id, // Assuming the 'id' passed is the key, or we should use a real id
+      value: data.value,
+      updated_at: new Date().toISOString()
+    }, { onConflict: 'key' });
     if (error) throw error;
     return { success: true };
   });
