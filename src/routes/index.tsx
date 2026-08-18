@@ -50,19 +50,16 @@ export const Route = createFileRoute("/")({
 
 const steps = [
   {
-    icon: Sparkles,
-    title: "Pick your design",
-    body: "Browse the collection, or send us a picture of what you have in mind.",
+    title: "Pick a design",
+    body: "Browse the collection and tap \"Order\" on the rakhi you love.",
   },
   {
-    icon: MessageCircle,
     title: "Message us on WhatsApp",
-    body: "Tap Order and we'll confirm colours, quantity and delivery date.",
+    body: "Your message opens ready-made. Add colours, quantity, or a custom idea.",
   },
   {
-    icon: Package,
-    title: "Made and posted",
-    body: "We crochet your order and ship it wrapped in handmade paper, all India.",
+    title: "We make it & ship it",
+    body: "We confirm the price and delivery date, then ship anywhere in India.",
   },
 ];
 
