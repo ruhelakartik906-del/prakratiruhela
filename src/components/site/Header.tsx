@@ -20,7 +20,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
   const counts = categoryCounts();
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FFFDF9]/85 backdrop-blur-xl border-b border-black/5">
+    <header className="sticky top-0 z-40 bg-[#FFFDF9]/92 backdrop-blur-md border-b border-[#EBE3D5]/50 shadow-sm">
       <div className="mx-auto w-full px-4 pt-2 sm:px-6">
         {/* Brand Row */}
         <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
