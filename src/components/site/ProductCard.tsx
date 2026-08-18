@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
-import { orderLink, type Product } from "@/data/products";
+import { orderLink, rakshaBandhanCategories, type Product } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
+  // Find the display label for the category
+  const categoryLabel = rakshaBandhanCategories.find(c => c.id === product.category)?.label || product.category;
+
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-[16px] border border-[#EEE7E1] bg-white shadow-[0_3px_12px_rgba(60,40,25,0.06)] h-full transition-all duration-300">
-      {/* Product Image area */}
+      {/* Product Image area: 1:1, cover, no padding */}
       <div className="relative aspect-square overflow-hidden w-full block">
         <img
           src={product.image}
@@ -15,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
           height={800}
           className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-[1.04]"
         />
-        {/* Bestseller Badge */}
+        {/* Bestseller Badge: Small, top-left, disappears on hover */}
         <div className="absolute top-[10px] left-[10px] z-10 rounded-full bg-[#C94F32] px-[10px] py-[5px] text-[11px] font-semibold text-white transition-all duration-[180ms] ease-in-out group-hover:invisible group-hover:opacity-0">
           Bestseller
         </div>
@@ -25,7 +28,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col pt-[14px] px-[20px] pb-[16px] text-left">
         {/* Category Label: uppercase, 10px, spacing 1px, #A85A18 */}
         <span className="text-[10px] font-semibold tracking-[1px] text-[#A85A18] uppercase mb-[8px]">
-          FOR KIDS
+          {categoryLabel}
         </span>
         
         {/* Product Title: Playfair Display, 17px, font-weight 600, #3B2922 */}
