@@ -135,7 +135,7 @@ function Index() {
   }, []);
 
   return (
-    <div id="top" className="min-h-screen bg-background overflow-x-hidden">
+    <div id="top" className="min-h-screen bg-background overflow-x-hidden w-full">
       <Header query={query} onQuery={setQuery} category={mainCategory} onCategory={setMainCategory} />
 
       <main>
