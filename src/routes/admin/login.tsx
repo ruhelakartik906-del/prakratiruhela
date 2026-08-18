@@ -9,9 +9,14 @@ import { toast } from 'sonner';
 
 export const Route = createFileRoute('/admin/login')({
   beforeLoad: async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-      throw redirect({ to: '/admin' as any });
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        throw redirect({ to: '/admin' as any });
+      }
+    } catch (err) {
+      if (err instanceof Error && (err as any).status === 307) throw err;
+      // Continue to login if session fetch fails or is not a redirect
     }
   },
   component: AdminLogin,

@@ -7,14 +7,15 @@ import { toast } from 'sonner';
 export const Route = createFileRoute('/admin')({
   beforeLoad: async () => {
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      const { data: { session }, error } = await supabase.auth.getSession();
+      if (error || !session) {
         throw redirect({ to: '/admin/login' as any });
       }
       return { session };
     } catch (err) {
-      if (err instanceof Error && err.message.includes('redirect')) throw err;
-      console.error('Auth check failed:', err);
+      // TanStack redirect is an object with a status or special symbol
+      if (err && typeof err === 'object' && ('status' in err || 'isRedirect' in err)) throw err;
+      console.error('Admin Auth Error:', err);
       throw redirect({ to: '/admin/login' as any });
     }
   },

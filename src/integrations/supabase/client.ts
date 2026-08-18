@@ -3,15 +3,20 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'];
 const supabaseAnonKey = import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'];
 
-console.log('Supabase check:', { hasUrl: !!supabaseUrl, hasKey: !!supabaseAnonKey });
-
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('CRITICAL: Missing Supabase environment variables.');
+  console.error('Supabase credentials missing from environment variables');
 }
 
 export const supabase = createClient(
   supabaseUrl || '',
-  supabaseAnonKey || ''
+  supabaseAnonKey || '',
+  {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true
+    }
+  }
 );
 
 export type Tables = {
