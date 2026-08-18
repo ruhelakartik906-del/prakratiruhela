@@ -48,16 +48,15 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="group relative flex h-12 w-12 items-center justify-center rounded-full border-none p-0 outline-none ring-0 transition-all hover:scale-105 active:scale-95"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border-none p-0 outline-none ring-0 transition-all hover:scale-105 active:scale-95"
               style={{
                 background:
                   "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
                 boxShadow:
-                  "0 6px 16px -4px rgba(214,36,159,0.45), inset 0 1px 1px rgba(255,255,255,0.45)",
+                  "0 6px 16px -4px rgba(214,36,159,0.45)",
               }}
             >
-              <span className="pointer-events-none absolute inset-x-1 top-0.5 h-1/2 rounded-full bg-gradient-to-b from-white/30 to-transparent" />
-              <svg viewBox="0 0 24 24" fill="none" className="relative h-6 w-6" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
                 <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="white" strokeWidth="2" />
                 <circle cx="12" cy="12" r="4.2" stroke="white" strokeWidth="2" />
                 <circle cx="17.6" cy="6.4" r="1.3" fill="white" />
