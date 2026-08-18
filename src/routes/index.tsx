@@ -347,7 +347,7 @@ function Index() {
 
 
         {/* Our Story Section */}
-        <section className="story-section py-[42px] px-4 md:px-0">
+        <section className="story-section pt-[80px] pb-[60px] px-4 md:px-0 bg-[#FBF6EE]">
           <div 
             className="story-box mx-auto w-full flex flex-col items-center justify-center text-center"
             style={{
