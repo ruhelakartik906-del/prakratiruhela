@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'] || (typeof process !== 'undefined' ? process.env['EXT_SUPABASE_URL'] : undefined);
-const supabaseAnonKey = import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'] || (typeof process !== 'undefined' ? process.env['EXT_SUPABASE_ANON_KEY'] : undefined);
+const supabaseUrl = (import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'] || (typeof process !== 'undefined' ? process.env['EXT_SUPABASE_URL'] : undefined)) as string;
+const supabaseAnonKey = (import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'] || (typeof process !== 'undefined' ? process.env['EXT_SUPABASE_ANON_KEY'] : undefined)) as string;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   if (typeof window !== 'undefined') {
@@ -128,8 +128,8 @@ export type Database = {
 export type Tables<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Row'];
 
 export const supabase = createClient<Database>(
-  supabaseUrl || '',
-  supabaseAnonKey || '',
+  supabaseUrl || 'https://placeholder.supabase.co',
+  supabaseAnonKey || 'placeholder',
   {
     auth: {
       persistSession: true,
