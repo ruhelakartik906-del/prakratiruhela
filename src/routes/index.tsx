@@ -32,18 +32,20 @@ import lumba from "@/assets/rakhi-lumba.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Crochet Craft — Handmade Crochet Rakhi Catalogue" },
+      { title: "Crochet Craft by Prakrati Ruhela — Handmade Crochet Gifts" },
       {
         name: "description",
         content:
-          "Hand-crocheted rakhis, lumba sets and custom designs. Browse the Raksha Bandhan collection and order directly on WhatsApp.",
+          "Handmade crochet rakhis, gifts and custom designs made with love at home. Browse the Raksha Bandhan collection and order directly on WhatsApp.",
       },
-      { property: "og:title", content: "Crochet Craft — Handmade Crochet Rakhis" },
+      { property: "og:title", content: "Crochet Craft by Prakrati Ruhela" },
       {
         property: "og:description",
         content:
-          "A small-batch crochet rakhi catalogue. Flowers, kids' motifs, classics and rakhi + lumba sets, made by hand.",
+          "Handmade crochet rakhis, gifts and custom designs made with love at home.",
       },
+      { property: "og:image", content: logoAsset.url },
+      { name: "twitter:image", content: logoAsset.url },
     ],
   }),
   component: Index,
