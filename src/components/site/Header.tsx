@@ -48,7 +48,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               target="_blank" 
               rel="noreferrer" 
               aria-label="Instagram"
-              className="flex h-8 w-8 sm:h-[70px] sm:w-[70px] md:h-10 md:w-10 items-center justify-center rounded-full transition-all hover:scale-105 active:scale-95"
+              className="flex h-8 w-8 sm:h-[70px] sm:w-[70px] md:h-10 md:w-10 items-center justify-center rounded-full transition-all hover:scale-105 active:scale-95 sm:order-first"
               style={{
                 background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
               }}
@@ -63,7 +63,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
               href={waLink("Hi! I'd like to know more about your crochet products.")} 
               target="_blank" 
               rel="noreferrer" 
-              className="flex h-8 sm:h-[70px] sm:w-[170px] md:h-10 items-center justify-center gap-1.5 md:gap-2 rounded-full px-3 md:px-5 transition-all hover:brightness-105 active:scale-95"
+              className="flex h-8 sm:h-[70px] sm:w-[220px] md:h-10 items-center justify-center gap-1.5 md:gap-2 rounded-full px-3 sm:px-8 md:px-5 transition-all hover:brightness-105 active:scale-95"
               style={{
                 background: "linear-gradient(180deg, #12A66F 0%, #0B7C58 100%)",
               }}
@@ -77,7 +77,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         </div>
  
         {/* Search Bar Row */}
-        <div className="mt-3 flex justify-center px-4 md:px-0">
+        <div className="mt-3 md:mt-4 flex justify-center px-4 md:px-0">
           <div className="relative w-full md:w-[620px] tablet-container md:tablet-auto">
             <Search className="pointer-events-none absolute top-1/2 left-4 md:left-5 h-4 w-4 md:h-5 md:w-5 -translate-y-1/2 text-[#3F2A22]/40" />
             <input
