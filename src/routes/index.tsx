@@ -107,15 +107,19 @@ function Index() {
       return matchesRakhiCategory && matchesQuery;
     });
 
-    // Add virtual custom order card
-    list.push({
+    // Add virtual custom order card at the end
+    const customCard = {
       id: "custom-request",
       name: "Have your own idea?",
       description: "A favourite colour, a cartoon character, a name — tell us and we'll crochet a one-of-a-kind rakhi just for you.",
       price: 0,
       category: "classic", // dummy
       image: ""
-    } as any);
+    } as any;
+
+    if (q === "" && rakhiCategory === "all") {
+       list.push(customCard);
+    }
 
     return list;
   }, [query, rakhiCategory]);
@@ -131,7 +135,7 @@ function Index() {
   }, []);
 
   return (
-    <div id="top" className="min-h-screen bg-background overflow-x-hidden">
+    <div id="top" className="min-h-screen bg-background overflow-x-hidden w-full">
       <Header query={query} onQuery={setQuery} category={mainCategory} onCategory={setMainCategory} />
 
       <main>
@@ -174,7 +178,7 @@ function Index() {
             }}
           />
 
-          <div className="relative z-10 mx-auto max-w-[1440px] px-6 md:px-8 pt-8 md:pt-[80px] pb-12 md:pb-16 lg:px-[10%] flex flex-col md:grid md:items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div className="relative z-10 desktop-container pt-8 md:pt-[80px] pb-12 md:pb-16 flex flex-col md:grid md:items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
             <div className="max-w-[700px] text-center md:text-left">
               <div className="mx-auto md:mx-0 inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[12px] md:text-[13px] font-medium text-[#3B2922]">
@@ -182,7 +186,7 @@ function Index() {
                 <span>Raksha Bandhan · 28 August 2026</span>
               </div>
               
-              <h1 className="mt-6 md:mt-8 font-display text-[42px] leading-[1.05] md:text-[62px] lg:text-[68px] font-bold text-[#3B2922]">
+              <h1 className="mt-6 md:mt-8 font-display text-[42px] leading-[1.05] md:text-[56px] lg:text-[70px] font-bold text-[#3B2922] max-w-[680px]">
                 A rakhi made by hand,<br className="hidden md:block" />
                 tied with <span className="italic font-normal text-[#C94F32] font-display">love</span>
               </h1>
@@ -222,8 +226,8 @@ function Index() {
             {/* Right Column: Circular Image Composition */}
             <div className="order-last md:order-none relative aspect-square w-full max-w-[450px] md:max-w-[550px] mx-auto mt-4 md:mt-0">
 
-              {/* Main Large Image (Top Right on Desktop, Centered on Mobile) */}
-              <div className="absolute top-[5%] right-[5%] z-20 h-[60%] w-[60%] md:h-[65%] md:w-[65%] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+              {/* Main Large Image */}
+              <div className="absolute top-[10%] left-[20%] z-20 h-[50%] w-[50%] md:h-[300px] md:w-[300px] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
                 <img
                   src={flower}
                   alt="Handmade crochet flower rakhi"
@@ -231,8 +235,8 @@ function Index() {
                 />
               </div>
 
-              {/* Medium Overlapping 1 (Left Middle) */}
-              <div className="absolute top-[25%] left-0 z-10 h-[45%] w-[45%] md:h-[48%] md:w-[48%] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
+              {/* Overlapping 1 */}
+              <div className="absolute top-[5%] right-[5%] z-10 h-[40%] w-[40%] md:h-[180px] md:w-[180px] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
                 <img
                   src={classic}
                   alt="Classic pearl crochet rakhi"
@@ -240,8 +244,8 @@ function Index() {
                 />
               </div>
 
-              {/* Medium Overlapping 2 (Bottom Right) */}
-              <div className="absolute bottom-0 right-[15%] z-30 h-[40%] w-[40%] md:h-[42%] md:w-[42%] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
+              {/* Overlapping 2 */}
+              <div className="absolute bottom-[5%] right-[20%] z-30 h-[35%] w-[35%] md:h-[160px] md:w-[160px] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
                 <img
                   src={lumba}
                   alt="Rakhi + Lumba set"
@@ -249,8 +253,8 @@ function Index() {
                 />
               </div>
 
-              {/* Small Circle (Bottom Left) */}
-              <div className="absolute bottom-[10%] left-[15%] z-40 h-[25%] w-[25%] md:h-[28%] md:w-[28%] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
+              {/* Small Circle */}
+              <div className="absolute bottom-[20%] left-[5%] z-40 h-[30%] w-[30%] md:h-[140px] md:w-[140px] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
                 <img
                   src={kids}
                   alt="Crochet teddy bear rakhi for kids"
@@ -267,7 +271,7 @@ function Index() {
           className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
           style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
         >
-          <div className="mx-auto grid w-full max-w-[1440px] grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-x-4 md:gap-x-[55px] gap-y-6 md:gap-y-4 px-4 sm:px-8 lg:px-[8%]">
+          <div className="w-full lg:desktop-container grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-x-4 md:gap-x-[55px] gap-y-6 md:gap-y-4 px-4 md:px-0">
             <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
               <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               <span className="text-[14px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Handmade to order</span>
@@ -291,7 +295,7 @@ function Index() {
 
 
         {/* Collection Section */}
-        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 md:px-8 pt-12 md:pt-[65px] pb-12 lg:px-[10%]">
+        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 md:px-0 pt-12 md:pt-[65px] pb-12 lg:desktop-container">
           <div className="text-center">
             <span className="block mb-5 md:mb-7 text-[13px] md:text-[14px] font-semibold tracking-[3px] text-[#A85A18] uppercase">
               28 AUGUST
@@ -314,7 +318,7 @@ function Index() {
           </div>
 
 
-          <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-2.5">
+          <div className="mt-8 md:mt-[45px] flex flex-wrap items-center justify-center gap-2 md:gap-3">
             {rakshaBandhanCategories.map((c) => {
               const active = c.id === rakhiCategory;
               const count = counts[c.id];
@@ -322,7 +326,7 @@ function Index() {
                 <button
                   key={c.id}
                   onClick={() => setRakhiCategory(c.id)}
-                  className={`h-[42px] md:h-[48px] rounded-full px-4 md:px-6 text-[13px] md:text-[15px] font-semibold transition-all active:scale-95 ${
+                  className={`h-[42px] md:h-[48px] rounded-full px-5 md:px-7 text-[13px] md:text-[15px] font-semibold transition-all active:scale-95 whitespace-nowrap ${
                     active
                       ? "bg-[#C94F32] text-white"
                       : "border border-[#D8CEC5] bg-white text-[#3F3028] hover:border-[#C94F32]/30"
@@ -340,7 +344,7 @@ function Index() {
               No designs match that search. Try another colour or motif — or ask us on WhatsApp.
             </p>
           ) : (
-            <div className="mt-[30px] md:mt-[40px] grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+            <div className="mt-[30px] md:mt-[40px] grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[28px]">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
@@ -354,7 +358,7 @@ function Index() {
           <div 
             className="story-box mx-auto w-full flex flex-col items-center justify-center text-center"
             style={{
-              width: 'min(876px, calc(100% - 32px))',
+              width: 'min(900px, calc(100% - 32px))',
               minHeight: '225px',
               padding: '24px 20px',
               borderRadius: '18px',
@@ -406,7 +410,7 @@ function Index() {
 
 
         {/* How to order */}
-        <section className="mx-auto max-w-6xl px-4 pt-16 md:pt-20 pb-20 md:pb-24 sm:px-6">
+        <section className="mx-auto lg:desktop-container px-4 pt-16 md:pt-20 pb-20 md:pb-24 sm:px-6">
           <div className="text-center">
             <span 
               className="text-[11px] font-bold tracking-[2px] uppercase mb-3 block"
@@ -446,7 +450,7 @@ function Index() {
 
 
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 pt-[60px] md:pt-[80px] pb-20 md:pb-24 sm:px-6">
+        <section className="mx-auto px-4 pt-[60px] md:pt-[80px] pb-20 md:pb-24 sm:px-6" style={{ width: 'min(900px, 100%)' }}>
           <div className="text-center">
             <span className="text-[11px] font-bold tracking-[2px] uppercase mb-3 block" style={{ color: '#A96516' }}>GOOD TO KNOW</span>
             <h2 className="font-display text-[32px] md:text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">

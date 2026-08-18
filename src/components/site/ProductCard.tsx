@@ -39,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-[14px] border border-[#EEE7E1] bg-white shadow-[0_2px_8px_rgba(60,40,25,0.04)] h-full transition-all duration-300 hover:shadow-[0_8px_24px_rgba(60,40,25,0.08)]">
+    <article className="group relative flex flex-col overflow-hidden rounded-[16px] border border-[#EEE7E1] bg-white shadow-[0_2px_8px_rgba(60,40,25,0.04)] h-full transition-all duration-300 hover:shadow-[0_8px_24px_rgba(60,40,25,0.08)]">
       {/* Product Image area: Reference shows a very clean, tightly framed image */}
       <div className="relative aspect-square overflow-hidden w-full bg-[#FBF6EE]/30 p-3">
         <img
@@ -64,12 +64,12 @@ export function ProductCard({ product }: { product: Product }) {
         </span>
         
         {/* Product Title: Elegant serif, medium size */}
-        <h3 className="font-display text-[16px] md:text-[20px] font-bold leading-tight text-[#1D1613]">
+        <h3 className="font-display text-[16px] md:text-[18px] font-bold leading-tight text-[#1D1613]">
           {product.name}
         </h3>
         
         {/* Product Description: Clean, readable */}
-        <p className="mt-2 md:mt-3 text-[12px] md:text-[13px] font-medium leading-relaxed text-[#5E4A40] line-clamp-2">
+        <p className="mt-2 md:mt-3 text-[12px] md:text-[12.5px] font-medium leading-relaxed text-[#806F64] line-clamp-2">
           {product.description}
         </p>
         
