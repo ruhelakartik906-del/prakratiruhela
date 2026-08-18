@@ -25,7 +25,7 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
         {/* Brand Row */}
         <div className="flex items-center justify-between gap-3 px-4 lg:px-8 md:px-0">
           <a href="#top" className="flex items-center gap-2 md:gap-3">
-            <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-[#EBE3D5] overflow-hidden">
+            <div className="flex h-12 w-12 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-[#EBE3D5] overflow-hidden">
               <img 
                 src={logoAsset.url} 
                 alt="Crochet Craft Logo" 
