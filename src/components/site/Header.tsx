@@ -114,9 +114,8 @@ export function Header({ query, onQuery, category, onCategory }: Props) {
                       : "border-black/5 bg-[#FFFDF9] text-[#3F2A22] hover:border-terracotta/40 hover:text-terracotta hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
-                  {/* Icon Circle */}
                   {c.icon && (
-                    <span className={`flex h-10 w-10 min-w-[40px] shrink-0 items-center justify-center rounded-full text-base ${active ? 'bg-white/20' : 'bg-terracotta/10'}`}>
+                    <span className="flex h-10 w-10 min-w-[40px] shrink-0 items-center justify-center text-[22px] leading-none">
                       {c.icon}
                     </span>
                   )}
