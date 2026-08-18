@@ -348,18 +348,6 @@ function Index() {
           )}
         </section>
 
-            
-            <p className="text-[16px] leading-relaxed text-[#5E4A40] mb-8">
-              A favourite colour, a cartoon character, a name — tell us and we'll crochet a one-of-a-kind rakhi just for you.
-            </p>
-
-            <Button asChild className="h-12 rounded-full bg-[#087F6D] px-8 text-[15px] font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-95 border-none">
-              <a href={customOrderLink()} target="_blank" rel="noreferrer">
-                Request a custom rakhi
-              </a>
-            </Button>
-          </div>
-        </section>
 
 
         {/* Brand story */}
