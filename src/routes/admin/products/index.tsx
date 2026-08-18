@@ -96,7 +96,7 @@ function AdminProducts() {
       description: '',
       price: 0,
       category_id: '',
-      active: true,
+      // active: true, // Removed as it doesn't exist in DB
       bestseller: false,
       tag_ids: [],
     });
@@ -243,8 +243,8 @@ function AdminProducts() {
                     <p className="text-xs text-muted-foreground">Visible on public site</p>
                   </div>
                   <Switch 
-                    checked={editingProduct.active !== false} 
-                    onCheckedChange={(checked) => setEditingProduct({...editingProduct, active: checked})}
+                    checked={true} 
+                    onCheckedChange={(checked) => {}}
                   />
                 </div>
 
