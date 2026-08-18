@@ -16,12 +16,13 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         throw new Error("Service role key is not configured. Migration cannot run.");
       }
 
-      const results = {
+      const results: any = {
         categories: 0,
         tags: 0,
         products: 0,
         productTags: 0,
         siteContent: 0,
+        details: []
       };
 
       // 1. Categories Migration
@@ -39,8 +40,12 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         .upsert(mainCategories, { onConflict: 'slug' })
         .select();
       
-      if (catError) throw catError;
+      if (catError) {
+        results.details.push(`Category migration error: ${catError.message}`);
+        throw catError;
+      }
       results.categories = dbCategories?.length || 0;
+      results.details.push(`Successfully migrated ${results.categories} categories.`);
 
       // 2. Tags Migration
       // Extracted from design and common crochet themes
@@ -58,8 +63,12 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         .upsert(tags, { onConflict: 'slug' })
         .select();
 
-      if (tagError) throw tagError;
+      if (tagError) {
+        results.details.push(`Tag migration error: ${tagError.message}`);
+        throw tagError;
+      }
       results.tags = dbTags?.length || 0;
+      results.details.push(`Successfully migrated ${results.tags} tags.`);
 
       // 3. Products Migration
       const productsData = [
@@ -133,10 +142,12 @@ export const migrateExistingData = createServerFn({ method: "POST" })
         .select();
 
       if (contentError) {
+        results.details.push(`Content migration error: ${contentError.message}`);
         console.error("Error migrating site content:", contentError);
         throw new Error(`Site content migration failed: ${contentError.message}`);
       }
       results.siteContent = dbContent?.length || 0;
+      results.details.push(`Successfully migrated ${results.siteContent} content records.`);
 
       return { success: true, results };
     } catch (err: any) {
