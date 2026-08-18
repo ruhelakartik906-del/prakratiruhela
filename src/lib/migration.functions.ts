@@ -43,7 +43,7 @@ export const migrateExistingData = createServerFn({ method: "POST" })
       ];
 
       for (const p of products) {
-        const cat = dbCategories?.find(c => c.slug === p.category_slug);
+        const cat = dbCategories?.find((c: any) => c.slug === p.category_slug);
         if (cat) {
           const { category_slug, ...pData } = p;
           await (supabase.from("products") as any).upsert({
