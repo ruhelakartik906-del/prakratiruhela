@@ -163,8 +163,7 @@ function Index() {
               </h1>
 
               <p className="mt-7 max-w-[650px] text-lg leading-[1.6] text-[#3B2922]/70 sm:text-[19px]">
-                Every piece is crocheted stitch by stitch in soft cotton yarn — no moulds, no machines.
-                Choose from this year's collection or tell us your idea and we'll make it for you.
+                Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-[14px]">
@@ -191,7 +190,7 @@ function Index() {
               </div>
 
               <div className="mt-8 text-[16px] text-[#3B2922]/80">
-                Custom orders close in <span className="font-bold text-[#C94F32]">3 days</span>. Secure yours today.
+                Only 10 days left until Raksha Bandhan — order early, every piece is made by hand.
               </div>
             </div>
 
