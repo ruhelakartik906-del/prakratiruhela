@@ -173,7 +173,6 @@ function Index() {
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { all: dbProducts.length };
-    // Hardcoded logic for now to match demo
     const rakhiCats = ["kids", "flowers", "classic", "lumba-sets"];
     rakhiCats.forEach(cat => {
       c[cat] = dbProducts.filter((p: any) => p.category === cat).length;
