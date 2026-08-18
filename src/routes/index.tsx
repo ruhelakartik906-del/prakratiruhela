@@ -289,7 +289,7 @@ function Index() {
               {/* Overlapping 1 */}
               <div className="absolute top-[5%] right-[5%] z-10 h-[40%] w-[40%] sm:h-[130px] sm:w-[130px] md:h-[180px] md:w-[180px] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
                 <img
-                  src={classic}
+                  src="/assets/rakhi-classic.jpg"
                   alt="Classic pearl crochet rakhi"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
