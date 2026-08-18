@@ -248,6 +248,7 @@ function Index() {
           </div>
         </section>
 
+
         {/* Feature/Information Strip */}
         <section 
           className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
