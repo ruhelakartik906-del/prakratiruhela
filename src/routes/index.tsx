@@ -97,12 +97,12 @@ function Index() {
   const [mainCategory, setMainCategory] = useState<MainCategoryId>("all");
   const [rakhiCategory, setRakhiCategory] = useState<RakshaBandhanCategoryId>("all");
 
-  const { data: dbProducts = [] } = useQuery({
+  const { data: dbProducts = [] } = useQuery<any[]>({
     queryKey: ['products'],
     queryFn: async () => {
       const { data, error } = await supabase.from('products').select('*, categories(*)');
       if (error) throw error;
-      return data.map(p => ({
+      return (data || []).map((p: any) => ({
         id: p.id,
         name: p.name,
         description: p.description,
@@ -113,17 +113,17 @@ function Index() {
     }
   });
 
-  const { data: dbContent = [] } = useQuery({
+  const { data: dbContent = [] } = useQuery<any[]>({
     queryKey: ['siteContent'],
     queryFn: async () => {
       const { data, error } = await supabase.from('site_content').select('*');
       if (error) throw error;
-      return data;
+      return data || [];
     }
   });
 
   const getContent = (key: string, fallback: string) => {
-    return dbContent.find(c => c.key === key)?.value || fallback;
+    return dbContent.find((c: any) => c.key === key)?.value || fallback;
   };
 
   const filtered = useMemo(() => {
@@ -217,7 +217,7 @@ function Index() {
               </div>
               
               <h1 className="mt-6 md:mt-8 font-display text-[42px] sm:text-[48px] md:text-[56px] lg:text-[70px] leading-[1.05] font-bold text-[#3B2922] max-w-[680px]">
-                {getContent('hero_title', 'A rakhi made by hand, tied with love').split(',').map((part, i, arr) => (
+                {getContent('hero_title', 'A rakhi made by hand, tied with love').split(',').map((part: any, i: number, arr: any[]) => (
                   <span key={i}>
                     {part}{i < arr.length - 1 ? ',' : ''}
                     {i === 0 && <br className="hidden md:block" />}
