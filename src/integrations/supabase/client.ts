@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_EXT_SUPABASE_URL || import.meta.env.EXT_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_EXT_SUPABASE_ANON_KEY || import.meta.env.EXT_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env['VITE_EXT_SUPABASE_URL'] || import.meta.env['EXT_SUPABASE_URL'];
+const supabaseAnonKey = import.meta.env['VITE_EXT_SUPABASE_ANON_KEY'] || import.meta.env['EXT_SUPABASE_ANON_KEY'];
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn('Missing Supabase environment variables. Please check your Lovable secrets.');
