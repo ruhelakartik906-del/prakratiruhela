@@ -533,6 +533,3 @@ function Index() {
     </div>
   );
 }
-    </div>
-  );
-}
