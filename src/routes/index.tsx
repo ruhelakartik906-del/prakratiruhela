@@ -175,18 +175,18 @@ function Index() {
 
           <div className="relative z-10 mx-auto max-w-[1440px] px-8 pt-[60px] pb-16 lg:px-[10%] lg:pt-[80px] grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             {/* Left Column */}
-            <div className="max-w-[700px]">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[13px] font-medium text-[#3B2922]">
+            <div className="max-w-[700px] text-center md:text-left">
+              <div className="mx-auto md:mx-0 inline-flex items-center gap-2 rounded-full border border-[#3B2922]/10 bg-[#F5EFE6] px-3 py-1.5 text-[12px] md:text-[13px] font-medium text-[#3B2922]">
                 <span className="text-base">✨</span>
                 <span>Raksha Bandhan · 28 August 2026</span>
               </div>
               
-              <h1 className="mt-8 font-display text-[52px] leading-[1] font-bold text-[#3B2922] sm:text-[62px] lg:text-[68px]">
-                A rakhi made by hand,<br />
+              <h1 className="mt-6 md:mt-8 font-display text-[42px] leading-[1.05] md:text-[62px] lg:text-[68px] font-bold text-[#3B2922]">
+                A rakhi made by hand,<br className="hidden md:block" />
                 tied with <span className="italic font-normal text-[#C94F32] font-display">love</span>
               </h1>
 
-              <p className="mt-7 max-w-[650px] text-lg leading-[1.6] text-[#3B2922]/70 sm:text-[19px]">
+              <p className="mt-5 md:mt-7 mx-auto md:mx-0 max-w-[650px] text-[18px] md:text-lg leading-[1.45] md:leading-[1.6] text-[#3B2922]/70 sm:text-[19px]">
                 Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf.
               </p>
 
@@ -219,9 +219,9 @@ function Index() {
             </div>
 
             {/* Right Column: Circular Image Composition */}
-            <div className="relative aspect-square w-full max-w-[550px] mx-auto">
-              {/* Main Large Image (Top Right) */}
-              <div className="absolute top-[5%] right-[5%] z-20 h-[65%] w-[65%] overflow-hidden rounded-full border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+            <div className="relative aspect-square w-full max-w-[550px] mx-auto mt-8 md:mt-0">
+              {/* Main Large Image (Top Right on Desktop, Centered on Mobile) */}
+              <div className="absolute top-[5%] right-[5%] z-20 h-[60%] w-[60%] md:h-[65%] md:w-[65%] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
                 <img
                   src={flower}
                   alt="Handmade crochet flower rakhi"
@@ -230,7 +230,7 @@ function Index() {
               </div>
 
               {/* Medium Overlapping 1 (Left Middle) */}
-              <div className="absolute top-[25%] left-0 z-10 h-[48%] w-[48%] overflow-hidden rounded-full border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
+              <div className="absolute top-[25%] left-0 z-10 h-[45%] w-[45%] md:h-[48%] md:w-[48%] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_25px_rgba(0,0,0,0.1)]">
                 <img
                   src={classic}
                   alt="Classic pearl crochet rakhi"
@@ -239,7 +239,7 @@ function Index() {
               </div>
 
               {/* Medium Overlapping 2 (Bottom Right) */}
-              <div className="absolute bottom-0 right-[15%] z-30 h-[42%] w-[42%] overflow-hidden rounded-full border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
+              <div className="absolute bottom-0 right-[15%] z-30 h-[40%] w-[40%] md:h-[42%] md:w-[42%] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
                 <img
                   src={lumba}
                   alt="Rakhi + Lumba set"
@@ -248,7 +248,7 @@ function Index() {
               </div>
 
               {/* Small Circle (Bottom Left) */}
-              <div className="absolute bottom-[10%] left-[15%] z-40 h-[28%] w-[28%] overflow-hidden rounded-full border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
+              <div className="absolute bottom-[10%] left-[15%] z-40 h-[25%] w-[25%] md:h-[28%] md:w-[28%] overflow-hidden rounded-full border-[3px] md:border-[5px] border-white shadow-[0_6px_15px_rgba(0,0,0,0.1)]">
                 <img
                   src={kids}
                   alt="Crochet teddy bear rakhi for kids"
