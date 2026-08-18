@@ -126,7 +126,8 @@ function Index() {
 
       <main>
         <section 
-          className="relative mx-auto max-w-[1440px] px-6 pt-[60px] pb-16 sm:px-8 lg:px-[8%] lg:pt-[80px] overflow-hidden" 
+          className="relative mx-auto max-w-[1440px] px-8 pt-[60px] pb-16 lg:px-[10%] lg:pt-[80px] overflow-hidden" 
+
           style={{ 
             backgroundColor: '#FBF6EE',
             background: `
@@ -276,7 +277,7 @@ function Index() {
 
 
         {/* Collection Section */}
-        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-4 pt-[65px] pb-8 sm:px-6">
+        <section id="collection" className="scroll-mt-24 bg-[#FBF6EE] px-8 pt-[65px] pb-12 lg:px-[10%]">
           <div className="text-center">
             <span className="block mb-7 text-[14px] font-semibold tracking-[3px] text-[#A85A18] uppercase">
               28 AUGUST
