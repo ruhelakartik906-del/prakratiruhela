@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
 import instagramAsset from "@/assets/instagram.png.asset.json";
+import logoAsset from "@/assets/logo-transparent.png.asset.json";
 import { Header } from "@/components/site/Header";
 import { ProductCard } from "@/components/site/ProductCard";
 import { CookieNotice } from "@/components/site/CookieNotice";
