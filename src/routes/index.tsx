@@ -220,7 +220,8 @@ function Index() {
             </div>
 
             {/* Right Column: Circular Image Composition */}
-            <div className="relative aspect-square w-full max-w-[550px] mx-auto mt-8 md:mt-0">
+            <div className="order-last md:order-none relative aspect-square w-full max-w-[450px] md:max-w-[550px] mx-auto mt-4 md:mt-0">
+
               {/* Main Large Image (Top Right on Desktop, Centered on Mobile) */}
               <div className="absolute top-[5%] right-[5%] z-20 h-[60%] w-[60%] md:h-[65%] md:w-[65%] overflow-hidden rounded-full border-[4px] md:border-[6px] border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
                 <img
