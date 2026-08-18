@@ -190,10 +190,10 @@ function Index() {
                 Every rakhi is crocheted one stitch at a time at home — soft on the wrist, gentle on the heart, and unlike anything from a store shelf.
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-[14px]">
+              <div className="mt-7 md:mt-9 flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-[12px] md:gap-[14px]">
                 <Button 
                   onClick={() => scrollToId("collection")}
-                  className="h-14 min-w-[190px] rounded-full bg-[#087F6D] text-[16px] font-bold text-white shadow-[0_4px_14px_rgba(8,127,109,0.25)] transition-all hover:scale-[1.02] active:scale-95"
+                  className="h-[52px] md:h-14 flex-1 md:flex-none md:min-w-[190px] rounded-full bg-[#087F6D] text-[15px] md:text-[16px] font-bold text-white shadow-[0_4px_14px_rgba(8,127,109,0.25)] transition-all hover:scale-[1.02] active:scale-95"
                 >
                   Browse Designs
                 </Button>
@@ -202,7 +202,7 @@ function Index() {
                   href={waLink("Hi! I'd love to know more about your handmade rakhis.")} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="flex h-14 min-w-[190px] items-center justify-center gap-2 rounded-full border border-[#3B2922]/20 bg-transparent text-[16px] font-bold text-[#3B2922] transition-all hover:bg-[#3B2922]/5 active:scale-95"
+                  className="flex h-[52px] md:h-14 flex-1 md:flex-none md:min-w-[190px] items-center justify-center gap-2 rounded-full border border-[#3B2922]/20 bg-transparent text-[15px] md:text-[16px] font-bold text-[#3B2922] transition-all hover:bg-[#3B2922]/5 active:scale-95"
                 >
                   <img 
                     src={whatsappAsset.url} 
@@ -213,7 +213,7 @@ function Index() {
                 </a>
               </div>
 
-              <div className="mt-8 text-[16px] text-[#3B2922]/80">
+              <div className="mt-7 md:mt-8 text-[15px] md:text-[16px] text-[#3B2922]/80 text-center md:text-left">
                 Only 10 days left until Raksha Bandhan — order early, every piece is made by hand.
               </div>
             </div>
@@ -265,24 +265,24 @@ function Index() {
           className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0"
           style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
         >
-          <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-center gap-x-[55px] gap-y-4 px-6 sm:px-8 lg:px-[8%]">
-            <div className="flex items-center gap-2.5">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span className="text-[17px] font-medium text-[#4A342A]">Handmade to order</span>
+          <div className="mx-auto grid w-full max-w-[1440px] grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-x-4 md:gap-x-[55px] gap-y-6 md:gap-y-4 px-4 sm:px-8 lg:px-[8%]">
+            <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
+              <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span className="text-[14px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Handmade to order</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polyline points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-              <span className="text-[17px] font-medium text-[#4A342A]">Pan-India shipping</span>
+            <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
+              <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polyline points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span className="text-[14px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Pan-India shipping</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <div className="h-[22px] w-[22px] flex items-center justify-center">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
+              <div className="h-5 w-5 md:h-[22px] md:w-[22px] flex items-center justify-center">
+                <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
               </div>
-              <span className="text-[17px] font-medium text-[#4A342A]">Gift-ready packaging</span>
+              <span className="text-[14px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Gift-ready packaging</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-              <span className="text-[17px] font-medium text-[#4A342A]">Custom colours welcome</span>
+            <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
+              <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              <span className="text-[14px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Custom colours welcome</span>
             </div>
           </div>
         </section>
