@@ -2,11 +2,16 @@ import { createServerFn } from "@tanstack/react-start";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
 // Assets to be migrated/handled
+const SUPABASE_URL = "https://wxqzyvrvaflenisqsahz.supabase.co";
+const STORAGE_BUCKET = "website-images";
+
+const getPublicUrl = (path: string) => `${SUPABASE_URL}/storage/v1/object/public/${STORAGE_BUCKET}/${path}`;
+
 const FAKE_IMAGES = {
-  flower: "/assets/rakhi-flower.jpg",
-  kids: "/assets/rakhi-kids.jpg",
-  classic: "/assets/rakhi-classic.jpg",
-  lumba: "/assets/rakhi-lumba.jpg"
+  flower: getPublicUrl("products/rakhi-flower.jpg"),
+  kids: getPublicUrl("products/rakhi-kids.jpg"),
+  classic: getPublicUrl("products/rakhi-classic.jpg"),
+  lumba: getPublicUrl("products/rakhi-lumba.jpg")
 };
 
 export const migrateExistingData = createServerFn({ method: "POST" })
