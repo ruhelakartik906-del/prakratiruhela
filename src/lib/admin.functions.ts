@@ -27,6 +27,37 @@ export const getProducts = createServerFn({ method: "GET" }).handler(async () =>
   return data;
 });
 
+export const upsertProduct = createServerFn({ method: "POST" })
+  .validator((data: { 
+    id?: string; 
+    name: string; 
+    description?: string | null; 
+    price: number; 
+    image_url?: string | null; 
+    category_id?: string | null;
+    active?: boolean;
+    bestseller?: boolean;
+    tag_ids?: string[];
+  }) => data)
+  .handler(async ({ data }) => {
+    const { tag_ids, ...productData } = data;
+    const { data: product, error } = await supabase.from("products").upsert(productData).select().single();
+    if (error) throw error;
+
+    if (tag_ids) {
+      // Simple tag sync: delete existing and insert new
+      await supabase.from("product_tags").delete().eq("product_id", product.id);
+      if (tag_ids.length > 0) {
+        const { error: tagError } = await supabase.from("product_tags").insert(
+          tag_ids.map(tag_id => ({ product_id: product.id, tag_id }))
+        );
+        if (tagError) throw tagError;
+      }
+    }
+
+    return { success: true, product };
+  });
+
 export const deleteProduct = createServerFn({ method: "POST" })
   .validator((data: string) => data)
   .handler(async ({ data: id }) => {
