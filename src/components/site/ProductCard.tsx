@@ -7,47 +7,47 @@ export function ProductCard({ product }: { product: Product }) {
   const categoryLabel = rakshaBandhanCategories.find(c => c.id === product.category)?.label || product.category;
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-[20px] border border-[#EEE7E1] bg-white shadow-[0_4px_16px_rgba(60,40,25,0.06)] h-full min-h-[580px] transition-all duration-300">
-      {/* Product Image area: Square container with more padding for a "framed" gallery look */}
-      <div className="relative aspect-square overflow-hidden w-full bg-[#FBF6EE]/40 p-[22px]">
+    <article className="group relative flex flex-col overflow-hidden rounded-[14px] border border-[#EEE7E1] bg-white shadow-[0_2px_8px_rgba(60,40,25,0.04)] h-full transition-all duration-300 hover:shadow-[0_8px_24px_rgba(60,40,25,0.08)]">
+      {/* Product Image area: Reference shows a very clean, tightly framed image */}
+      <div className="relative aspect-square overflow-hidden w-full bg-[#FBF6EE]/30 p-3">
         <img
           src={product.image}
           alt={`${product.name} — handmade crochet rakhi`}
           loading="lazy"
           width={800}
           height={800}
-          className="h-full w-full object-cover rounded-[14px] transition-transform duration-500 ease-out group-hover:scale-[1.08]"
+          className="h-full w-full object-cover rounded-[10px] transition-transform duration-500 ease-out group-hover:scale-[1.05]"
         />
-        {/* Bestseller Badge: Very small, premium pill */}
-        <div className="absolute top-[32px] left-[32px] z-10 rounded-full bg-[#C94F32] px-[10px] py-[4px] text-[9px] font-bold tracking-wider text-white transition-all duration-[250ms] ease-in-out group-hover:invisible group-hover:opacity-0 shadow-sm uppercase">
+        {/* Bestseller Badge: Small, simple pill */}
+        <div className="absolute top-5 left-5 z-10 rounded-full bg-[#C94F32] px-2 py-0.5 text-[9px] font-bold text-white transition-opacity duration-300 group-hover:opacity-0 shadow-sm">
           Bestseller
         </div>
       </div>
 
-      {/* Card Content Padding: Consistent editorial spacing */}
-      <div className="flex flex-1 flex-col pt-[24px] px-[28px] pb-[28px] text-left">
-        {/* Category Label: uppercase, 11px, #A85A18 */}
-        <span className="text-[11px] font-bold tracking-[2px] text-[#A85A18] uppercase mb-[12px]">
+      {/* Card Content Padding: Tight, clean layout per reference */}
+      <div className="flex flex-1 flex-col pt-4 px-5 pb-5 text-left">
+        {/* Category Label: subtle */}
+        <span className="text-[10px] font-bold tracking-wider text-[#A85A18] uppercase mb-2 opacity-80">
           {categoryLabel}
         </span>
         
-        {/* Product Title: Playfair Display, 24px, font-weight 700, #1A110D */}
-        <h3 className="font-display text-[24px] font-bold leading-[1.15] text-[#1A110D]">
+        {/* Product Title: Elegant serif, medium size */}
+        <h3 className="font-display text-[20px] font-bold leading-tight text-[#1D1613]">
           {product.name}
         </h3>
         
-        {/* Product Description: 15px, Inter, 1.6 line-height, #4A3B34 */}
-        <p className="mt-[16px] text-[15px] font-medium leading-[1.6] text-[#4A3B34] line-clamp-3">
+        {/* Product Description: Clean, readable */}
+        <p className="mt-3 text-[13px] font-medium leading-relaxed text-[#5E4A40] line-clamp-2">
           {product.description}
         </p>
         
-        {/* Price + Order Button on same bottom row */}
-        <div className="mt-auto pt-[28px] flex items-center justify-between">
-          {/* Price: 24px, bold, #1A110D */}
-          <span className="text-[24px] font-bold text-[#1A110D]">₹{product.price}</span>
+        {/* Price + Order Button: Horizontal alignment */}
+        <div className="mt-auto pt-5 flex items-center justify-between">
+          {/* Price: Bold, prominent */}
+          <span className="text-[20px] font-bold text-[#1D1613]">₹{product.price}</span>
           
-          {/* Order button: Prominent teal pill #087F6D, 16px, 700 */}
-          <Button asChild className="h-[52px] rounded-full bg-[#087F6D] px-[32px] text-[16px] font-bold text-white border-none shadow-[0_6px_18px_rgba(8,127,109,0.2)] transition-all hover:bg-[#066a57] active:scale-95">
+          {/* Order button: Compact teal pill */}
+          <Button asChild className="h-10 rounded-full bg-[#087F6D] px-6 text-[14px] font-bold text-white border-none shadow-md transition-all hover:bg-[#066a57] active:scale-95">
             <a href={orderLink(product)} target="_blank" rel="noreferrer">
               Order
             </a>
