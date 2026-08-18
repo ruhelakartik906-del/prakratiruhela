@@ -20,7 +20,7 @@ function AdminContent() {
   });
 
   const mutation = useMutation({
-    mutationFn: updateSiteContent,
+    mutationFn: (data: { id: string; value: any }) => updateSiteContent({ data }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['adminContent'] });
       toast.success('Content updated');
