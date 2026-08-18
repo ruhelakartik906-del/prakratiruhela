@@ -271,7 +271,7 @@ function Index() {
           style={{ minHeight: '72px', display: 'flex', alignItems: 'center' }}
           className="w-full border-t border-b border-[#E8D5C1] bg-[#F8EBDD] py-4 md:py-0 overflow-x-auto no-scrollbar"
         >
-          <div className="w-full lg:desktop-container tablet-container grid grid-cols-2 md:flex md:flex-nowrap items-center justify-center gap-x-4 md:gap-x-[40px] lg:gap-x-[55px] gap-y-6 md:gap-y-4 px-4 md:px-0 whitespace-nowrap">
+          <div className="w-full lg:desktop-container tablet-container grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-nowrap items-center justify-center gap-x-4 md:gap-x-[40px] lg:gap-x-[55px] gap-y-6 md:gap-y-8 px-6 md:px-12 lg:px-0 whitespace-nowrap">
             <div className="flex flex-col md:flex-row items-center md:items-center gap-1.5 md:gap-2.5 text-center md:text-left">
               <svg width="20" height="20" className="md:w-[22px] md:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="#C94F32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               <span className="text-[14px] sm:text-[16px] md:text-[17px] font-medium text-[#4A342A] leading-tight">Handmade to order</span>
