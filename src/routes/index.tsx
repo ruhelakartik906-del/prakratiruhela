@@ -443,27 +443,28 @@ function Index() {
         {/* FAQ */}
         <section className="mx-auto max-w-3xl px-4 pb-24 sm:px-6">
           <div className="text-center">
-            <span className="text-xs font-bold tracking-[0.2em] text-terracotta uppercase">FAQ</span>
-            <h2 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
-              Questions, answered
+            <span className="text-[11px] font-bold tracking-[2px] uppercase mb-4 block" style={{ color: '#A96516' }}>GOOD TO KNOW</span>
+            <h2 className="font-display text-[42px] font-semibold text-[#3B2922] sm:text-[48px]">
+              Common questions
             </h2>
           </div>
           <Accordion type="single" collapsible className="mt-12 space-y-4">
-            {faqs.map((f) => (
+            {faqs.map((f, i) => (
               <AccordionItem
-                key={f.q}
-                value={f.q}
-                className="border-none"
+                key={i}
+                value={`item-${i}`}
+                className="border border-[#EEE7E1] bg-white rounded-[14px] px-6 overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all hover:border-[#EBD4BA]"
               >
-                <AccordionTrigger className="flex rounded-[1.25rem] border border-border/40 bg-card px-6 py-5 text-left font-display text-lg font-semibold text-foreground transition-all hover:border-terracotta/40 hover:no-underline data-[state=open]:border-terracotta/40 data-[state=open]:text-terracotta">
+                <AccordionTrigger className="hover:no-underline py-5 text-[17px] font-medium text-[#3B2922] text-left">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="mt-2 px-6 pb-4 text-base leading-relaxed text-muted-foreground/80">
+                <AccordionContent className="pb-5 text-[15px] leading-[1.6] text-[#765F55]">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
+        </section>
         </section>
       </main>
 
