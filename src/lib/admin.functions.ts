@@ -124,22 +124,26 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
 export const updateSiteContent = createServerFn({ method: "POST" })
   .validator((data: any) => data)
   .handler(async ({ data }) => {
-    // Check if we have an ID (which is the UUID from site_content.id) or a key
-    const identifier = data.id || data.key;
-    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
-
+    // data should contain id or (section and content_key)
+    const { id, section, content_key, content_value, content_type } = data;
+    
     const upsertData: any = { 
-      value: data.value,
+      content_value,
+      content_type: content_type || 'text',
       updated_at: new Date().toISOString()
     };
 
-    if (isUuid) {
-      upsertData.id = identifier;
+    if (id) {
+      upsertData.id = id;
     } else {
-      upsertData.key = identifier;
+      upsertData.section = section;
+      upsertData.content_key = content_key;
     }
 
-    const { error } = await (supabase.from("site_content") as any).upsert(upsertData, { onConflict: isUuid ? 'id' : 'key' });
+    const { error } = await (supabase.from("site_content") as any).upsert(upsertData, { 
+      onConflict: id ? 'id' : 'section,content_key' 
+    });
+    
     if (error) throw error;
     return { success: true };
   });
