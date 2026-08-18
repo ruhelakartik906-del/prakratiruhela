@@ -467,45 +467,53 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bg-[#3F2A22] py-20 text-white">
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-3">
-          <div>
-            <h3 className="font-display text-3xl font-semibold">Crochet Craft</h3>
-            <p className="mt-6 max-w-xs text-base leading-relaxed opacity-60">
-              Handmade crochet rakhis, lumba sets and custom pieces. Shipped across India.
-            </p>
+      <footer className="bg-[#3B2922] py-20 text-white">
+        <div className="mx-auto flex flex-col items-center text-center px-4 max-w-4xl">
+          {/* Logo Container */}
+          <div className="h-20 w-20 rounded-full border border-white/20 bg-white p-2 shadow-sm mb-6 flex items-center justify-center">
+             <img 
+               src="https://raw.githubusercontent.com/ruhelak/crochet-craft/main/logo.png" 
+               alt="Crochet Craft" 
+               className="h-full w-full object-contain"
+             />
           </div>
-          <div className="text-base">
-            <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Explore</p>
-            <div className="mt-6 flex flex-col items-start gap-4">
-              <button onClick={() => scrollToId("collection")} className="opacity-70 transition-opacity hover:opacity-100">
-                Collection
-              </button>
-              <a href={customOrderLink()} target="_blank" rel="noreferrer" className="opacity-70 transition-opacity hover:opacity-100">
-                Custom orders
-              </a>
-              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 opacity-70 transition-opacity hover:opacity-100">
-                <img src={instagramAsset.url} alt="Instagram" className="h-5 w-5 rounded-full object-contain" /> Instagram
-              </a>
-            </div>
-          </div>
-          <div className="text-base">
-            <p className="text-xs font-bold tracking-[0.2em] opacity-40 uppercase">Talk to us</p>
-            <p className="mt-6 opacity-60">Mon–Sat, 10am to 7pm IST</p>
-            <Button asChild className="mt-6 h-12 rounded-full bg-[#25D366] px-8 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110 active:scale-95">
-              <a href={waLink("Hi! I'd like to place a rakhi order.")} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                <img 
-                  src={whatsappAsset.url} 
-                  alt="WhatsApp" 
-                  className="h-5 w-5 object-contain"
-                />
-                <span>Order on WhatsApp</span>
+
+          <h3 className="font-display text-[26px] font-semibold text-white mb-2">
+            Crochet Craft by Pooja Jain
+          </h3>
+          
+          <p className="text-[15px] opacity-70 mb-8 max-w-lg leading-relaxed">
+            Handmade crochet · Made with love at home · Shipping across India
+          </p>
+
+          <div className="flex flex-col items-center gap-6">
+            <a 
+              href={INSTAGRAM_URL} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex items-center gap-2.5 group"
+            >
+              <div className="h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#FFD600] via-[#FF0069] to-[#7638FA] p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+                <div className="h-full w-full flex items-center justify-center rounded-full bg-[#3B2922] p-2">
+                  <img src={instagramAsset.url} alt="Instagram" className="h-full w-full object-contain brightness-0 invert" />
+                </div>
+              </div>
+              <span className="text-[15px] font-medium tracking-wide">@cro_chetcraft</span>
+            </a>
+
+            <Button 
+              asChild 
+              className="h-[52px] rounded-full bg-[#087F6D] px-10 text-[16px] font-bold text-white shadow-[0_4px_14px_rgba(8,127,109,0.25)] transition-all hover:scale-105 active:scale-95"
+            >
+              <a href={waLink("Hi! I'd like to place an order.")} target="_blank" rel="noreferrer">
+                Order on WhatsApp
               </a>
             </Button>
           </div>
-        </div>
-        <div className="mt-20 border-t border-white/10 pt-8 text-center text-sm opacity-40">
-          © {new Date().getFullYear()} Crochet Craft. Made by hand.
+
+          <div className="mt-20 w-full border-t border-white/10 pt-8 text-[13px] opacity-30 tracking-wider">
+            © {new Date().getFullYear()} CROCHET CRAFT. MADE BY HAND.
+          </div>
         </div>
       </footer>
 
